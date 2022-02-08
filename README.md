@@ -1,67 +1,63 @@
-// ------------------------------------------------------
-	Démarrer avec goblim - WINDOWS
-// ------------------------------------------------------
+
+# DÃ©marrer avec goblim - WINDOWS
+
 - Lancer la solution GoblimSolution/GoblimGL4.sln
-- Définissez le projet SampleProject comme "Projet de démarrage" (click droit sur le projet - définir comme projet de démarrage)
-- Dans la section "dépendance de build" du menu du projet, ajouter le projet GoblimGL4 comme dépendance de build
+- DÃ©finissez le projet SampleProject comme "Projet de dÃ©marrage" (click droit sur le projet - dÃ©finir comme projet de dÃ©marrage)
+- Dans la section "dÃ©pendance de build" du menu du projet, ajouter le projet GoblimGL4 comme dÃ©pendance de build
 
-- Si ça ne marche pas : 
--- il se peut que des chemin d'inclusion ou de lib se soit remplacer à l'ouverture de la solution en dur (mais j'espère que non)
--- La plateforme AMD est en test, le suppot intel HD n'est pas encore prévu
+- Si Ã§a ne marche pas : 
+-- il se peut que des chemin d'inclusion ou de lib se soit remplacer Ã  l'ouverture de la solution en dur (mais j'espÃ¨re que non)
+-- La plateforme AMD est en test, le suppot intel HD n'est pas encore prÃ©vu
 
-// ------------------------------------------------------
-	Démarrer avec goblim - LINUX
-// ------------------------------------------------------
-- Dans le répertoire Libraries/ToCompileForLinux : lisez rapidement le readme et installez les librairie nécessaires
+# DÃ©marrer avec goblim - LINUX
+
+- Dans le rÃ©pertoire Libraries/ToCompileForLinux : lisez rapidement le readme et installez les librairie nÃ©cessaires
 - Lancer la solution LinuxSublimeSolution/Goblim.sublime-project
-- Dans Goblim Solution/Makefile : Modifier la variable project pour qu'elle corresponde au projet à compiler (pas de version multi projet pour le moment)
-- Vous pouvez tester la compilation du moteur lui même en faisant "make goblim -j 8" (-j lance la compilation sur plusieurs thread, ici 8)
+- Dans Goblim Solution/Makefile : Modifier la variable project pour qu'elle corresponde au projet Ã  compiler (pas de version multi projet pour le moment)
+- Vous pouvez tester la compilation du moteur lui mÃªme en faisant "make goblim -j 8" (-j lance la compilation sur plusieurs thread, ici 8)
 - Pour compiler le projet, vous pouvez utilisez simplement "make", ou utilisez les options de build fournis dans le projet sublime text (ctrl+b)
-- Sous linux, toute l'édition/compilation du projet/mise a jour des shaders peut être faite directement depuis le projet sublime-text situé dans LinuxSublimeSolution
+- Sous linux, toute l'Ã©dition/compilation du projet/mise a jour des shaders peut Ãªtre faite directement depuis le projet sublime-text situÃ© dans LinuxSublimeSolution
 - Je vous conseil de regarder quelles options de build sont disponibles
 
 
-// ------------------------------------------------------
-	Ajouter votre propre projet
-// ------------------------------------------------------
-- Copier le dossier SampleProject et renommé le dossier et les fichiers de visual studio et le fichier sublime-project
--- Attention a bien faire correspondre les noms de vos projet sublime text et visual pour que le déploiement des shaders par sublime text fonctionne
-- Dans la solution de visual studio, ajouter votre projet à la solution
-- dans la section "dépendance de build" du menu du projet, ajouter le projet GoblimGL4 comme dépendance de votre projet
-- Définissez le projet comme "Projet de démarrage"
+# Ajouter votre propre projet
+
+- Copier le dossier SampleProject et renommÃ© le dossier et les fichiers de visual studio et le fichier sublime-project
+-- Attention a bien faire correspondre les noms de vos projet sublime text et visual pour que le dÃ©ploiement des shaders par sublime text fonctionne
+- Dans la solution de visual studio, ajouter votre projet Ã  la solution
+- dans la section "dÃ©pendance de build" du menu du projet, ajouter le projet GoblimGL4 comme dÃ©pendance de votre projet
+- DÃ©finissez le projet comme "Projet de dÃ©marrage"
 - lancer la compilation
 
-// ------------------------------------------------------
-	Modifier le répertoire de sortie - WINDOWS
-// ------------------------------------------------------
-Pour modifier le répertoire de sortie de votre projet, il faut modifier 4 choses :
-- Les répertoire de sortie et intermédiaire du projet goblimGL4
-- Les répertoire de sortie et intermédiaire de votre projet
-- Les répertoires de librairie de votre projet 
--- C:\Home\Output\GobLimGL4\$(Configuration) est à remplacer par votre nouveau répertoire de sortie du projet GoblimGL4
-- Les répertoires de sortie configuré dans les "build_systems" du fichier sublime-project
--- Pour modifier le fichier, ouvrez un sublime-text et glissez-déposez le fichier dans l'éditeur, sinon il vous ouvrira le projet au lieu du fichier
- 
-// ------------------------------------------------------
-	Mise a jour des shaders - WINDOWS
-// ------------------------------------------------------
-Ce projet déploiement rend le debuggage de shader un peu plus long si vous n'utilisez que visual studio
-- Les shaders utilisés par le moteur au débuggage sont une copie de ceux de votre projet
-	-- Ils sont copiés à la génération dans le C:/Home/OutPut/<VotreProjet+config>/Materials ou Effects
- - Cette copie n'est mise a jour qu'a chaque régénération du projet par visual studio
+# Modifier le rÃ©pertoire de sortie - WINDOWS
 
-################ EN UTILISANT SUBLIME TEXTE #########################
+Pour modifier le rÃ©pertoire de sortie de votre projet, il faut modifier 4 choses :
+- Les rÃ©pertoire de sortie et intermÃ©diaire du projet goblimGL4
+- Les rÃ©pertoire de sortie et intermÃ©diaire de votre projet
+- Les rÃ©pertoires de librairie de votre projet 
+-- C:\Home\Output\GobLimGL4\$(Configuration) est Ã  remplacer par votre nouveau rÃ©pertoire de sortie du projet GoblimGL4
+- Les rÃ©pertoires de sortie configurÃ© dans les "build_systems" du fichier sublime-project
+-- Pour modifier le fichier, ouvrez un sublime-text et glissez-dÃ©posez le fichier dans l'Ã©diteur, sinon il vous ouvrira le projet au lieu du fichier
+ 
+# Mise a jour des shaders - WINDOWS
+
+Ce projet dÃ©ploiement rend le debuggage de shader un peu plus long si vous n'utilisez que visual studio
+- Les shaders utilisÃ©s par le moteur au dÃ©buggage sont une copie de ceux de votre projet
+	-- Ils sont copiÃ©s Ã  la gÃ©nÃ©ration dans le C:/Home/OutPut/<VotreProjet+config>/Materials ou Effects
+ - Cette copie n'est mise a jour qu'a chaque rÃ©gÃ©nÃ©ration du projet par visual studio
+
+## EN UTILISANT SUBLIME TEXTE 3
 - Ouvrer le projet <nomdevotreprojet>.sublime-project
 - Modifier vos shaders depuis sublime texte
 - Compiler avec l'option de build qui vous convient (tools->build system->transfert GLSL to debug/release)
-- relancer votre exe depuis visual OU lancer directement l'exe depuis son répertoire de sortie
+- relancer votre exe depuis visual OU lancer directement l'exe depuis son rÃ©pertoire de sortie
 
-################ DIRECTEMENT VISUAL STUDIO #########################
-Pour la mise à jour des shaders situés dans votre projets, il est nécessaire de regénérer votre projet
+## DIRECTEMENT VISUAL STUDIO
+Pour la mise Ã  jour des shaders situÃ©s dans votre projets, il est nÃ©cessaire de regÃ©nÃ©rer votre projet
 Pour aller plus vite, vous pouvez au choix :
-- faire clic droit sur le projet -> Projet uniquement -> régénérer le projet pour transférer vos shaders du projet mis a jour
+- faire clic droit sur le projet -> Projet uniquement -> rÃ©gÃ©nÃ©rer le projet pour transfÃ©rer vos shaders du projet mis a jour
 
-- éditer directement les materiaux situés dans le répertoire de sortie mais attention :
-	-- Ces shaders ne sont pas sauvegardé dans le projet
-	-- Ces shaders sont éffacés à chaque régénération du projet
+- Ã©diter directement les materiaux situÃ©s dans le rÃ©pertoire de sortie mais attention :
+	-- Ces shaders ne sont pas sauvegardÃ© dans le projet
+	-- Ces shaders sont Ã©ffacÃ©s Ã  chaque rÃ©gÃ©nÃ©ration du projet
 
