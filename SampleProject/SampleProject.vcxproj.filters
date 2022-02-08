@@ -31,6 +31,9 @@
     <ClCompile Include="Sources\GaussianSplat.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="Materials\SurfacicSpotNoise\SurfacicSpotNoise.cpp">
+      <Filter>Materials\SurfacicSpotNoise</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Sources">
@@ -63,6 +66,9 @@
     <Filter Include="Effects\WaveletImage">
       <UniqueIdentifier>{d457a278-f4e3-40be-87a2-674c73325f06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Materials\SurfacicSpotNoise">
+      <UniqueIdentifier>{404fe64c-b8bc-4ae9-a0af-9ca627b570a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\SampleEngine.h">
@@ -91,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="Sources\GaussianSplat.h">
       <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\SurfacicSpotNoise\SurfacicSpotNoise.h">
+      <Filter>Materials\SurfacicSpotNoise</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +139,12 @@
     </None>
     <None Include="Materials\Common\SpotNoise.glsl">
       <Filter>Materials\Common</Filter>
+    </None>
+    <None Include="Materials\SurfacicSpotNoise\Shaders\Main-FS.glsl">
+      <Filter>Materials\SurfacicSpotNoise</Filter>
+    </None>
+    <None Include="Materials\SurfacicSpotNoise\Shaders\Main-VS.glsl">
+      <Filter>Materials\SurfacicSpotNoise</Filter>
     </None>
   </ItemGroup>
 </Project>

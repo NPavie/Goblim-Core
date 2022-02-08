@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"gif",
+				"gifTest"
+			],
+			[
+				"cropp",
+				"croppedImage"
+			],
+			[
+				"dif",
+				"difHeightY"
+			],
+			[
+				"difH",
+				"difHeightX"
+			],
+			[
+				"nois",
+				"noise_x"
+			],
+			[
+				"nor",
+				"normalInWorld"
+			],
+			[
+				"No",
+				"Normal"
+			],
+			[
+				"Posi",
+				"Position"
+			],
+			[
+				"noise",
+				"noiseResult"
+			],
+			[
 				"cro",
 				"croppedImage"
 			],
@@ -478,57 +514,45 @@
 			[
 				"kerne",
 				"computeKernel"
-			],
-			[
-				"signe",
-				"signe_r2"
-			],
-			[
-				"sign",
-				"signe_r1"
-			],
-			[
-				"kernelTo",
-				"KernelToCameraSpace"
-			],
-			[
-				"v_",
-				"v_CameraSpaceCoord"
-			],
-			[
-				"int",
-				"intersection"
-			],
-			[
-				"quad",
-				"quadraticToKernelSpace"
-			],
-			[
-				"point",
-				"point_NDC"
-			],
-			[
-				"delta",
-				"delta_root"
-			],
-			[
-				"g_P",
-				"g_PositionInCamera"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/Cours/CoursNASM.tex",
+			"file": "Effects/SpotNoise/Shaders/PerPixel-FS.glsl",
 			"settings":
 			{
-				"buffer_size": 4753,
+				"buffer_size": 1484,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Materials/Common/SpotNoise.glsl",
+			"settings":
+			{
+				"buffer_size": 28296,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Materials/SurfacicSpotNoise/Shaders/Main-FS.glsl",
+			"settings":
+			{
+				"buffer_size": 3606,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Effects/DistributionProfile/Shaders/PerPixel-FS.glsl",
+			"settings":
+			{
+				"buffer_size": 788,
 				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "Transfert GLSL Files To debug",
+	"build_system": "Transfert GLSL Files To release",
 	"build_system_choices":
 	[
 		[
@@ -543,7 +567,7 @@
 				]
 			],
 			[
-				"Transfert GLSL Files To debug",
+				"Transfert GLSL Files To release",
 				""
 			]
 		]
@@ -551,21 +575,57 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 334.0,
-		"last_filter": "color ",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"color ",
-				"Colorsublime: Install Theme"
+				"",
+				"Anaconda: Show error list"
+			],
+			[
+				"sho",
+				"Anaconda: Show error list"
+			],
+			[
+				"python",
+				"Anaconda: Set Python interpreter"
+			],
+			[
+				"anacond",
+				"Anaconda: Find object usage"
+			],
+			[
+				"goto",
+				"Anaconda: Goto object definition"
+			],
+			[
+				"ana",
+				"Anaconda: Goto object definition"
+			],
+			[
+				"displa",
+				"Anaconda: Display object docs"
 			],
 			[
 				"ins",
 				"Package Control: Install Package"
 			],
 			[
+				"pyt",
+				"Build With: Python - Syntax Check"
+			],
+			[
 				"instal",
 				"Package Control: Install Package"
+			],
+			[
+				"debu",
+				"Build With: Transfert GLSL Files To debug"
+			],
+			[
+				"color ",
+				"Colorsublime: Install Theme"
 			],
 			[
 				"read ima",
@@ -677,6 +737,43 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Nico/Dropbox/Public/LCSN/index.html",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/Core/Materials/Common/Splatting.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/Core/Materials/Common/Grid.glsl",
+		"/C/Users/Nico/AppData/Roaming/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/C/Users/Nico/Dropbox/Public/LCSN/css/theme/blood_custom.css",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/SampleProject/Materials/Common/SpotNoise.glsl",
+		"/C/Home/Output/SampleProject/Release/capture/autoCropPPMToPNG.py",
+		"/C/Home/Output/SampleProject/Release/capture/ppmCutterToPNG.py",
+		"/C/Users/Nico/Dropbox/Public/LCSN/images/byExampleJeansHTML.svg",
+		"/C/Users/Nico/Dropbox/Public/LCSN/images/SpotNoiseHow.svg",
+		"/C/Users/Nico/Dropbox/Public/LCSN/images/TextureTypes.svg",
+		"/C/Users/Nico/Dropbox/Public/LCSN/images/TextureTypesHTML.svg",
+		"/C/Users/Nico/Dropbox/Scripts/batchAutoCrop.py",
+		"/C/Users/Nico/Dropbox/CodeSharing/SLIC_Windows_GUI/ProcessingPipeline/stage3_batchedEllipseExtraction.py",
+		"/C/Users/Nico/Dropbox/CodeSharing/SLIC_Windows_GUI/ProcessingPipeline/stage1_subdivide.py",
+		"/C/Users/Nico/Dropbox/CodeSharing/SLIC_Windows_GUI/ProcessingPipeline/cleanPipeline.py",
+		"/C/Users/Nico/Dropbox/CodeSharing/SLIC_Windows_GUI/imagesSubdivide/subdivider.py",
+		"/C/Users/Nico/AppData/Roaming/Sublime Text 3/Packages/Anaconda/README.md",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/mergeInGIF.py",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/autoCropPPMToPNG.py",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/Captures_autoCropPPMToPNG.py",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/Core/Materials/Common/Common.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/Core/Materials/Common/Lighting/Lighting.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/SampleProject/Materials/SurfacicSpotNoise/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/SampleProject/Materials/SurfacicSpotNoise/Shaders/Main-FS.glsl",
+		"/C/Home/Output/SampleProject/Release/justATest.ppm",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/SampleProject/Effects/SpotNoise/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/Downloads/science.bib",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/SampleProject/Materials/SampleMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/SampleProject/Materials/SampleMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Versions de Goblim/Goblim-Win32-core - LCSN WSCG 3D objects/SampleProject/SampleProject.sublime-project",
+		"/C/Users/Nico/Documents/Objets/Dragon.DAE",
+		"/C/Users/Nico/Downloads/mgrf-textures-20141219/README.txt",
+		"/C/Users/Nico/Downloads/mgrf-textures-20141219/seqlearning.py",
+		"/C/Users/Nico/Dropbox/CodeSharing/LocalRandomPhaseNoise/src/Main.cpp",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Prog Unix/ProgUnix/SujetsTDTP2015/tp_4.tex",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/Cours/CoursNASM.tex",
 		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Materials/Common/SpotTree.glsl",
 		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Materials/Common/SpotNoise.glsl",
 		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Effects/SpotNoise/Shaders/PerPixel-FS.glsl",
@@ -767,44 +864,7 @@
 		"/C/Users/Nico/Documents/paper_0042_example_code/noise.cpp",
 		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Common/Kernels.glsl",
 		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/Parts/Fuzzy_Procedural_Pattern.tex",
-		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/elsarticle-template-3-num-cag.tcp",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Main-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Pass3-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Pass2-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Pass2-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/Dragon/Dragon.DAE",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/Common/Random/Random.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/PhongMaterial/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/PhongMaterial/Shaders/Main-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/Plane/Grass_profile/grass1/modelHerbe.png",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/Plane/Plane.DAE",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/ImplicitSurfaceMaterial/Shaders/Main-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Common/toolbox.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SplattedVolumetricKernelMaterial/Shaders/Main-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/ImplicitSurfaceMaterial/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/Common/Common.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Pass2-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Pass2-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Main-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/ShellSpotNoise.sublime-project",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Deferred3DKernelMaterial/Shaders/Main-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Effects/DepthCopy/Shaders/Base-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Effects/DepthCopy/Shaders/DepthCopy-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedVolumetricKernelMaterial/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedVolumetricKernelMaterial/Shaders/Main-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelMaterial/VolumetricKernelMaterial.h",
-		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/Schemas/Comparaisons_instancing_splatting_mix.pdf",
-		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/Schemas/Comparaisons_instancing_splatting_mix.pdf_tex",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Effects/DisplayImage/Shaders/Display-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SplattedVolumetricKernelMaterial/Shaders/Pass2-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SplattedVolumetricKernelMaterial/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Deferred3DKernelMaterial/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/DeferredMaterial/Shaders/Main-FS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/DeferredMaterial/Shaders/Main-VS.glsl",
-		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedVolumetricKernelMaterial/Shaders/Pass2-FS.glsl"
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/elsarticle-template-3-num-cag.tcp"
 	],
 	"find":
 	{
@@ -822,6 +882,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"DragonFabric",
+			"etal",
+			"text-shadow",
+			"font",
+			"outputFileName",
+			"1",
 			"currentSize",
 			"size",
 			"matrixStr",
@@ -943,13 +1009,7 @@
 			"surfaceKernel_profile",
 			"XtVY",
 			"surfaceKernel_profile",
-			"surfaceKernel_toViewSpace",
-			"vertexGeneratedKernel",
-			"XtVY",
-			"relatedSurfacePoint",
-			"surfaceKernel_profile",
-			"AQB",
-			"R"
+			"surfaceKernel_toViewSpace"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -968,35 +1028,130 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/Cours/CoursNASM.tex",
+					"file": "Effects/SpotNoise/Shaders/PerPixel-FS.glsl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4753,
+						"buffer_size": 1484,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2939,
-								2939
+								829,
+								830
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/OpenGL Shading Language (GLSL)/GLSL.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Materials/Common/SpotNoise.glsl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								874,
+								874
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/OpenGL Shading Language (GLSL)/GLSL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 12409.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Materials/SurfacicSpotNoise/Shaders/Main-FS.glsl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+								80
+							],
+							"syntax": "Packages/OpenGL Shading Language (GLSL)/GLSL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Effects/DistributionProfile/Shaders/PerPixel-FS.glsl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 788,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								237,
+								237
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+								80
+							],
+							"syntax": "Packages/OpenGL Shading Language (GLSL)/GLSL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

@@ -16,6 +16,7 @@
     <ClCompile Include="Effects\SpotNoise\SpotNoise.cpp" />
     <ClCompile Include="Effects\SpotProfile\SpotProfile.cpp" />
     <ClCompile Include="Materials\SampleMaterial\SampleMaterial.cpp" />
+    <ClCompile Include="Materials\SurfacicSpotNoise\SurfacicSpotNoise.cpp" />
     <ClCompile Include="Sources\GaussianSplat.cpp" />
     <ClCompile Include="Sources\GPUSpotVector.cpp" />
     <ClCompile Include="Sources\Main.cpp" />
@@ -28,6 +29,7 @@
     <ClInclude Include="Effects\SpotNoise\SpotNoise.h" />
     <ClInclude Include="Effects\SpotProfile\SpotProfile.h" />
     <ClInclude Include="Materials\SampleMaterial\SampleMaterial.h" />
+    <ClInclude Include="Materials\SurfacicSpotNoise\SurfacicSpotNoise.h" />
     <ClInclude Include="Sources\GaussianSplat.h" />
     <ClInclude Include="Sources\GPUSpotVector.h" />
     <ClInclude Include="Sources\SampleEngine.h" />
@@ -46,6 +48,8 @@
     <None Include="Materials\Common\SpotTree.glsl" />
     <None Include="Materials\SampleMaterial\Shaders\Main-FS.glsl" />
     <None Include="Materials\SampleMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\SurfacicSpotNoise\Shaders\Main-FS.glsl" />
+    <None Include="Materials\SurfacicSpotNoise\Shaders\Main-VS.glsl" />
     <None Include="SampleProject.sublime-project" />
   </ItemGroup>
   <ItemGroup>

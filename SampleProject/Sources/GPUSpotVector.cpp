@@ -223,6 +223,15 @@ void GPUSpotVector::parseSpotsAndDistributionVectors(std::vector<Spot*> spotVect
 		TwAddVarRW(spotMenu, valName.str().c_str(), TW_TYPE_FLOAT, &(gaussianCPUArray[i].aroundXYZrotations.z), "step=0.005");
 		valName = std::stringstream();
 
+		valName << "C_" << i << "_red";
+		TwAddVarRW(spotMenu, valName.str().c_str(), TW_TYPE_FLOAT, &(gaussianCPUArray[i].color.x), "step=0.005");
+		valName = std::stringstream();
+		valName << "C_" << i << "_green";
+		TwAddVarRW(spotMenu, valName.str().c_str(), TW_TYPE_FLOAT, &(gaussianCPUArray[i].color.y), "step=0.005");
+		valName = std::stringstream();
+		valName << "C_" << i << "_blue";
+		TwAddVarRW(spotMenu, valName.str().c_str(), TW_TYPE_FLOAT, &(gaussianCPUArray[i].color.z), "step=0.005");
+		valName = std::stringstream();
 
 
 	}

@@ -11,7 +11,6 @@ layout(std140) uniform FP_UBO{
 	int nbSpotPerAxis;
 	int distribID;
 	int noiseType;
-
 };
 
 in vec3 texCoord;
@@ -36,9 +35,17 @@ void main()
 		Color = NonUniformControlledRandomizedSpotNoise(evaluatedPos, 0, totalSpots, distribID);
 	} else if(noiseType < 2){
 		Color = NonUniformControlledOrderedSpotNoise(evaluatedPos, 0, nbSpotPerAxis, distribID);
-	} else {
+	} else if(noiseType < 3){
 		//Color = NonUniformControlledRandomImpulseSpotNoise(evaluatedPos, 0, totalSpots, distribID, smp_dataField);
 		Color = NonUniformControlledRandomImpulseMultiSpotNoise(evaluatedPos, 0, totalSpots, distribID, smp_dataField);
+	} else {
+		Color = LocallyControledSpotNoise(
+			evaluatedPos, 
+			0, 
+			totalSpots, 
+			distribID, 
+			smp_dataField, 
+			0.125f );
 	}
 
 	//Color = Color.a > 1.0 ? Color / Color.a : Color;

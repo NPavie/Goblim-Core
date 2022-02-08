@@ -28,7 +28,16 @@ class SampleEngine : public EngineGL
 
 		void requestUpdate();
 
+		bool activeRecord;
+		void record(bool shouldI);
+		void dumpFramebufferToFile(const char* filename);
+
 	protected:
+
+		GPUFBO* framebufferNoise;
+		GPUFBO* framebufferSpot;
+		GPUFBO* framebufferSpotDistribution;
+		GPUFBO* framebufferDistribution;
 
 		//SampleEffect* sampleEffectForTest;
 		//SampleMaterial* sampleMaterialForTest;

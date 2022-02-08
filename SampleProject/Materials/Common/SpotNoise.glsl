@@ -34,13 +34,36 @@ struct Gaussian
 float gaussianFunc(in vec3 evaluatedPosition, in Gaussian param)
 {
 	
-	float d = dot(vec4(evaluatedPosition, 1.0), param.V * vec4(evaluatedPosition, 1.0));
+	float d = dot(
+		vec4(evaluatedPosition, 1.0), 
+		param.V * vec4(evaluatedPosition, 1.0));
+
+	float fallOffLimit = 4.27; // Full width at Tenth of magnitude
+	float fallOfParam = max(0.01,param.color.a);
+	float fallOffSize = 1.0f /  max(0.01,fallOfParam);
+	float d_prime = max(0.0f, 
+		- (1.0 - fallOfParam) * sqrt(fallOffLimit) * fallOffSize 
+		+ d * fallOffSize);
+	
+	return clamp(
+		1.0f * exp(-0.5 * d_prime) ,
+		0.0f,1.0f)	;
+}
+
+float gaussianFuncNormal(in vec3 evaluatedPosition, in Gaussian param)
+{
+
+	float d = dot(
+		vec4(evaluatedPosition, 1.0), 
+		param.V * vec4(evaluatedPosition, 1.0));
 	//float fallOffLimit = dot(vec4(1.0), param.V * vec4(1.0));
 	float fallOffLimit = 4.27; // Full width at Tenth of magnitude
 	float fallOfParam = max(0.01,param.color.a);
 	float fallOffSize = 1.0f /  max(0.01,fallOfParam);
-	float d_prime = max(0.0f, - (1.0 - fallOfParam) * sqrt(fallOffLimit) * fallOffSize + d * fallOffSize);
-	
+	float d_prime = max(0.0f, 
+		- (1.0 - fallOfParam) * sqrt(fallOffLimit) * fallOffSize 
+		+ d * fallOffSize);
+
 	return clamp(
 		1.0f * exp(-0.5 * d_prime) ,
 		0.0f,1.0f)	;
@@ -64,9 +87,21 @@ mat4 ellipseIsoSurfaceMatrix(in vec3 shift, in vec3 scale, in vec3 rotation)
 	// This a simple predevelopped form of the ShiftMat * RotMat * ScaleMat operation (with RotMat = RotAroundZ * RotAroundY * RotAroundX)
 	// FLAGUNSURE
 	mat4 MRS = mat4(
-		scale.x * vec4((c.z * c.y), (s.z * c.y), -s.y, 0.0 ),
-		scale.y * vec4((c.z * s.y * s.x - s.z * c.x) , (s.z * s.y * s.x + c.z * c.x ), (c.y * s.x), 0.0 ),
-		scale.z * vec4((c.z * s.y * c.x + s.z * s.x) , (s.z * s.y * c.x - c.z * s.x ), (c.y * c.x), 0.0),
+		scale.x * vec4(
+			(c.z * c.y), 
+			(s.z * c.y), 
+			-s.y, 
+			0.0 ),
+		scale.y * vec4(
+			(c.z * s.y * s.x - s.z * c.x) , 
+			(s.z * s.y * s.x + c.z * c.x ), 
+			(c.y * s.x), 
+			0.0 ),
+		scale.z * vec4(
+			(c.z * s.y * c.x + s.z * s.x) , 
+			(s.z * s.y * c.x - c.z * s.x ), 
+			(c.y * c.x), 
+			0.0),
 		vec4(shift,1.0));
 	MRS = inverse(MRS);
 	return transpose(MRS) * MRS;
@@ -78,14 +113,18 @@ struct Harmonic
 	vec4 thetaPhiFrequency;
 };
 
-// FLAGUNSURE
+// FLAGUNSURE : pas la bonne fonction
 float harmonicFunc(in vec3 evaluatedPosition, in Harmonic param)
 {
 	return clamp(
-		cos(PIx2 * param.thetaPhiFrequency.z 
-			* ( evaluatedPosition.x * cos(param.thetaPhiFrequency.x) //* sin(param.thetaPhiFrequency.y) 
-				+ evaluatedPosition.y * sin(param.thetaPhiFrequency.x)// * sin(param.thetaPhiFrequency.y) + evaluatedPosition.z * cos(param.thetaPhiFrequency.y) 
-				)),
+		cos(
+			PIx2 * param.thetaPhiFrequency.z 
+			* ( evaluatedPosition.x * cos(param.thetaPhiFrequency.x) 
+			//* sin(param.thetaPhiFrequency.y) 
+			+ evaluatedPosition.y * sin(param.thetaPhiFrequency.x)
+			// * sin(param.thetaPhiFrequency.y) 
+			//+ evaluatedPosition.z * cos(param.thetaPhiFrequency.y) 
+			)),
 		-1.0f, 1.0f);
 }
 
@@ -102,35 +141,43 @@ float constantFunc(in vec3 evaluatedPosition, in Constant param)
 
 
 ///////// BUFFERS 
-// parameters buffers
+// buffer of Gaussian function parameters
 layout (std430,binding=3) buffer gaussianDataBuffer
 {
 	Gaussian gaussian[];
 };
 
+// For later usage and gabor kernels creations : buffer of harmonic functions
 layout (std430,binding=4) buffer harmonicDataBuffer
 {
 	Harmonic harmonic[];
 };
-
+// Buffer of constant values for more complex spot creations
 layout (std430,binding=5) buffer constantDataBuffer
 {
 	Constant constant[];
 };
 
-////////////// Pour plus tard
+// Tableau des paramètres d'une distribution (float pour alignement)
 struct Distribution
 {
 	float param[24];
 };
 
+// SSBO des distribution
 layout (std430,binding=6) buffer distribDataBuffer
 {
-	// distrib : response.xyz, weigtRange.xy, posMinCenterMax[3][3], rotationsMinMax.xyzw, scaleMin.xyz, scaleMax.xyz
+	// distrib : 
+	// response.xyz,
+	// weigtRange.xy, 
+	// posMinCenterMax[3][3],
+	// rotationsMinMax.xyzw,
+	// scaleMin.xyz,
+	// scaleMax.xyz
 	Distribution distrib[];
 };
 
-// Test
+// Caching the distribution used for easier usage
 struct CachedDistribution
 {
 	vec3 responseSize; // 0 1 2
@@ -161,7 +208,11 @@ CachedDistribution fromDistributionBuffer(Distribution dist)
 	temp.p_min = vec3(dist.param[5],dist.param[6],dist.param[7]);
 	temp.p_center = vec3(dist.param[8],dist.param[9],dist.param[10]);
 	temp.p_max = vec3(dist.param[11],dist.param[12],dist.param[13]);
-	temp.rotate_min_max = vec4(dist.param[14],dist.param[15],dist.param[16],dist.param[17]);
+	temp.rotate_min_max = vec4(
+		dist.param[14],
+		dist.param[15],
+		dist.param[16],
+		dist.param[17]);
 	temp.scale_min = vec3(dist.param[18],dist.param[19],dist.param[20]);
 	temp.scale_max = vec3(dist.param[21],dist.param[22],dist.param[23]);
 	return temp;
@@ -169,17 +220,18 @@ CachedDistribution fromDistributionBuffer(Distribution dist)
 //////////////
 
 // Data buffer
-
 layout (std430,binding=7) buffer spotDataBuffer
 {
-	int spotData[];				// spotData : 	nbFunction_S0, F_1[Operand_1,typeFunction_1,paramId_1], F_2[], nbFunction_S1...
-	// Il faudrait que je rajoute un nbImpulse et un evaluationRes
+	int spotData[];
+	// spotData : nbFunction_S0, F_1[Operand_1,typeFunction_1,paramId_1], F_2[], nbFunction_S1... 	
+	
 };
 
-// Index buffers
+// Index buffers of spots
 layout (std430,binding=8) buffer spotIndexBuffer
 {
 	int spotIndex[];
+	// Index of the first spotData element for each spot
 };
 
 layout (std430,binding=9) buffer sizeOfArraysBuffer
@@ -270,11 +322,31 @@ vec4 gaussiansSpot(vec3 p,uint spotID)
 	return res; // normalized color of the resulting spot with res.a = alpha
 }
 
+vec4 gaussiansNormal(vec3 p,uint spotID)
+{
+	vec4 res = vec4(0.0f);
+	int spotFirstDataIndex = spotIndex[spotID];
+	int spot_nbFunction = spotData[spotFirstDataIndex];
+	int currentIndex = spotFirstDataIndex+1;
+	// Opti possible : mettre en cache les parametres des gaussiennes
+	 
+	for(int f = 0; f < spot_nbFunction;++f)
+	{
+		int param = spotData[currentIndex + (3*f) + 2];
+		Gaussian G = gaussian[param];
+		res += vec4(G.color.rgb,1.0f) * gaussianFunc(p,G);
+	}
+	res = res.a > 1.0 ? res / res.a : res;
+	res.xyz = res.a > 0.0 ? res.xyz / res.a : res.xyz;
+	return res; // normalized color of the resulting spot with res.a = alpha
+}
+
 // For anisotropic noise (randomly rotated kernel)
 mat4 R_j(vec4 rotationMinMax)
 {
 
-	vec2 randomRotate = rotationMinMax.xy + (rotationMinMax.zw - rotationMinMax.xy) * random();
+	vec2 randomRotate = rotationMinMax.xy 
+		+ (rotationMinMax.zw - rotationMinMax.xy) * random();
 	vec3 rotation = vec3(randomRotate.x,0 , randomRotate.y);
 	// cosines
 	vec3 c = cos(rotation);
@@ -458,15 +530,14 @@ float controlledDistributionProfile(vec2 p, CachedDistribution dist)
 			1.0 : 0.0;
 }
 
-float NonUniformControledDistributionProfile(vec2 p, int distribID, int impulsePerCellAxis) {
+float NonUniformControledDistributionProfile(vec2 p, int distribID) {
 
 	CachedDistribution dist = fromDistributionBuffer(distrib[distribID]);
 	float res = 0.0f;
-	
+	vec2 point = p * dist.responseSize.xy;
 	// Current evaluation cell
 
-
-	ivec2 cell = ivec2(floor(p));
+	ivec2 cell = ivec2(floor(point));
 
 	ivec2 currentCell;
 	for(currentCell.x = cell.x - 1; currentCell.x <= cell.x +1; ++currentCell.x)
@@ -477,14 +548,16 @@ float NonUniformControledDistributionProfile(vec2 p, int distribID, int impulseP
 		uint cy = currentCell.y < 0 ? 4294967295u - abs(currentCell.y) : uint(currentCell.y);
 		seeding(morton(cx,cy));
 
-		for(int imp = 0; imp < impulsePerCellAxis * impulsePerCellAxis; ++imp)
+		for(int imp = 0; imp < dist.responseSize.z; ++imp)
 		{
 			vec2 impulsePos = currentCell + dist.p_center.xy + randomIn(dist.p_min.xy,dist.p_max.xy);
-			
+			float densityTest = randomIn(0.1f,0.9f);
+			int impulseSpotID = int(randomIn(0,1));
+
 			mat4 Rj = R_j(vec4(0,0,0,0));
 			mat4 Sj = S_j(vec3(1.0), vec3(1.0));
 
-			float d = length(p - impulsePos) < (0.25/impulsePerCellAxis) ? 1.0 : 0.0;
+			float d = length(point - impulsePos) < 0.1 ? 1.0 : 0.0;
 			res += randomIn(dist.w_min,dist.w_max) * d;
 			
 		}
@@ -492,6 +565,8 @@ float NonUniformControledDistributionProfile(vec2 p, int distribID, int impulseP
 	return 0.5f + 0.5f * clamp(res,-1.0f,1.0f);
 
 }
+
+
 
 
 vec4 NonUniformControlledOrderedSpotNoise(vec2 p, int firstSpotID, int nbSpotPerAxis, int distribID) {
@@ -668,10 +743,10 @@ vec4 NonUniformControlledRandomImpulseMultiSpotNoise(vec2 p, int firstSpotID, in
 			mat4 Sj = S_j(  vec3(1.0), vec3(1.0) );
 			
 			vec4 spotColor = gaussiansSpot((vec4(point - impulsePos,0,1) * Rj * Sj ).xyz , uint(impulseSpotID));
-			res += randomIn(dist.w_min,dist.w_max) * vec4(spotColor.rgb * spotColor.a, spotColor.a) ;
+			res += (spotWeight[0]) * randomIn(dist.w_min,dist.w_max) * vec4(spotColor.rgb * spotColor.a, spotColor.a) ;
 		}
 	}
-	res = res.a > 1.0 ? res / res.a : res; // Renormalize if >1
+	//res = res.a > 1.0 ? res / res.a : res; // Renormalize if >1
 	//res.rgb = res.a > 0.0 ? res.rgb / res.a : res.rgb; // Recompute true color if < 1
 	//res.rgb *= res.a;
 	//res = res * spotWeight[spotID];
@@ -679,6 +754,193 @@ vec4 NonUniformControlledRandomImpulseMultiSpotNoise(vec2 p, int firstSpotID, in
 	//res.a *= spotWeight[spotID];
 	
 	return res;
+
+}
+
+// Version pour prez
+vec4 LocallyControledSpotNoise(
+	vec2 p, // Evaluated position in the texture space
+	int firstSpotID, // ID of the First spot to use in the noise
+	int nbSpot, // Number of different spot to use (spots used are in )
+	int localDistribID, 
+	sampler2D globalDensityField, 
+	float densityFieldResolution) 
+{
+
+	CachedDistribution dist = fromDistributionBuffer(distrib[localDistribID]);
+	
+	vec4 res = vec4(0.0f);
+	vec2 point = p * dist.responseSize.xy;
+	// Current evaluation cell
+	ivec2 cell = ivec2(floor(point));
+
+	float localVariation = 0.0;
+
+	ivec2 currentCell;
+	for(currentCell.x = cell.x - 1; currentCell.x <= cell.x +1; ++currentCell.x)
+	for(currentCell.y = cell.y - 1; currentCell.y <= cell.y +1; ++currentCell.y)
+	{
+		// Init PRNG
+		uint cx = currentCell.x < 0 ? 
+			4294967295u - abs(currentCell.x) : 
+			uint(currentCell.x);
+		uint cy = currentCell.y < 0 ? 
+			4294967295u - abs(currentCell.y) : 
+			uint(currentCell.y);
+		
+		seeding(morton(cx,cy));
+
+		for(int imp = 0; imp < dist.responseSize.z; ++imp)
+		{
+			vec2 impulsePos = currentCell 
+				+ dist.p_center.xy 
+				+ randomIn(dist.p_min.xy,dist.p_max.xy);
+			vec4 data = vec4(1.0);
+			data = texture2D(
+				globalDensityField , 
+				impulsePos * densityFieldResolution / dist.responseSize.xy );
+
+			// using dataField as spot selector :
+			float densityTest = randomIn(0.1f,0.9f);
+			int impulseSpotID = int(randomIn(firstSpotID,nbSpot));
+			float validImpulse = densityTest < data.x ? 1.0f : 0.0f;
+			
+			mat4 Rj = R_j(vec4(0,0,0,0.0));
+			mat4 Sj = S_j( vec3(1.0), vec3(1.0) );
+
+			vec4 spotColor = gaussiansSpot(
+				(vec4(point - impulsePos,0,1) * Rj * Sj ).xyz , 
+				uint(impulseSpotID));
+
+			res += validImpulse 
+				* (spotWeight[0]) 
+				* randomIn(dist.w_min,dist.w_max) 
+				* vec4(spotColor.rgb * spotColor.a, spotColor.a) ;
+		}
+	}
+	
+	return res;
+
+}
+
+float LocallyControledSpotDistribution(
+	vec2 p,
+	int nbSpot, 
+	int localDistribID, 
+	sampler2D globalDensityField,
+	float densityFieldResolution)
+{
+	CachedDistribution dist = fromDistributionBuffer(
+		distrib[localDistribID]);
+	
+	float res = 0.0f;
+	vec2 point = p * dist.responseSize.xy;
+	// Current evaluation cell
+	ivec2 cell = ivec2(floor(point));
+
+	
+	ivec2 currentCell;
+	for(currentCell.x = cell.x - 1; currentCell.x <= cell.x +1; ++currentCell.x)
+	for(currentCell.y = cell.y - 1; currentCell.y <= cell.y +1; ++currentCell.y)
+	{
+		// Init PRNG
+		uint cx = currentCell.x < 0 ? 
+			4294967295u - abs(currentCell.x) : 
+			uint(currentCell.x);
+		uint cy = currentCell.y < 0 ? 
+			4294967295u - abs(currentCell.y) : 
+			uint(currentCell.y);
+		
+		seeding(morton(cx,cy));
+
+		for(int imp = 0; imp < dist.responseSize.z; ++imp)
+		{
+			vec2 impulsePos = currentCell 
+				+ dist.p_center.xy 
+				+ randomIn(dist.p_min.xy,dist.p_max.xy);
+			vec4 data = vec4(1.0);
+			//data = texture2D(
+			//	globalDensityField, 
+			//	impulsePos * densityFieldResolution  / dist.responseSize.xy);
+
+			// using dataField as spot selector :
+			float densityTest = randomIn(0.1f,0.9f);
+			int impulseSpotID = int(randomIn(0,nbSpot));
+			float validImpulse = densityTest < data.x ? 1.0f : 0.0f;
+			
+			mat4 Rj = R_j(vec4(0,0,0,0.0));
+			mat4 Sj = S_j( vec3(1.0), vec3(1.0) );
+
+			float d = length(point - impulsePos) < 0.1 ? 1.0 : 0.0;
+
+			res += validImpulse * randomIn(dist.w_min,dist.w_max) * d;
+		}
+	}
+	return 0.5f + 0.5f * clamp(res,-1.0f,1.0f);
+	//return texture2D(globalDensityField, (point/ dist.responseSize.xy) * densityFieldResolution ).r;
+
+}
+
+vec4 LocallyControledSpotDistributionWithBackground(
+	vec2 p,
+	int nbSpot, 
+	int localDistribID, 
+	sampler2D globalDensityField,
+	float densityFieldResolution)
+{
+	CachedDistribution dist = fromDistributionBuffer(
+		distrib[localDistribID]);
+	
+	float res = 0.0f;
+	vec2 point = p * dist.responseSize.xy;
+	// Current evaluation cell
+	ivec2 cell = ivec2(floor(point));
+
+	
+	ivec2 currentCell;
+	for(currentCell.x = cell.x - 1; currentCell.x <= cell.x +1; ++currentCell.x)
+	for(currentCell.y = cell.y - 1; currentCell.y <= cell.y +1; ++currentCell.y)
+	{
+		// Init PRNG
+		uint cx = currentCell.x < 0 ? 
+			4294967295u - abs(currentCell.x) : 
+			uint(currentCell.x);
+		uint cy = currentCell.y < 0 ? 
+			4294967295u - abs(currentCell.y) : 
+			uint(currentCell.y);
+		
+		seeding(morton(cx,cy));
+
+		for(int imp = 0; imp < dist.responseSize.z; ++imp)
+		{
+			vec2 impulsePos = currentCell 
+				+ dist.p_center.xy 
+				+ randomIn(dist.p_min.xy,dist.p_max.xy);
+			vec4 data = vec4(0.0);
+			data = texture2D(
+				globalDensityField, 
+				impulsePos * densityFieldResolution  / dist.responseSize.xy);
+
+			// using dataField as spot selector :
+			float densityTest = randomIn(0.1f,0.9f);
+			int impulseSpotID = int(randomIn(0,nbSpot));
+			float validImpulse = densityTest < data.x ? 1.0f : 0.0f;
+			
+			mat4 Rj = R_j(vec4(0,0,0,0.0));
+			mat4 Sj = S_j( vec3(1.0), vec3(1.0) );
+
+			float d = length(point - impulsePos) < 0.1 ? 1.0 : 0.0;
+
+			res += validImpulse * randomIn(dist.w_min,dist.w_max) * d;
+		}
+	}
+	vec4 final = vec4(min(res,1.0));
+	final.y = final.z = 0.0f;
+	float tex = texture2D(
+		globalDensityField, 
+		(point / dist.responseSize.xy) * densityFieldResolution ).r;
+	vec4 background = vec4(tex);
+	return mix(background,final,final.a);
 
 }
 

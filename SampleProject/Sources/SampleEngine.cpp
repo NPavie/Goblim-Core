@@ -13,9 +13,14 @@
 #include "Effects/SpotNoise/SpotNoise.h"
 #include "Effects/DistributionProfile/DistributionProfile.h"
 #include "Effects/SpotProfile/SpotProfile.h"
+#include "Materials/SurfacicSpotNoise/SurfacicSpotNoise.h"
 
 #include "GaussianSplat.h"
 
+#include <Utils/dirent.h>
+#ifdef _MSC_VER
+	
+#endif
 int nbLvlToDisplay = 1;
 
 SpotNoise *noise;
@@ -24,10 +29,9 @@ SpotProfile *spotProfile2;
 DistributionProfile *distribution;
 GPUSpotVector *spotLoader;
 
-GPUFBO* framebufferNoise;
-GPUFBO* framebufferSpot;
-GPUFBO* framebufferSpotDistribution;
-GPUFBO* framebufferDistribution;
+SurfacicSpotNoise* noiseOnMesh;
+
+
 
 SampleEngine::SampleEngine(int width, int height):
 EngineGL(width,height)
@@ -39,8 +43,21 @@ SampleEngine::~SampleEngine()
 	
 }
 
+typedef struct justForFun {
+	int val1;
+	float val2;
+} justForFun;
+
 bool SampleEngine::init()
 {
+	activeRecord = false;
+
+	justForFun * test = (justForFun*)malloc(3 * sizeof(justForFun));
+	for (int i = 0; i < 3; ++i) {
+		test[i].val1 = i;
+		test[i].val2 = i;
+	}
+
 	// --------------
 	// Exemple d'un Engine chargeant un lapin initialement situé dans SampleProject/Objets/FurryBunny
 	// --------------
@@ -52,8 +69,9 @@ bool SampleEngine::init()
 
 	// Loading a scene or a mesh and add it to the root of the Engine scenegraphe
 	SceneLoaderGL* sceneloader = new SceneLoaderGL();
-	//Node* sceneLoaded = sceneloader->loadScene(ressourceObjPath + "FurryBunny/Bunny.obj");
-	Node* sceneLoaded = sceneloader->loadScene(ressourceObjPath + "Plane/Plane.DAE");
+	//Node* sceneLoaded = sceneloader->loadScene(ressourceObjPath + "Dragon.DAE");
+	Node* sceneLoaded = sceneloader->loadScene(ressourceObjPath + "FurryBunny/Bunny.obj");
+	//Node* sceneLoaded = sceneloader->loadScene(ressourceObjPath + "Plane/Plane.DAE");
 	scene->getSceneNode()->adopt(sceneLoaded);
 
 	// Create Lighting Model GL and collect all light nodes of the scene 
@@ -129,6 +147,37 @@ bool SampleEngine::init()
 	TriangleSpot->addFunction(ADD, new Gaussian(2.0, glm::vec3(0.0, -0.15, 0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(1.0f / 4.29f, 0.1f / 4.29f, 1.0f)));
 	//TriangleSpot->addFunction(ADD, new Gaussian(2.0, glm::vec3(0.0, 0.0, 0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.25f / 4.29f, 0.25f / 4.29f, 1.0f)));
 
+	// SPOT_Scales
+	Spot* Scales = new Spot(0.2);
+	Scales->addFunction(ADD, 
+		new Gaussian(0.15, 
+			glm::vec3(0.30, -0.15, 0), 
+			glm::vec3(0.0, 0.0, -0.785), 
+			glm::vec3(0.25, 0.120, 1.0f),
+			glm::vec3(1.0)));
+	Scales->addFunction(ADD,
+		new Gaussian(0.15,
+			glm::vec3(0.0, -0.15, 0),
+			glm::vec3(0.0, 0.0, 0.785),
+			glm::vec3(0.25, 0.120, 1.0f),
+			glm::vec3(1.0)));
+
+	// SPOT_Cross
+	Spot* cross = new Spot(0.175);
+	cross->addFunction(ADD,
+		new Gaussian(0.365,
+			glm::vec3(0.0, 0.0, 0),
+			glm::vec3(0.0, 0.0, -1.625),
+			glm::vec3(0.8, 0.2, 1.0f),
+			glm::vec3(0.8,0.2,0.2)));
+	cross->addFunction(ADD,
+		new Gaussian(0.370,
+			glm::vec3(0.0, 0.0, 0),
+			glm::vec3(0.0, 0.0, 0.78),
+			glm::vec3(1.19, 0.155, 1.0f),
+			glm::vec3(0.8,0.2,0.2)));
+
+
 	Spot* gridSpot = new Spot();
 	gridSpot->addFunction(ADD, new Gaussian(1.0, glm::vec3(0,0.1,0), glm::vec3(0.0), glm::vec3(1.0f / 4.29f, 0.25f / 4.29f, 1.0f)));
 	gridSpot->addFunction(ADD, new Gaussian(1.0, glm::vec3(0,-0.1, 0), glm::vec3(0.0), glm::vec3(1.0f / 4.29f, 0.25f / 4.29f, 1.0f)));
@@ -150,7 +199,7 @@ bool SampleEngine::init()
 	//harmonicSpot->addFunction(ADD, new ConstantParam(0.5));
 
 	DistribParam* fullRandom = new DistribParam(
-		glm::vec3(1.0),
+		glm::vec3(2.0,2.0,8),
 		glm::vec2(0.0, 1.0),
 		glm::mat3(glm::vec3(-0.5, -0.5, -0.5), glm::vec3(0.5), glm::vec3(0.5, 0.5, 0.5)),
 		glm::vec4(0.0, 0.0, 0.0, 3.14),
@@ -159,20 +208,20 @@ bool SampleEngine::init()
 	
 	// ---- tissus bleu dans le papier du LRP
 	int nbGaussiennes = 4;
-	Spot* fabricBlueElement = new Spot(0.33f / nbGaussiennes);
-	fabricBlueElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(-0.235, 0.2, 0), glm::vec3(0, 0, -1.050f), glm::vec3(0.18, 0.040, 1.0f)));
-	fabricBlueElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(0.235, 0.2, 0), glm::vec3(0, 0, 1.200f),glm::vec3(0.18, 0.050, 1.0f)));
+	Spot* fabricBlueElement = new Spot(0.18);
+	fabricBlueElement->addFunction(ADD, new Gaussian(1.0, glm::vec3(-0.235, 0.2, 0), glm::vec3(0, 0, -1.050f), glm::vec3(0.18, 0.040, 1.0f),glm::vec3(0.138,0.5,0.8)));
+	fabricBlueElement->addFunction(ADD, new Gaussian(1.0, glm::vec3(0.235, 0.2, 0), glm::vec3(0, 0, 1.200f),glm::vec3(0.18, 0.050, 1.0f), glm::vec3(0.138, 0.5, 0.8)));
 	// Test avec 4 gaussiennes
-	fabricBlueElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(-0.235, -0.2, 0), glm::vec3(0, 0, -1.050f), glm::vec3(0.18, 0.040, 1.0f)));
-	fabricBlueElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(0.235, -0.2, 0), glm::vec3(0, 0, 1.200f), glm::vec3(0.18, 0.050, 1.0f)));
+	fabricBlueElement->addFunction(ADD, new Gaussian(1.0, glm::vec3(-0.235, -0.2, 0), glm::vec3(0, 0, -1.050f), glm::vec3(0.18, 0.040, 1.0f), glm::vec3(0.138, 0.5, 0.8)));
+	fabricBlueElement->addFunction(ADD, new Gaussian(1.0, glm::vec3(0.235, -0.2, 0), glm::vec3(0, 0, 1.200f), glm::vec3(0.18, 0.050, 1.0f), glm::vec3(0.138, 0.5, 0.8)));
 	// Test avec 6 Gaussiennes
 	//fabricBlueElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(-0.235, -0.3, 0), glm::vec3(0, 0, -1.050f), glm::vec3(0.18, 0.040, 1.0f)));
 	//fabricBlueElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(0.235, -0.3, 0), glm::vec3(0, 0, 1.250f), glm::vec3(0.18, 0.060, 1.0f)));
 
 	DistribParam* fabricBlueDistribution = new DistribParam(
-		glm::vec3(2.0,2.0,6),
-		glm::vec2(0.0, 1.0),
-		glm::mat3(glm::vec3(-0.5,-0.5,-0.5), glm::vec3(0.5), glm::vec3(0.5,0.5,0.5)),
+		glm::vec3(2.0,2.0,8),
+		glm::vec2(0.9, 0.9),
+		glm::mat3(glm::vec3(-0.1,-0.5,-0.5), glm::vec3(0.5), glm::vec3(0.1,0.5,0.5)),
 		glm::vec4(0.0, 0.0, 0.0, 3.14),
 		glm::vec3(1.0),
 		glm::vec3(1.0));
@@ -187,13 +236,46 @@ bool SampleEngine::init()
 	//fabricYellowElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(0.25, -0.25, 0), glm::vec3(0, 0, 0.0f), glm::vec3(0.15, 0.1, 1.0f)));
 	//fabricYellowElement->addFunction(ADD, new Gaussian(-25.0 / nbGaussiennes, glm::vec3(-0.25, -0.25, 0), glm::vec3(0, 0, 0.0f), glm::vec3(0.075, 0.1, 1.0f)));
 
-	fabricYellowElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(-0.25, 0.385, 0), glm::vec3(0, 0, 0.0f), glm::vec3(0.15, 0.045, 1.0f)));
-	fabricYellowElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(-0.25, 0.15, 0), glm::vec3(0, 0, 0.0f), glm::vec3(0.15, 0.05, 1.0f)));
-	fabricYellowElement->addFunction(ADD, new Gaussian(25.0 / nbGaussiennes, glm::vec3(0.3, 0.25, 0), glm::vec3(0, 0, 0.0f), glm::vec3(0.075, 0.1, 1.0f),glm::vec3(-1.0f)));
+	fabricYellowElement->addFunction(ADD, 
+		new Gaussian(
+			100.0 / nbGaussiennes, 
+			glm::vec3(-0.25, 0.385, 0), 
+			glm::vec3(0, 0, 0.0f), 
+			glm::vec3(0.15, 0.045, 1.0f)));
+	fabricYellowElement->addFunction(ADD, 
+		new Gaussian(
+			100.0 / nbGaussiennes, 
+			glm::vec3(-0.25, 0.15, 0), 
+			glm::vec3(0, 0, 0.0f), 
+			glm::vec3(0.15, 0.05, 1.0f)));
+	fabricYellowElement->addFunction(ADD, 
+		new Gaussian(
+			25.0 / nbGaussiennes, 
+			glm::vec3(0.3, 0.25, 0), 
+			glm::vec3(0, 0, 0.0f), 
+			glm::vec3(0.075, 0.1, 1.0f),
+			glm::vec3(-1.0f)));
+
 	// Test avec 4 gaussiennes
-	fabricYellowElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(0.25, -0.15, 0), glm::vec3(0, 0, 0.0f), glm::vec3(0.15, 0.05, 1.0f)));
-	fabricYellowElement->addFunction(ADD, new Gaussian(100.0 / nbGaussiennes, glm::vec3(0.25, -0.35, 0), glm::vec3(0, 0, 0.0f), glm::vec3(0.15, 0.05, 1.0f)));
-	fabricYellowElement->addFunction(ADD, new Gaussian(25.0 / nbGaussiennes, glm::vec3(-0.3, -0.25, 0), glm::vec3(0, 0, 0.0f), glm::vec3(0.075, 0.1, 1.0f), glm::vec3(-1.0f)));
+	fabricYellowElement->addFunction(ADD, 
+		new Gaussian(
+			100.0 / nbGaussiennes, 
+			glm::vec3(0.25, -0.15, 0), 
+			glm::vec3(0, 0, 0.0f), 
+			glm::vec3(0.15, 0.05, 1.0f)));
+	fabricYellowElement->addFunction(ADD, 
+		new Gaussian(
+			100.0 / nbGaussiennes, 
+			glm::vec3(0.25, -0.35, 0), 
+			glm::vec3(0, 0, 0.0f), 
+			glm::vec3(0.15, 0.05, 1.0f)));
+	fabricYellowElement->addFunction(ADD, 
+		new Gaussian(
+			25.0 / nbGaussiennes, 
+			glm::vec3(-0.3, -0.25, 0), 
+			glm::vec3(0, 0, 0.0f), 
+			glm::vec3(0.075, 0.1, 1.0f), 
+			glm::vec3(-1.0f)));
 
 	DistribParam* fabricYellowDistribution = new DistribParam(
 		glm::vec3(1.0),
@@ -264,7 +346,7 @@ bool SampleEngine::init()
 
 
 
-	Spot* jeansFabric = new Spot();
+	Spot* jeansFabric = new Spot(0.5);
 	//jeansFabric->loadFromEllipsesFile((ressourceObjPath + "imageJean_2_sub2_1_1.eli").c_str());
 	jeansFabric->loadFromSVGParserResult((ressourceObjPath + "test_jeans.txt").c_str());
 
@@ -365,8 +447,8 @@ bool SampleEngine::init()
 	// Pour le moment, le choix du spot utilisé est mis par défaut sur le spot 0 (tout est en dur dans le shader de l'effet SpotNoise)
 	std::vector<DistribParam*> distribList;
 	std::vector<Spot*> spotList;
-	spotList.push_back(fabricBlueElement);
-	distribList.push_back(fabricBlueDistribution);
+	spotList.push_back(cross);
+	distribList.push_back(fullRandom);
 	//spotList.push_back(blackMetalSample);
 	//spotList.push_back(fabric_test);
 	//distribList.push_back(clusterDistribution);
@@ -388,20 +470,26 @@ bool SampleEngine::init()
 	// -------------------------------------
 
 
-	
+	noiseOnMesh = new SurfacicSpotNoise("SpotNoise", int(sqrt(spotLoader->size())), 0, 3);
+	// NODESET
+	scene->getNode("Bunny")->setMaterial(noiseOnMesh);
+	//scene->getNode("Dragon")->setMaterial(noiseOnMesh);
 
-	noise = new SpotNoise("SpotNoiseTest",int(sqrt(spotLoader->size())),0,2);
+	noise = new SpotNoise("SpotNoiseTest",int(sqrt(spotLoader->size())),0,3);
 	spotProfile = new SpotProfile("SpotProfileVisualizer",0);
 	spotProfile2 = new SpotProfile("SpotProfileVisualizer2", 1);
 	distribSpotProfile = new SpotProfile("DistribSpotVisualizer",0,false,true);
-	distribution = new DistributionProfile("DistribVisualizer",0);
+	distribution = new DistributionProfile("DistribVisualizer",0, int(sqrt(spotLoader->size())));
 
 
-	GPUTexture2D* dataField = new GPUTexture2D((ressourceObjPath + "rgb-compose.png"));
+	//GPUTexture2D* dataField = new GPUTexture2D((ressourceObjPath + "rgb-compose.png"));
+	GPUTexture2D* dataField = new GPUTexture2D((ressourceObjPath + "red.png"));
 	noise->addDataField(dataField);
+	noiseOnMesh->addDataField(dataField);
+	distribution->addDataField(dataField);
 
 	framebufferNoise = new GPUFBO("noiseRenderingTest");
-	framebufferNoise->create(1024, 1024, 4, false, GL_RGBA32F, GL_TEXTURE_2D, 1);
+	framebufferNoise->create(1024, 1024, 4, true, GL_RGBA32F, GL_TEXTURE_2D, 1);
 	
 	framebufferSpot = new GPUFBO("DisplaySpotProfile");
 	framebufferSpot->create(256, 256, 1, false, GL_RGBA32F, GL_TEXTURE_2D, 1);
@@ -470,9 +558,7 @@ void SampleEngine::render()
 	// Clear Buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	// Rendering every collected node
-	//for (unsigned int i = 0; i < renderedNodes->nodes.size(); i++)
-	//	renderedNodes->nodes[i]->render();
+	
 
 	float screenRatio = (float)w_Width / (float)w_Height;
 	
@@ -484,17 +570,33 @@ void SampleEngine::render()
 	// Profiles (effet SpotProfile)
 	spotProfile->apply(NULL, framebufferSpot);
 	framebufferSpot->display(glm::vec4(0.001, 0.001, profileSize, profileSize*screenRatio));
-	//distribSpotProfile->apply(NULL, framebufferSpotDistribution);
-	spotProfile2->apply(NULL, framebufferSpotDistribution);
+	distribSpotProfile->apply(NULL, framebufferSpotDistribution);
+	//spotProfile2->apply(NULL, framebufferSpotDistribution);
 	framebufferSpotDistribution->display(glm::vec4(profileSize, 0.001, profileSize, profileSize*screenRatio));
-	
 	distribution->apply(NULL, framebufferDistribution);
 	framebufferDistribution->display(glm::vec4(0, 0.2*screenRatio, 0.4, 0.4*screenRatio));
 	x += 0.4;
 	profileSize *= 2;
 
+	// FLAGRENDERING
 	// Noise result (effet SpotNoise)
 	noise->apply(NULL, framebufferNoise);
+
+	//framebufferNoise->enable();
+	//scene->camera()->setAspectRatio(1.0);
+	//// Rendering every collected node
+	//for (unsigned int i = 0; i < renderedNodes->nodes.size(); i++)
+	//	renderedNodes->nodes[i]->render();
+	//
+	//
+	//if (drawLights)
+	//	lightingModel->renderLights();
+	//
+	//if (drawBoundingBoxes)
+	//	for (unsigned int i = 0; i < renderedNodes->nodes.size(); i++)
+	//		renderedNodes->nodes[i]->render(boundingBoxMat);
+	//
+	//framebufferNoise->disable();
 	framebufferNoise->display(glm::vec4(x, 0.0, 0.6, 0.6*screenRatio), 0);
 	
 	//
@@ -506,17 +608,15 @@ void SampleEngine::render()
 	timeQuery->end();
 
 
-	if (drawLights)
-		lightingModel->renderLights();
-
-	if (drawBoundingBoxes)
-		for (unsigned int i = 0; i < renderedNodes->nodes.size(); i++)
-			renderedNodes->nodes[i]->render(boundingBoxMat);
-
+	
 
 	// scene has been rendered : no need for recomputing values until next camera/parameter change
 	//Scene::getInstance()->camera()->setUpdate(true);
 	scene->needupdate = false;
+
+	this->record(this->activeRecord);
+
+	spotLoader->reloadToGPU();
 }
 
 void SampleEngine::animate(const int elapsedTime)
@@ -525,7 +625,89 @@ void SampleEngine::animate(const int elapsedTime)
 	this->EngineGL::animate(elapsedTime);
 }
 
+
+extern "C" {
+	char* toString(unsigned int n) {
+		unsigned char nbdigit = 1;
+
+		unsigned int copy = 0;
+		for (copy = n; (copy /= 10) > 0 && n > 0; ++nbdigit);
+		char* str = (char*)malloc(sizeof(char) * (nbdigit + 1));
+		str[nbdigit] = '\0';
+
+		unsigned char power = 0;
+		for (copy = n; power < nbdigit; copy /= 10)
+			str[nbdigit - power++ - 1] = (copy % 10) + '0';
+
+		return str;
+	}
+
+	char* toFixString(unsigned int n, unsigned short charNumber) {
+		char* str = (char*)malloc(sizeof(char) * (charNumber + 1));
+		str[charNumber] = '\0';
+		for (; charNumber > 0; n /= 10)
+			str[--charNumber] = (n % 10) + '0';
+
+		return str;
+	}
+
+}
+
+
+static unsigned int currentFrameNumber = 0;
 void SampleEngine::requestUpdate()
 {
-	spotLoader->reloadToGPU();
+	if (!activeRecord){
+		std::cout << "Begin capture at frame " << toFixString(currentFrameNumber, 5) << std::endl;
+	} else { std::cout << "Stop capture at frame " << toFixString(currentFrameNumber, 5) << std::endl; }
+
+	activeRecord = !activeRecord;
+
+}
+
+
+void SampleEngine::record(bool shouldI)
+{
+	if (shouldI) {
+		std::stringstream frameName;
+		DIR* captureFolder = opendir("./capture");
+		if (captureFolder == NULL) {
+			system("mkdir capture");
+		} else closedir(captureFolder);
+
+		frameName << "./capture/capture_" << toFixString(currentFrameNumber, 5) << ".ppm";
+		this->dumpFramebufferToFile(frameName.str().c_str());
+		++currentFrameNumber;
+	}
+
+}
+
+void SampleEngine::dumpFramebufferToFile(const char * filename)
+{
+	static unsigned char* pixelsArray = NULL;
+	static int previousWidth = getWidth();
+	static int previousHeight = getHeight();
+	static GLint viewPort[4];
+	
+
+	if (pixelsArray == NULL || previousWidth != getWidth() || previousHeight != getHeight()) {
+		previousWidth = getWidth();
+		previousHeight = getHeight();
+		glGetIntegerv(GL_VIEWPORT, viewPort);
+		if (pixelsArray != NULL) delete pixelsArray;
+		pixelsArray = (unsigned char*)malloc(viewPort[2] * viewPort[3] * 3 * sizeof(unsigned char));
+	}
+	
+	glReadPixels(0, 0, viewPort[2], viewPort[3], GL_RGB, GL_UNSIGNED_BYTE, pixelsArray);
+
+	// RAW ppm writer
+	FILE* tempImage = fopen(filename, "wb");
+	if (tempImage != NULL) {
+		fprintf(tempImage, "P6\n%d %d\n255\n", viewPort[2], viewPort[3]);
+		fwrite(pixelsArray, sizeof(unsigned char), viewPort[2] * viewPort[3] * 3, tempImage);
+		fclose(tempImage);
+	}
+	else std::cout << "Failed writing image " << filename << std::endl;
+
+
 }

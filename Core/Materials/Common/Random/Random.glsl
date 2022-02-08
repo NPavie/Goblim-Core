@@ -12,8 +12,6 @@
 
 // variables globales
 uint seed;
-
-
 // Définition de la graine de départ
 void seeding(uint s)
 {
@@ -44,7 +42,6 @@ void setState(uint state)
 float random()
 {
 	float f = float(next())/4294967295u;
-  
 	return(f);
 	// 1 seed shift
 }
@@ -109,22 +106,13 @@ uint morton(uint x, uint y,uint z)
 	}
 	return w;
 }
-
-// Morton code 3D
-uint morton3D(uvec3 v)
-{
-	uint nbM = 0;
-	uint zero = 0;
-	uint one = 1;
-	uint two = 2;
-	uint x = uint(v.x);
-	uint y = uint(v.y);
-	uint z = uint(v.z);
-	for (uint i = 0; i < (1 * 16); ++i) {
-		nbM = nbM | ((x & (one << i)) << i) | ((y & (one << i)) << (i + one)) | ((z & (one << i)) << (i + two)) ;
-	}
-	return nbM;
-}
+//inline uint64_t mortonEncode_for(unsigned int x, unsigned int y, unsigned int z){
+//    uint64_t answer = 0;
+//    for (uint64_t i = 0; i < (sizeof(uint64_t)* CHAR_BIT)/3; ++i) {
+//        answer |= ((x & ((uint64_t)1 << i)) << 2*i) | ((y & ((uint64_t)1 << i)) << (2*i + 1)) | ((z & ((uint64_t)1 << i)) << (2*i + 2));
+//    }
+//    return answer;
+//}
 
 // Distribution de poisson
 uint poisson(float mean)

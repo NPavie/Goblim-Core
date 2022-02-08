@@ -4,7 +4,7 @@
 
 
 
-DistributionProfile::DistributionProfile(std::string name, int distribID) :
+DistributionProfile::DistributionProfile(std::string name, int distribID, int nbSpotPerAxis) :
 EffectGL(name, "DistributionProfile")
 {
 	/* Default Vertex program for quad rendering over the camera*/
@@ -35,7 +35,12 @@ EffectGL(name, "DistributionProfile")
 
 	fp_distribID = perPixelProgram->uniforms()->getGPUint("distribID");
 	fp_distribID->Set(distribID);
+	fp_nbSpotPerAxis = perPixelProgram->uniforms()->getGPUint("nbSpotPerAxis");
+	fp_nbSpotPerAxis->Set(nbSpotPerAxis);
 
+	smp_dataField = perPixelProgram->uniforms()->getGPUsampler("smp_dataField");
+	smp_dataField->Set(1);
+	tex_dataField = NULL;
 	
 }
 DistributionProfile::~DistributionProfile()
@@ -45,6 +50,10 @@ DistributionProfile::~DistributionProfile()
 	delete perPixelProgram;
 }
 
+void DistributionProfile::addDataField(GPUTexture2D * dataTexture)
+{
+	tex_dataField = dataTexture;
+}
 
 void DistributionProfile::apply(GPUFBO *in, GPUFBO *out)
 {
@@ -57,12 +66,14 @@ void DistributionProfile::apply(GPUFBO *in, GPUFBO *out)
 
 		/* Binding the in framebuffer as a texture */
 		if (in != NULL)in->bindColorTexture(0);
+		if (tex_dataField != NULL) tex_dataField->bind(1);
 
 		/* Launching the per pixel program */
 		m_ProgramPipeline->bind();
 		quad->drawGeometry(GL_TRIANGLES);
 		m_ProgramPipeline->release();
 		
+		if (tex_dataField != NULL) tex_dataField->release();
 		if (in != NULL)in->releaseColorTexture();
 		out->disable();
 

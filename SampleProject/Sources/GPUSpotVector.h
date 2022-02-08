@@ -46,7 +46,7 @@ public:
 	DistribParam();
 	~DistribParam();
 	/** @brief Distribution configuration contructor
-		@param responseSize		Size of the kernel axes when distributed on the surface
+		@param responseSize		Size of the kernel axes when distributed on the surface and number of impulses
 		@param weightRange		The range of possible randomly generated weight
 		@param posMinCenterMax	The random position range defined as 3 vector such as the position is generated in [center - min, center + max]
 		@param rotationsMinMax	The random rotation angles range (for now only 2 axes are considered)

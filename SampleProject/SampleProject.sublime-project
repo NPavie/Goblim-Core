@@ -30,6 +30,16 @@
 				"shell": true
 			},
 			"working_dir": "${project_path}"
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"C:\\Users\\Nico\\AppData\\Local\\Programs\\Python\\Python35-32\\python.exe\" -u \"$file\""
 		}
-	]
+	],
+	"settings":
+	{
+		"python_interpreter": "C:\\Users\\Nico\\AppData\\Local\\Programs\\Python\\Python35-32\\python.exe"
+	}
 }
