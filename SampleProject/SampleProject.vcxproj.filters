@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Sources\Main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\SampleEngine.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\SampleMaterial\SampleMaterial.cpp">
+      <Filter>Materials\SampleMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\SampleEffect\SampleEffect.cpp">
+      <Filter>Effects\SampleEffect</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{a001fa5f-f12d-4fea-a748-b0be0e94f692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects">
+      <UniqueIdentifier>{cb494c69-72e8-4a90-9e28-16c5c714adec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials">
+      <UniqueIdentifier>{cc381c1a-b189-442a-a48e-726638f8e5ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\SampleMaterial">
+      <UniqueIdentifier>{2e73c6e3-840d-4b46-9447-b389245f0c40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\SampleEffect">
+      <UniqueIdentifier>{faf3040d-d492-4668-b2f6-9e54e9c3e463}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\SampleEngine.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\SampleMaterial\SampleMaterial.h">
+      <Filter>Materials\SampleMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\SampleEffect\SampleEffect.h">
+      <Filter>Effects\SampleEffect</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Materials\SampleMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\SampleMaterial</Filter>
+    </None>
+    <None Include="Materials\SampleMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\SampleMaterial</Filter>
+    </None>
+    <None Include="Effects\SampleEffect\Shaders\Base-VS.glsl">
+      <Filter>Effects\SampleEffect</Filter>
+    </None>
+    <None Include="Effects\SampleEffect\Shaders\PerPixel-FS.glsl">
+      <Filter>Effects\SampleEffect</Filter>
+    </None>
+    <None Include="SampleProject.sublime-project" />
+  </ItemGroup>
+</Project>

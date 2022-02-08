@@ -1,0 +1,5 @@
+kernel : 0.1 0.01 1.0 1.0
+shape : 1.0 0.35 1.0 0.5
+distribution : 0 1 50
+control : 1.0 0.6 1.0 0.0
+light : 0.0 0.0 5.5 1.5

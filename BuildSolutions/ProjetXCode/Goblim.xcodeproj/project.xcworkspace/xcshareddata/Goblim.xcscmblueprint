@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++C7881C7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++3C7528F" : 0,
+    "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++43E1FBB" : 0,
+    "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++625CE3C" : 0,
+    "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++C7881C7" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4C5F9A60-89F3-47DB-802A-824DC3ECE9B6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++3C7528F" : "..\/Dropbox\/CodeSharing\/Goblim-Win32-core",
+    "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++43E1FBB" : "Goblim-Win32-core\/",
+    "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++625CE3C" : "..\/Dropbox\/CodeSharing\/Goblim-Win32-core",
+    "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++C7881C7" : "Goblim-Win32-core-MacOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Goblim",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ProjetXCode\/Goblim.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.unilim.fr\/nicolas.pavie\/Goblim-Win32-core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++3C7528F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.unilim.fr:nicolas.pavie\/Goblim-Win32-core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++43E1FBB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.unilim.fr:nicolas.pavie\/Goblim-Win32-core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++625CE3C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.unilim.fr:nicolas.pavie\/Goblim-Win32-core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D48F5B88D8F23E7530B213A01D2FE6060DA4D639+++C7881C7"
+    }
+  ]
+}

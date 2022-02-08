@@ -1,0 +1,1142 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"wei",
+				"weight"
+			],
+			[
+				"no",
+				"nodeID"
+			],
+			[
+				"str",
+				"strANSSI"
+			],
+			[
+				"char",
+				"charValue"
+			],
+			[
+				"get",
+				"getState"
+			],
+			[
+				"state",
+				"stateBackup"
+			],
+			[
+				"noeud",
+				"noeudEvaluer"
+			],
+			[
+				"create",
+				"createImpulseOf"
+			],
+			[
+				"getSon",
+				"getSonID"
+			],
+			[
+				"noeu",
+				"noeudCourant"
+			],
+			[
+				"impulseat",
+				"impulseAtLvl"
+			],
+			[
+				"max",
+				"MAXLVL"
+			],
+			[
+				"niveau",
+				"niveauCourant"
+			],
+			[
+				"dis",
+				"distribSpotID"
+			],
+			[
+				"Impu",
+				"Impulsion"
+			],
+			[
+				"rot",
+				"rotation"
+			],
+			[
+				"di",
+				"distribSpotID"
+			],
+			[
+				"lo",
+				"localDistParam"
+			],
+			[
+				"nivea",
+				"niveauCourant"
+			],
+			[
+				"nbImpulseC",
+				"nbImpulseCreated"
+			],
+			[
+				"nbFilsA",
+				"nbFilsATraiter"
+			],
+			[
+				"niv",
+				"niveauCourant"
+			],
+			[
+				"fir",
+				"firstData"
+			],
+			[
+				"scale",
+				"scale_min"
+			],
+			[
+				"respo",
+				"responseSize"
+			],
+			[
+				"posM",
+				"posMax"
+			],
+			[
+				"w",
+				"weight"
+			],
+			[
+				"scal",
+				"scale"
+			],
+			[
+				"w_m",
+				"w_max"
+			],
+			[
+				"w_",
+				"w_min"
+			],
+			[
+				"scaleM",
+				"scaleMax"
+			],
+			[
+				"random",
+				"randomIn"
+			],
+			[
+				"rand",
+				"randomRotate"
+			],
+			[
+				"spotsTree",
+				"spotsTreeData"
+			],
+			[
+				"genera",
+				"generatedImpulse"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"she",
+				"shellSurface"
+			],
+			[
+				"shell",
+				"shellFront"
+			],
+			[
+				"smp_shellB",
+				"smp_shellBack"
+			],
+			[
+				"smp_sh",
+				"smp_shellFront"
+			],
+			[
+				"surface",
+				"surfacePosition"
+			],
+			[
+				"worl",
+				"worldGroundNormal"
+			],
+			[
+				"normali",
+				"normalize"
+			],
+			[
+				"norm",
+				"normalize"
+			],
+			[
+				"PI",
+				"PIx2"
+			],
+			[
+				"surfa",
+				"surfaceKernel_toViewSpace"
+			],
+			[
+				"kernel",
+				"kernelColor"
+			],
+			[
+				"Color",
+				"colorAccumulation"
+			],
+			[
+				"position",
+				"positionFinale"
+			],
+			[
+				"surf",
+				"surfaceKernel"
+			],
+			[
+				"norml",
+				"normalize"
+			],
+			[
+				"slicing",
+				"slicingDirectionInKernel"
+			],
+			[
+				"kernelC",
+				"kernelContrib"
+			],
+			[
+				"intersection",
+				"intersectionPoint"
+			],
+			[
+				"fram",
+				"fragmentImpulse"
+			],
+			[
+				"height",
+				"heightFromGround"
+			],
+			[
+				"grid",
+				"gridHeight"
+			],
+			[
+				"surfaceK",
+				"surfaceKernel"
+			],
+			[
+				"surfaceKer",
+				"surfaceKernel_toObjectSpace"
+			],
+			[
+				"g",
+				"g_vrk"
+			],
+			[
+				"obj",
+				"objectToWorldSpace"
+			],
+			[
+				"profi",
+				"profileID"
+			],
+			[
+				"instan",
+				"instanceCell"
+			],
+			[
+				"inst",
+				"instanceID"
+			],
+			[
+				"n",
+				"normale"
+			],
+			[
+				"fromObjectSp",
+				"fromObjectSpace"
+			],
+			[
+				"from",
+				"fromObject"
+			],
+			[
+				"objectT",
+				"objectToWorldSpace"
+			],
+			[
+				"tang",
+				"tangente"
+			],
+			[
+				"smp_",
+				"smp_distributionMaps"
+			],
+			[
+				"instance",
+				"instanceCell"
+			],
+			[
+				"object",
+				"objectNormal"
+			],
+			[
+				"kernelT",
+				"kernelToObjectSpace"
+			],
+			[
+				"gl_fra",
+				"gl_FragCoord"
+			],
+			[
+				"slicin",
+				"slicingStep"
+			],
+			[
+				"normal",
+				"normalize"
+			],
+			[
+				"compute",
+				"computeKernel"
+			],
+			[
+				"somm",
+				"sommeAlphaS"
+			],
+			[
+				"World",
+				"WorldNormal"
+			],
+			[
+				"Worl",
+				"WorldPosition"
+			],
+			[
+				"objec",
+				"objectToCamera"
+			],
+			[
+				"Xt",
+				"XtVY"
+			],
+			[
+				"Kern",
+				"KernelToCameraSpace"
+			],
+			[
+				"kerne",
+				"computeKernel"
+			],
+			[
+				"signe",
+				"signe_r2"
+			],
+			[
+				"sign",
+				"signe_r1"
+			],
+			[
+				"kernelTo",
+				"KernelToCameraSpace"
+			],
+			[
+				"v_",
+				"v_CameraSpaceCoord"
+			],
+			[
+				"int",
+				"intersection"
+			],
+			[
+				"quad",
+				"quadraticToKernelSpace"
+			],
+			[
+				"point",
+				"point_NDC"
+			],
+			[
+				"delta",
+				"delta_root"
+			],
+			[
+				"g_P",
+				"g_PositionInCamera"
+			],
+			[
+				"depth",
+				"depthBufferValue"
+			],
+			[
+				"depthBufferIn",
+				"depthBufferInCamera"
+			],
+			[
+				"scree",
+				"screenPlanesNearAndFar"
+			],
+			[
+				"surfaceN",
+				"surfaceNormal"
+			],
+			[
+				"disc",
+				"discardTest"
+			],
+			[
+				"Somme",
+				"sommeAlphaS"
+			],
+			[
+				"use",
+				"useBestFragment"
+			],
+			[
+				"obje",
+				"objectToWorld"
+			],
+			[
+				"voxel",
+				"voxel_Normal"
+			],
+			[
+				"wind",
+				"windFactor"
+			],
+			[
+				"dista",
+				"distanceToCamera"
+			],
+			[
+				"ran",
+				"randomVec3"
+			],
+			[
+				"bes",
+				"bestAlpha"
+			],
+			[
+				"nb",
+				"nbCellPerLine"
+			],
+			[
+				"ob",
+				"object_pos"
+			],
+			[
+				"posi",
+				"positionMap"
+			],
+			[
+				"rando",
+				"randomCellPosition"
+			],
+			[
+				"render",
+				"renderKernels"
+			],
+			[
+				"coord_te",
+				"coord_texture"
+			],
+			[
+				"coord",
+				"coord_texture"
+			],
+			[
+				"CPU",
+				"CPU_MVP"
+			],
+			[
+				"mac",
+				"macGuireEq7"
+			],
+			[
+				"tan",
+				"tangentMap"
+			],
+			[
+				"as_fl",
+				"as_float4	Reinterpret Type As float4"
+			],
+			[
+				"bound",
+				"boundingCubeMax"
+			],
+			[
+				"curre",
+				"currentDistance"
+			],
+			[
+				"as_float",
+				"as_float3	Reinterpret Type As float3"
+			],
+			[
+				"as_flo",
+				"as_float3	Reinterpret Type As float3"
+			],
+			[
+				"__",
+				"__global"
+			],
+			[
+				"barycen",
+				"barycentric"
+			],
+			[
+				"to",
+				"to_ret"
+			],
+			[
+				"bary",
+				"barycentre"
+			],
+			[
+				"convert_flo",
+				"convert_float3	Explixit Type Conversion To float3"
+			],
+			[
+				"f_",
+				"f_Grid_height"
+			],
+			[
+				"vox",
+				"VoxelIndex"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Engine/OpenGL/SourceFiles/SpecificGL4.4/GLProgramPipeline.cpp",
+			"settings":
+			{
+				"buffer_size": 3569,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/TextureMaterial/Shaders/Main-VS.glsl",
+			"settings":
+			{
+				"buffer_size": 663,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/ColorMaterial/Shaders/Main-FS.glsl",
+			"settings":
+			{
+				"buffer_size": 369,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Transfert GLSL Files To debug",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Transfert GLSL Files To debug",
+					""
+				],
+				[
+					"Transfert GLSL Files To release",
+					""
+				]
+			],
+			[
+				"Transfert GLSL Files To debug",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"relea",
+				"Build: Deploy resources to release"
+			],
+			[
+				"release",
+				"Build: Deploy resources to release"
+			],
+			[
+				"buil",
+				"Build: Deploy resources to release"
+			],
+			[
+				"bui",
+				"Build: Deploy resources to release"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"batch",
+				"Set Syntax: Batch File"
+			],
+			[
+				"Powe",
+				"Set Syntax: PowerShell"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"buid",
+				"Build: Build"
+			],
+			[
+				"C++",
+				"Set Syntax: C++"
+			],
+			[
+				"bat",
+				"Set Syntax: Batch File"
+			],
+			[
+				"ope",
+				"Set Syntax: OpenCL"
+			],
+			[
+				"open",
+				"Set Syntax: OpenCL"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"cma",
+				"Set Syntax: CMake"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 239.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/ColorMaterial",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/ColorMaterial/Shaders",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/Common/Lighting",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/LightMaterial",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/NormalMaterial",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/PhongMaterial",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/PhongMaterial/Shaders",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/TextureMaterial",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/TextureMaterial/Shaders"
+	],
+	"file_history":
+	[
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/Common/Common.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/Common/Lighting/Lighting.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Engine/OpenGL/SourceFiles/SpecificGL3.3/GLProgramPipeline.cpp",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/TextureMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/TextureMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/PhongMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/PhongMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Engine/OpenGL/SourceFiles/SpecificGL4.4/GLProgramPipeline.cpp",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/ColorMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/ColorMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/LightMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/LightMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/NormalMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/NormalMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Materials/Common/SpotTree.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/src/module_OpenCL/clHandler.c",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/src/module_OpenCL/cl.hpp",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/SampleProject/Effects/NoiseTextureGenerator/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/SampleProject/Materials/Common/SpotTree.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/VisualStudioFiles/ProceduralTextureEditor.vcxproj",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/VisualStudioFiles/ProceduralTextureEditor.vcxproj.filters",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/VisualStudioFiles/ProceduralTextureEditor.sln",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/VisualStudioFiles/ProceduralTextureEditor.vcxproj.user",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/SampleProject/Effects/DisplaySpot/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/gits/Goblim-Win32-core/Core/Effects/DisplayResource/Shaders/Base-VS.glsl",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SpotNoise2DCPU/SimpleSpotNoiseTest/Noise.cpp",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SimpleSpotNoiseTest/SimpleSpotNoiseTest/Spots2DTree.cpp",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SimpleSpotNoiseTest/SimpleSpotNoiseTest/Noise.cpp",
+		"/C/cygwin64/home/Nico/fastCode/main.cpp",
+		"/C/Users/Nico/Downloads/Kernel.hpp",
+		"/C/Users/Nico/Downloads/Kernel.cpp",
+		"/C/Users/Nico/gits/Goblim-Win32-core/SampleProject/Effects/DisplaySpot/Shaders/kd5hxbxk.vfw~",
+		"/C/Users/Nico/gits/Goblim-Win32-core/Core/Materials/Common/Random/Random.glsl",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SpotNoise2DCPU/SimpleSpotNoiseTest/Main.cpp",
+		"/C/Users/Nico/Desktop/voxelizator/Voxelization/openCL.hpp",
+		"/C/Users/Nico/Desktop/voxelizator/Voxelization/openCL.cpp",
+		"/C/Users/Nico/gits/Goblim-Win32-core/SampleProject/Materials/SpotsTreeNoise/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Downloads/image.cpp",
+		"/C/Users/Nico/Documents/sshkey/id_public.key",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Sources/SampleEngine.cpp",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SpotNoise2DCPU/SimpleSpotNoiseTest/Spot2D.cpp",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SpotNoise2DCPU/SimpleSpotNoiseTest/PRNG_Lagae.h",
+		"/C/Users/Nico/Documents/Template_These/These.tex",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Pass3-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Pass2-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Pass2-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/Common/Lighting/Lighting.glsl",
+		"/C/Users/Nico/Documents/paper_0042_example_code/noise.cpp",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Common/Kernels.glsl",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/Parts/Fuzzy_Procedural_Pattern.tex",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/elsarticle-template-3-num-cag.tex",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/elsarticle-template-3-num-cag.tcp",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Pass3-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Pass2-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Pass2-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/Dragon/Dragon.DAE",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/Common/Random/Random.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/PhongMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/PhongMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/Plane/Grass_profile/grass1/modelHerbe.png",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/Plane/Plane.DAE",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/ImplicitSurfaceMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Common/toolbox.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SplattedVolumetricKernelMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/ImplicitSurfaceMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/Common/Common.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Pass2-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Pass2-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/ShellSpotNoise.sublime-project",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Deferred3DKernelMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Effects/DepthCopy/Shaders/Base-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Effects/DepthCopy/Shaders/DepthCopy-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedVolumetricKernelMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedVolumetricKernelMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelMaterial/VolumetricKernelMaterial.h",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/Schemas/Comparaisons_instancing_splatting_mix.pdf",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/Schemas/Comparaisons_instancing_splatting_mix.pdf_tex",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Effects/DisplayImage/Shaders/Display-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SplattedVolumetricKernelMaterial/Shaders/Pass2-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SplattedVolumetricKernelMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Deferred3DKernelMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/DeferredMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/DeferredMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedVolumetricKernelMaterial/Shaders/Pass2-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-master/SampleProject/Materials/SampleMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Effects/DisplayResource/Shaders/Display-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/DeferredMaterial/Shaders/Main-GS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Effects/DisplayResource/Shaders/Base-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricShellKernelMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/DepthMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/LinuxSublimeSolution/Goblim.sublime-project",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/CubeSlicing-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/KernelBoundingCube-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/Composition-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/Composition-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/TexturedQuadSplatting-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/TexturedQuadRendering-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/KernelBoundingQuad-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/Pass2-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/DepthMaterial/Shaders/Main-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/Pass2-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/SSNMaterial/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Sources/SampleEngine_temp.h",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedSplattedKernelMaterial/Shaders/Pass3-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Sources/SampleEngine_temp.cpp",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/shaderTransfer.bat",
+		"/C/Users/Nico/.ssh/id_rsa.pub",
+		"/C/Users/Nico/Downloads/GobLim_ProjetM1_FX_Textures_PBR/GobLim_ProjetM1_FX_Textures_PBR/Materials/Common/Lighting/Lighting.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/sponza.mtl",
+		"/C/Users/Nico/Downloads/Goblim-Win32-core.rar",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedVolumetricKernelMaterial/Shaders/Pass2-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/Plane/Grass/grass1/config.txt",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/Cube.obj",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Objets/FurryBunny/Bunny.obj",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/InstancedVolumetricKernelMaterial/Shaders/Pass3-FS.glsl",
+		"/C/Users/Nico/Downloads/fonction_inconnue.asm",
+		"/C/Users/Nico/Desktop/NPavieWebSite/teaching/css/style.css",
+		"/C/Users/Nico/AppData/Local/Temp/fz3temp-1/style 2.css",
+		"/C/Users/Nico/AppData/Local/Temp/fz3temp-1/style.css",
+		"/C/Users/Nico/AppData/Local/Temp/fz3temp-1/index.html",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/NotToCompile/DetailsAdder/Shaders/Main-FS.glsl"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"OpenCL",
+			"strANSSI",
+			"argv",
+			"]);\n",
+			"createI",
+			"nodeID",
+			"xi",
+			"dist",
+			"Dist",
+			"dist",
+			"localDistParam",
+			"nodeData",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"posM",
+			";",
+			"x_i",
+			"y_i",
+			";\n",
+			"currentCell",
+			"c",
+			"dist",
+			"xi",
+			"scale",
+			"XYZrotations",
+			"glm::",
+			"glm",
+			"glm::",
+			"evalSpotID",
+			"smp_colorMap",
+			"k",
+			"positionOverSurface",
+			"sol",
+			"currentSliceCenter",
+			"cameraToViewSpace",
+			"projectPointToNDCSpace",
+			"depth",
+			"depthValue",
+			"depthValuer",
+			"XtVY",
+			"genratedImpulse",
+			"XMY",
+			"out",
+			"surfacePoint",
+			"surfaceKernel",
+			"chosen",
+			"surfaceKernel_profile",
+			"XtVY",
+			"surfaceKernel_profile",
+			"surfaceKernel_toViewSpace",
+			"vertexGeneratedKernel",
+			"XtVY",
+			"relatedSurfacePoint",
+			"surfaceKernel_profile",
+			"AQB",
+			"R",
+			"firstSliceInKernel",
+			"computeKernel",
+			"out",
+			"test",
+			"v_textureCoords",
+			"out",
+			"Out",
+			"out",
+			"Out",
+			"out",
+			"dummy",
+			"validation",
+			"surfaceKernel_toWorldSpace",
+			"surfacePoint",
+			"profile",
+			"surfaceKernel",
+			"surfacePoint",
+			"surfaceKernel",
+			"profileID",
+			"numKernel",
+			"computeKernel",
+			"realInstanceId",
+			"kernel",
+			"around",
+			"smp_surfaceData",
+			"Comparaisons_instancing_splatting_mix",
+			"currentSlicePos",
+			"cameraToObject",
+			"vec4(evalPos,1.0)",
+			"gaussianBase",
+			"gaussianSpaceMatrix",
+			"evaluatedPoint",
+			"object_point",
+			"test",
+			"matmul_XVX(_Vrk,vec4(evalPos,1.0))",
+			"matmul_XVX",
+			"matmul_XVY",
+			"matmul_XVX",
+			"computeKernel",
+			"test",
+			"screenCoord",
+			"screenToQuadraticSpace",
+			"objectToCamera",
+			"objectToScreen",
+			"CPU_MVP",
+			"quadraticInKernelSpace",
+			"gl_frag",
+			"gaussianSpaceMatrix",
+			"kernelEvaluation",
+			"windowRelativePoint",
+			"v_fragCoord",
+			"2_A",
+			"isIntersected",
+			"resource",
+			"zoverw",
+			"f",
+			"n",
+			"surface_position",
+			"gridHeight",
+			"computeKernel",
+			"objectToWorld",
+			"PI_4"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"v_i"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Engine/OpenGL/SourceFiles/SpecificGL4.4/GLProgramPipeline.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2615,
+								2615
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/TextureMaterial/Shaders/Main-VS.glsl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								517,
+								517
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/OpenGL Shading Language (GLSL)/GLSL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Nico/Documents/Gits/Goblim-Win32-core/Core/Materials/ColorMaterial/Shaders/Main-FS.glsl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								267,
+								267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/OpenGL Shading Language (GLSL)/GLSL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "SampleProject.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 152.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
