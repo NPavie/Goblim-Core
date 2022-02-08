@@ -18,7 +18,15 @@ const std::string kernelsPath = rootPath + "Kernels/";
 
 
 
+#define HD 1
 
+#if HD
+#define FBO_WIDTH 1920
+#define FBO_HEIGHT 1080
+#else 
+#define FBO_WIDTH 1280
+#define FBO_HEIGHT 720
+#endif
 
 
 #endif

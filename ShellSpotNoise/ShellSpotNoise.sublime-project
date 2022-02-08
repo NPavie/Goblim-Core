@@ -1,0 +1,59 @@
+{
+	"folders":
+	[
+		{
+      "name":"Project Materials",
+			"path": "Materials",
+			"file_exclude_patterns": ["*.h", "*.cpp"]
+		},
+		{
+      "name":"Project Effects",
+			"path": "Effects",
+			"file_exclude_patterns": ["*.h", "*.cpp"]
+		},
+    {
+      "name":"Project Resources",
+      "path": "Objets",
+      "file_exclude_patterns": ["*.h", "*.cpp"]
+    },
+    {
+      "name":"Goblim Effects",
+      "path": "../Core/Effects",
+      "file_exclude_patterns": ["*.h", "*.cpp"]
+    },
+    {
+      "name":"Goblim Materials",
+      "path": "../Core/Materials",
+      "file_exclude_patterns": ["*.h", "*.cpp"]
+    }
+	],
+  
+  
+	
+  "build_systems":
+    [
+        {
+          "name": "Deploy resources (default to debug)",
+          "working_dir": "${project_path}",
+          "cmd": ["shaderTransfer.bat","C:\\Home\\Output\\","${project_base_name}\\Debug\\"],
+          "shell": true,
+          "encoding": "cp850", 
+          
+          "variants":
+          [
+            {
+              "name": "Deploy resources to debug",
+              "cmd": ["shaderTransfer.bat","C:\\Home\\Output\\","${project_base_name}\\Debug\\"],
+              "shell": true,
+              "encoding": "cp850"
+            },
+            {
+              "name": "Deploy resources to release",
+              "cmd": ["shaderTransfer.bat","C:\\Home\\Output\\","${project_base_name}\\Release\\"],
+              "shell": true,
+              "encoding": "cp850"
+            }
+          ]       
+        }      
+    ]
+}

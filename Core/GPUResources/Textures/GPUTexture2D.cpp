@@ -27,7 +27,7 @@ GPUTexture(name)
 {
 	resident = isResident;
 	m_Target = GL_TEXTURE_2D;
-
+	
 	create(width,height,internalformat,format,type);
 
 	if (resident)
@@ -47,6 +47,7 @@ void GPUTexture2D::setUpSampler(GLint wrap,GLint minifyingFilter,GLint magnifica
 bool GPUTexture2D::create(int width,int height,GLint internalformat, GLint format,GLenum type, bool isResident)
 {
 	resident = isResident;
+	m_format = format;
 	glGenTextures(1,&m_TextureId);
 	glBindTexture(m_Target,m_TextureId);
 	glTexImage2D(m_Target,0,internalformat ,width, height,0,format,type,NULL);
@@ -65,7 +66,7 @@ bool GPUTexture2D::create(std::string filename)
 {
 
 	//m_TextureId = load2DTexture(filename, SOIL_LOAD_AUTO);
-	//notused: int width,height,channels;
+	int width,height,channels;
 	/*
 	unsigned char * tex = SOIL_load_image(filename.c_str(),&width, &height, &channels,SOIL_LOAD_AUTO);
 	glGenTextures(1,&m_TextureId);

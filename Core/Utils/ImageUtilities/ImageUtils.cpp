@@ -232,7 +232,7 @@ unsigned int loadLayer	(const unsigned char *const data,int width, int height, i
 					if( DDS_data )
 					{
 											
-						glCompressedTexSubImage3D(GL_TEXTURE_2D_ARRAY, MIPlevel,0,0,layer, MIPwidth, MIPheight,1, internal_texture_format,
+						glCompressedTexSubImage3D(GL_TEXTURE_2D_ARRAY_EXT, MIPlevel,0,0,layer, MIPwidth, MIPheight,1, internal_texture_format,
 							DDS_size, DDS_data);
 
 
@@ -243,7 +243,7 @@ unsigned int loadLayer	(const unsigned char *const data,int width, int height, i
 				else
 				{
 					
-					glTexSubImage3D(GL_TEXTURE_2D_ARRAY, MIPlevel,0,0,layer, MIPwidth, MIPheight,1, internal_texture_format,GL_UNSIGNED_BYTE,img);
+					glTexSubImage3D(GL_TEXTURE_2D_ARRAY_EXT, MIPlevel,0,0,layer, MIPwidth, MIPheight,1, internal_texture_format,GL_UNSIGNED_BYTE,img);
 				}
 				
 				/*	prep for the next level	*/

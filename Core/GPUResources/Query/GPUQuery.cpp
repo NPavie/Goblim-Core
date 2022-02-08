@@ -27,7 +27,7 @@ void GPUQuery::create()
 	glGenQueries(1, this->m_queryId[m_queryBufferFront]);
 	glGenQueries(1, this->m_queryId[m_queryBufferBack]);
 	// From lighthouse3D
-	if (m_queryType == GL_TIME_ELAPSED)
+	if (m_queryType == GL_TIME_ELAPSED) 
 		glQueryCounter(m_queryId[m_queryBufferFront][0], GL_TIMESTAMP);
 }
 

@@ -7,10 +7,10 @@
 #define _MODELGL_H
 
 
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include "Engine/Base/Model.h"
 
-#include "Engine/OpenGL/BoundingBoxModelGL.h"
+#include "Engine/OpenGL/BoundingBox/BoundingBoxModelGL.h"
 
 class ModelGL : public Model
 {

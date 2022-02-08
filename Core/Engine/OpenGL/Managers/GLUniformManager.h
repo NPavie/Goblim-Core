@@ -1,7 +1,7 @@
 #ifndef _GLUNIFORM_BUFFER_
 #define _GLUNIFORM_BUFFER_
 
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <string>
 #include <map>
 #include <vector>
@@ -54,8 +54,6 @@ class GLUniformManager
 		
 		map< string, GPUsampler*> listSamplers;		
 		map< string, GPUimage*> listImages;
-    
-        static void storeInSharedBuffersList(GPUBuffer* ubo);
 
 		void mapBufferToBlock(GPUBuffer* ubo,std::string blockName);
 
@@ -64,9 +62,7 @@ class GLUniformManager
 		GLuint m_UBuffer;
 		std::vector< GLUniformBlock* > listBlocks;
 		
-    static std::vector<GPUBuffer*> sharedBufferList;
-    
-    bool firstAccess;
+
 
 		void parseShader(GLint shaderName);
 		GPUVariableBase* createGPUVariable( GLenum type,string name,GLint program,GLuint uBuffer,GLint offset,GLint loc,GLint size);

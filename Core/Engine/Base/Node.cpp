@@ -29,12 +29,26 @@ Node::Node(std::string name)
 
 }
 
+Node::Node(const Node& toCopy)
+{
+	// Copy everything
+	this->m_Animator = (toCopy.m_Animator);
+	this->m_Father = (toCopy.m_Father);
+	this->m_Frame = (toCopy.m_Frame);
+	this->m_Material = (toCopy.m_Material);
+	this->m_Model = (toCopy.m_Model);
+
+	this->m_Name = string(toCopy.m_Name + "-copy" );
+	this->m_Shadow = toCopy.m_Shadow;
+	this->m_Sons = toCopy.m_Sons;
+}
+
 Node::~Node()
 {
 	LOG(TRACE) << "Deleting Node : " << m_Name ;
 
 	delete m_Frame;
-	//delete m_Animator;
+	delete m_Animator;
 	delete m_Shadow;
 }
 
@@ -79,18 +93,8 @@ Material* Node::getMaterial()
 void Node::render(Material* mat)
 {
 	if (m_Model)
-    {
-        if (mat)
-        {
-                mat->render(this);
-        }
-        else
-        {
-            if (m_Material != NULL) m_Material->render(this);
-        }
-    }
-		
-		
+		if (mat) mat->render(this);
+		else if (m_Material != NULL) m_Material->render(this);
 }
 
 void Node::animate(const int elapsedTime)
@@ -138,7 +142,7 @@ void Node::displayLeaves(int level)
 	}
 	else
 	{
-		int display_offset = level + (int)toDisplay.size();
+		int display_offset = level + toDisplay.size();
 		m_Sons[0]->displayLeaves(display_offset);
 		if (m_Sons.size() > 1)
 		{

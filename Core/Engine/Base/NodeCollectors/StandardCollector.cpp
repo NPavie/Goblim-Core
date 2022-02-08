@@ -12,7 +12,7 @@ StandardCollector::StandardCollector()
 
 StandardCollector::~StandardCollector()
 {
-
+	
 }
 void StandardCollector::collect(Node* node)
 {

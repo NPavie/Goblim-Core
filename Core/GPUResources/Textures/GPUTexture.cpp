@@ -69,6 +69,15 @@ GLuint GPUTexture::getSampler()
 void GPUTexture::display(const glm::vec4 & box)
 {
 	bind(0);
+	HUD->isUIntDepth->Set(false);
+	HUD->display(box);
+	release();
+}
+
+void GPUTexture::displayDepth(const glm::vec4 & box)
+{
+	bind(0);
+	HUD->isUIntDepth->Set(true);
 	HUD->display(box);
 	release();
 }
@@ -84,9 +93,7 @@ void GPUTexture::setUpSampler(GLint wrap,GLint filter)
 void GPUTexture::makeResident()
 {
 	glBindTexture(m_Target, m_TextureId);
-#if defined GLAD_NV_bindless_texture
 	m_Handle = glGetTextureHandleNV(m_TextureId);
 	glMakeTextureHandleResidentNV(m_Handle);
-#endif
 	glBindTexture(m_Target, 0);
 }

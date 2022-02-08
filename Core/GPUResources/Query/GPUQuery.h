@@ -1,7 +1,7 @@
 ﻿#ifndef GPU_QUERY_H
 #define GPU_QUERY_H
 
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <string>
 #include "Engine/Base/Resource.h"
 using namespace std;

@@ -31,28 +31,14 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include <ciso646>  // detect std::lib
 
 #include "setup.hpp"
 #if GLM_HAS_MAKE_SIGNED
-#ifdef _LIBCPP_VERSION
-// using libc++
-#include <type_traits>
-#else
-// using libstdc++
-#include <tr1/type_traits>
+#	include <type_traits>
 #endif
-#endif
-
 
 #if GLM_HAS_EXTENDED_INTEGER_TYPE
-#ifdef _LIBCPP_VERSION
-// using libc++
-#include <cstdint>
-#else
-// using libstdc++
-#include <tr1/cstdint>
-#endif
+#	include <cstdint>
 #endif
 
 namespace glm{

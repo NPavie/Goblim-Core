@@ -7,6 +7,7 @@
 #ifndef __FRAME__
 #define __FRAME__
 
+#include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <vector>
 /**
@@ -48,6 +49,8 @@ public:
 	 * @return pointer to frame matrix
 	 **/
 	glm::mat4* getMatrix(){ return(&matrix); };
+
+	glm::mat4 getMatrixCopy();
 
 	/**
 	 * @brief Get complete chain of matrix transformation

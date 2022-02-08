@@ -6,12 +6,11 @@
 
 #ifndef _GPUBuffer_H
 #define _GPUBuffer_H
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <string>
 #include "Engine/Base/Resource.h"
 using namespace std;
 
-class GLProgram;
 
 class GPUBuffer : public Resource
 {
@@ -68,16 +67,7 @@ class GPUBuffer : public Resource
 	*	@brief unMap the buffer being currently mapped
 	*/
 	void unMap();
-	
-	/**
-	*	@brief (mandatory for AMD) link the buffer binding point to a named GLSL buffer (storage block) in a GLprogram
-	*/
-	void bindToProgramStorageBlock(GLProgram* program, const char* bufferNameInGPU);
-
-	/**
-	*	@brief (mandatory for AMD) link a specified SSBO binding point to a named GLSL buffer (storage block) in a GLprogram
-	*/
-	static void linkBindingPointToProgramStorageBlock(GLProgram* program, const char* bufferNameInGPU, int bindingPoint);
+		
 
 		GLuint getBuffer();
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include "Engine/Base/Resource.h"
 
 class DisplayResource;
@@ -25,6 +25,8 @@ public:
 	GLuint getSampler();
 
 	virtual void display(const glm::vec4 & box = glm::vec4(0.0,0.0,1.0,1.0));
+
+	virtual void displayDepth(const glm::vec4 & box = glm::vec4(0.0, 0.0, 1.0, 1.0));
 	
 	virtual void setUpSampler(GLint wrap,GLint filter);
 protected:
@@ -37,6 +39,8 @@ protected:
 	GLuint m_SamplerId;
 	GLuint m_TextureId;
 	GLuint64 m_Handle;
+	GLint m_format;
+
 	bool resident;
 
 };

@@ -1,4 +1,6 @@
 
+#ifndef LIGHTING_GLSL
+#define LIGHTING_GLSL
 
 struct Light
 {
@@ -8,25 +10,12 @@ struct Light
 	vec4 info;
 };
 
-#if __VERSION__ > 410
-
 layout (std430,binding=2) readonly buffer LightingBuffer
 {
 	vec4 camPos;
-	vec4 nbLights;
+	ivec4 nbLights;	
 	Light Lights[];
 };
-
-#else 
-
-layout(std140) uniform LightingBuffer
-{
-	vec4 camPos;
-	ivec4 nbLights;	
-	Light Lights[100];
-};
-
-#endif
 
 // Phong Highlight
 vec3 PhongHighlight(in float dotRV, in vec3 S, in vec4 K)
@@ -139,13 +128,7 @@ addLight(
 	return _color;
 }
 
-vec4 addPhong(
-              in vec3 position,
-              in vec3 normal,
-              in vec4 ambiant,
-              in vec4 diffuse,
-              in vec4 specular,
-              in vec4 coefs)
+vec4 addPhong(in vec3 position, in vec3 normal,in vec4 ambiant, in vec4 diffuse,in vec4 specular,in vec4 coefs)
 {	
 
 	vec4 _color;
@@ -164,148 +147,162 @@ vec4 addPhong(
 		
 }
 
-/**
- @brief phong illumination function with limited subfunction access (works on iris pro)
- @param position position of the evaluated surface point (in world space)
- @param normal normal of the point (still in world space)
- @param ambiant color of the material when non-directly illuminated (typically the object color)
- @param diffuse color of the material when directly illuminated (typically the object color)
- @param specular color of the material when strongly exposed to light (typically the Light color or white)
- @param coefs coefficents of each color contribution + power of the specular dot
- */
-vec4 phongFunction(
-    vec3 position,
-    vec3 normal,
-    vec4 ambiant,
-    vec4 diffuse,
-    vec4 specular,
-    vec4 coefs)
-{
+//vec4 addPhongVolumetric(in vec3 position, in vec3 normal,in vec4 ambiant, 
+//	in float height, in vec3 groundNormal, in float occlusionDensity,
+//	in vec4 diffuse,in vec4 specular,in vec4 coefs)
+//{	
+//
+//	vec4 _color;
+//
+//	_color.xyz = ambiant.xyz*coefs.x;
+//
+//	for (int i = 0;i < nbLights.x ; i++)
+//	{
+//		float volOcclusion = clamp( max(exp(-occlusionDensity * (-height * dot(groundNormal,L) + sqrt(1.0-pow(height,2.0)*(1.0 - dot(groundNormal,LL))))),0.0),0.0,1.0);
+//		volOcclusion = pow(volOcclusion,2.0);
+//
+//		vec4 col = addLight(Lights[i].pos, Lights[i].color, 
+//						position, normal,
+//						ambiant,diffuse,specular,coefs);
+//		_color.xyz += Lights[i].color.w*col.xyz;			
+//	}
+//
+//	return _color;
+//		
+//}
 
-    vec4 surfaceColor = vec4(1.0);
-    surfaceColor.xyz = ambiant.xyz*coefs.x;
-
-    for(int i = 0; i < nbLights.x; ++i)
-    {
-        vec4 lightColorReceived = vec4(1.0);
-        vec4 lDir;
-        lDir.xyz = Lights[i].pos.xyz - position;
-        lDir.w = length(lDir);
-        lDir.xyz = normalize(lDir.xyz);
-
-        vec4 cPos = vec4(1.0);
-        cPos.xyz = normalize(camPos.xyz-position);
-
-        vec3 reflectedLight = reflect(-lDir.xyz,normal);
-        float specPower = pow(max(0.0,dot(reflectedLight,cPos.xyz)),coefs.w);
-        float diffusePower = max(0.0,dot(lDir.xyz,normal));
-
-        lightColorReceived = (coefs.y * diffusePower * diffuse * Lights[i].color );
-        lightColorReceived += (coefs.z * specPower * specular * Lights[i].color );
-        
-        surfaceColor.xyz += lightColorReceived.xyz * Lights[i].color.w;
-    }
-    
-    return surfaceColor;
-    
+float G1V ( float dotNV, float k ) {
+	return 1.0 / (dotNV*(1.0 - k) + k);
 }
 
-vec4 addBoulanger	(	vec3 position, 
-						vec4 positionColor,
-						vec3 normal,	
-						float occlusionFactor, 
-						float reflectance, 
-						float attenuation, 
-						float emittance  
-					) 
-{
-	vec4 color_added = positionColor;
-	color_added.xyz *= reflectance * occlusionFactor;
-	
-	for (int i = 0;i < nbLights.x;i++){
-	
-		vec3 L = Lights[i].pos.xyz - position;
-		float d = length(L);
-		L = normalize(L);
-		vec3 N = normalize(normal);
-		vec3 Id = Lights[i].color.xyz;
-	
-		vec3 diffuse_in = reflectance * 
-							max(dot(N,L),0) * 
-							(Id / (1.0 + attenuation * d * d));
-		vec3 diffuse_out = reflectance * emittance * 
-							max(dot(-N,L),0) * 
-							(Id / (1.0 + attenuation * d * d));
+vec3 computePBRLighting ( in Light light, in vec3 position, in vec3 N, in vec3 V, in vec3 albedo, in float roughness, in vec3 F0, in vec3 SSDO ) {
 
-		color_added.xyz += clamp(diffuse_in + diffuse_out , vec3(0),vec3(1));
+	float alpha = roughness*roughness;
+	vec3 L = normalize(light.pos.xyz - position);
+	//vec3 V = normalize (camPos.xyz-position);
+	vec3 H = normalize (V + L);
 
+	float dotNL = clamp (dot (N, L), 0.0, 1.0);
+	float dotNV = clamp (dot (N, V), 0.0, 1.0);
+	float dotNH = clamp (dot (N, H), 0.0, 1.0);
+	float dotLH = clamp (dot (L, H), 0.0, 1.0);
 
+	float D, vis;
+	vec3 F;
+
+	// NDF : GGX
+	float alphaSqr = alpha*alpha;
+	float pi = 3.1415926535;
+	float denom = dotNH * dotNH *(alphaSqr - 1.0) + 1.0;
+	D = alphaSqr / (pi * denom * denom);
+
+	// Fresnel (Schlick)
+	float dotLH5 = pow (1.0 - dotLH, 5);
+	F = F0 + (1.0 - F0)*(dotLH5);
+
+	// Visibility term (G) : Smith with Schlick's approximation
+	float k = alpha / 2.0;
+	vis = G1V (dotNL, k) * G1V (dotNV, k);
+
+	vec3 specular = /*dotNL **/ D * F * vis;
+
+	vec3 ambient = vec3(.03);
+
+	float invPi = 0.31830988618;
+	vec3 diffuse = (albedo /** invPi*/);
+
+	float lightOcclusion = 1; // Facteur SSDO
+	if (SSDO != vec3(0))
+		lightOcclusion = 1 - clamp(dot(L, SSDO), 0.0f, 1.0f);
+
+	return ambient + (diffuse + specular) * light.color.xyz * dotNL * lightOcclusion ;
+}
+
+vec4 addPBR( in vec3 position, in vec3 N, in vec3 V, in vec3 albedo, in float roughness, in vec3 F0, in vec3 SSDO) {
+	vec4 _color;
+
+	for ( int i = 0; i < nbLights.x; i++ ) {
+			vec3 col = computePBRLighting ( Lights[i], position, N, V, albedo, roughness, F0, SSDO);
+			_color.xyz += Lights[i].color.w*col;			
 	}
-	
-	
-	return color_added;
 
+	return _color;
 }
 
-vec4 addBoulanger2    ( vec3 position,
-                        vec4 positionColor,
-                        vec3 normal,
-                        vec3 groundNormal,
-                        float height,
-                        float reflectance,
-                        float attenuation,
-                        float emittance,
-                        float occlusionDensity
-                    )
-{
 
 
-    vec4 color_added = positionColor;
-    color_added.rgb *= 0.2 * reflectance;
-	//
 
-	for (int i = 0;i < nbLights.x;i++)
-    {
-
-    	vec3 L = Lights[i].pos.xyz - position;
-    	//vec3 L = vec3(0,-10,10) - position;
-        float d = length(L);
-        L = normalize(L);
-        vec3 N = normalize(normal);
-        vec3 No = normalize(groundNormal);
-        vec3 Id = Lights[i].color.xyz;
-
-        vec3 LL = L*L;
-
-        float volOcclusion = clamp(exp(-occlusionDensity*(-height*dot(No,L) + sqrt(1.0-pow(height,2.0)*(1.0 - dot(No,LL))))),0.01,1.0);
-
-        
-        vec3 diffuse_in = reflectance 
-        					* max(dot(N,L),0) 
-        					* Id * color_added.xyz
-        					//* (Id / (1.0 + attenuation * d * d))
-        					//* (Id / (1.0 + attenuation))
-        					;
-        vec3 diffuse_out = reflectance 
-        					* max(dot(-N,L),0) 
-        					* Id * color_added.xyz
-        					//* (Id / (1.0 + attenuation * d * d))
-        					//* (Id / (1.0 + attenuation))
-        					;
-
-    	//color_added.rgb *= 0.3 * reflectance * volOcclusion;    
-        color_added.rgb += (diffuse_in + diffuse_out) * volOcclusion;
-        color_added.rgb *= (attenuation * pow(volOcclusion,emittance) );
-
-    
-     
-    }
-
-
-    return color_added;
-}
 
 vec4 addBoulanger3 ( vec3 position,
+					vec4 positionColor,
+					vec3 normal,
+					vec3 groundNormal,
+					float height,
+					float reflectance,
+					float attenuation,
+					float emittance,
+					float occlusionDensity
+					)
+{
+	vec4 color_added  = vec4(0.0);
+	// test
+	color_added.rgb = emittance * positionColor.rgb;
+	
+
+	bool barbare = false;
+	vec3 N = normalize(normal);
+
+	for (int i = 0;i < nbLights.x;i++)
+	{
+
+		vec3 L = Lights[i].pos.xyz - position;
+		//L = vec3(0.0,0.0,1.0);
+		float d = length(L);
+		L = normalize(L);
+		
+		vec3 Id = Lights[i].color.xyz * Lights[i].color.w;
+
+		vec3 LL = L * L;
+
+		float volOcclusion = clamp( max(exp(-occlusionDensity * (-height * dot(groundNormal,L) + sqrt(1.0-pow(height,2.0)*(1.0 - dot(groundNormal,LL))))),0.0),0.0,1.0);
+		volOcclusion = pow(volOcclusion,2.0);
+		//volOcclusion *= clamp(abs(dot(N,groundNormal)),0.1, 1.0);
+		//volOcclusion *= clamp( abs(  max(dot(N,groundNormal),0.0) + max(dot(-N,groundNormal),0.0) ) ,0.1, 1.0);
+
+		if (barbare)
+		{
+			color_added.rgb += volOcclusion * positionColor.rgb;
+			barbare = true;
+		}
+		
+		//color_added.xyz *= 0.3*reflectance * volOcclusion;
+
+		vec3 diffuse_in = 	reflectance 
+							* max(dot(N,L),0) 
+							* Id * positionColor.xyz ;
+							//* (Id / (1.0 + attenuation * d * d))
+							//* (Id / (1.0 + attenuation))
+							;
+		vec3 diffuse_out = 	reflectance 
+							* max(dot(-N,L),0) 
+							* Id * positionColor.xyz ;
+							//* (Id / (1.0 + attenuation * d * d))
+							//* (Id / (1.0 + attenuation))
+							;
+
+		color_added.xyz += volOcclusion * attenuation * (diffuse_in + diffuse_out);
+
+
+		//color_added.xyz = vec3(volOcclusion,0.0,0.0);
+	}
+
+	color_added.w = positionColor.w;
+	
+	return color_added;
+}
+
+vec4 addBoulangerPBR( 
+					vec3 position,
 					vec4 positionColor,
 					vec3 normal,
 					vec3 groundNormal,
@@ -454,3 +451,100 @@ vec4 addBoulangerFixe ( vec3 position,
 
 	return color_added;
 }
+
+#endif
+
+// Backup
+//vec4 addBoulanger	(	vec3 position, 
+//						vec4 positionColor,
+//						vec3 normal,	
+//						float occlusionFactor, 
+//						float reflectance, 
+//						float attenuation, 
+//						float emittance  
+//					) 
+//{
+//	vec4 color_added = positionColor;
+//	color_added.xyz *= reflectance * occlusionFactor;
+//	
+//	for (int i = 0;i < nbLights.x;i++){
+//	
+//		vec3 L = Lights[i].pos.xyz - position;
+//		float d = length(L);
+//		L = normalize(L);
+//		vec3 N = normalize(normal);
+//		vec3 Id = Lights[i].color.xyz;
+//	
+//		vec3 diffuse_in = reflectance * 
+//							max(dot(N,L),0) * 
+//							(Id / (1.0 + attenuation * d * d));
+//		vec3 diffuse_out = reflectance * emittance * 
+//							max(dot(-N,L),0) * 
+//							(Id / (1.0 + attenuation * d * d));
+//
+//		color_added.xyz += clamp(diffuse_in + diffuse_out , vec3(0),vec3(1));
+//
+//
+//	}
+//	
+//	
+//	return color_added;
+//
+//}
+//
+//vec4 addBoulanger2    ( vec3 position,
+//                        vec4 positionColor,
+//                        vec3 normal,
+//                        vec3 groundNormal,
+//                        float height,
+//                        float reflectance,
+//                        float attenuation,
+//                        float emittance,
+//                        float occlusionDensity
+//                    )
+//{
+//
+//    vec4 color_added = positionColor;
+//    color_added.rgb *= 0.2 * reflectance;
+//	//
+//
+//	for (int i = 0;i < nbLights.x;i++)
+//    {
+//
+//    	vec3 L = Lights[i].pos.xyz - position;
+//    	//vec3 L = vec3(0,-10,10) - position;
+//        float d = length(L);
+//        L = normalize(L);
+//        vec3 N = normalize(normal);
+//        vec3 No = normalize(groundNormal);
+//        vec3 Id = Lights[i].color.xyz;
+//
+//        vec3 LL = L*L;
+//
+//        float volOcclusion = clamp(exp(-occlusionDensity*(-height*dot(No,L) + sqrt(1.0-pow(height,2.0)*(1.0 - dot(No,LL))))),0.01,1.0);
+//
+//        
+//        vec3 diffuse_in = reflectance 
+//        					* max(dot(N,L),0) 
+//        					* Id * color_added.xyz
+//        					//* (Id / (1.0 + attenuation * d * d))
+//        					//* (Id / (1.0 + attenuation))
+//        					;
+//        vec3 diffuse_out = reflectance 
+//        					* max(dot(-N,L),0) 
+//        					* Id * color_added.xyz
+//        					//* (Id / (1.0 + attenuation * d * d))
+//        					//* (Id / (1.0 + attenuation))
+//        					;
+//
+//    	//color_added.rgb *= 0.3 * reflectance * volOcclusion;    
+//        color_added.rgb += (diffuse_in + diffuse_out) * volOcclusion;
+//        color_added.rgb *= (attenuation * pow(volOcclusion,emittance) );
+//
+//    
+//     
+//    }
+//
+//
+//    return color_added;
+//}

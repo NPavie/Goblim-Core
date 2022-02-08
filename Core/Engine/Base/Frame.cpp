@@ -36,6 +36,11 @@ glm::mat4 Frame::getRootMatrix()
 		return(matrix);
 }
 
+glm::mat4 Frame::getMatrixCopy()
+{
+	return (matrix);
+}
+
 Frame::~Frame()
 {
 

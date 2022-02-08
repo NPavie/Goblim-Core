@@ -6,7 +6,7 @@
 #ifndef __Node_H
 #define __Node_H
 
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include "Engine/Base/Frame.h"
 #include "Model.h"
 #include "Material.h"
@@ -21,6 +21,9 @@ class Node
 	public:
 		Node(std::string name);
 		~Node();
+
+		Node(const Node& toCopy);
+
 		const std::string getName();
 
 		bool loadModel(Model *m);

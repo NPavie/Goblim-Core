@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Core\Effects\BilateralFilter\BilateralFilter.cpp" />
+    <ClCompile Include="..\Core\Effects\Bloom\Bloom.cpp" />
+    <ClCompile Include="..\Core\Effects\Composition\Composition.cpp" />
+    <ClCompile Include="..\Core\Effects\DisplayImage\DisplayImage.cpp" />
+    <ClCompile Include="..\Core\Effects\DisplayLayer\DisplayLayer.cpp" />
+    <ClCompile Include="..\Core\Effects\DisplayResource\DisplayResource.cpp" />
+    <ClCompile Include="..\Core\Effects\LightScattering\LightScattering.cpp" />
+    <ClCompile Include="..\Core\Effects\SSAO\SSAO.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Animator.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Animators\RotationAnimator.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\BoundingBox\BoundingBox.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\BoundingBox\GeometricBoundingBox.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Camera.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Effect.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Frame.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\GeometricModel.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\GeometricModelLoader\AssimpLoader.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\GeometricModelLoader\OBJLoader.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Lighting\LightingModel.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Lighting\LightNode.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Lighting\ShadowModel.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Material.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Model.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Node.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\NodeCollectors\FCCollector.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\NodeCollectors\LightCollector.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\NodeCollectors\MeshNodeCollector.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\NodeCollectors\StandardCollector.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Resource.cpp" />
+    <ClCompile Include="..\Core\Engine\Base\Scene.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\BoundingBox\BoundingBoxModelGL.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\CameraGL.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\EffectGL.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\EngineGL.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\Lighting\LightingModelGL.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\Managers\GLProgramsSourceManager.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\Managers\GLUniformBlock.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\Managers\GLUniformManager.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\Managers\textfile.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\MaterialGL.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\ModelGL.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\SceneLoaderGL.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\v4\GLProgram.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\v4\GLProgramPipeline.cpp" />
+    <ClCompile Include="..\Core\Engine\OpenGL\v4\GLProgramSource.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Buffers\GPUArrayBuffer.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Buffers\GPUBuffer.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Buffers\GPUIBuffer.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Buffers\GPUShaderStorageBuffer.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Buffers\GPUTextureBuffer.cpp" />
+    <ClCompile Include="..\Core\GPUResources\FBO\GPUFBO.cpp" />
+    <ClCompile Include="..\Core\GPUResources\GPUInfo.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Query\GPUQuery.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Textures\GPUTexImage.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Textures\GPUTexImage2D.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Textures\GPUTexImage2DArray.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Textures\GPUTexture.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Textures\GPUTexture1D.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Textures\GPUTexture2D.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Textures\GPUTexture2DArray.cpp" />
+    <ClCompile Include="..\Core\GPUResources\Textures\GPUTextureCubeMap.cpp" />
+    <ClCompile Include="..\Core\GPUResources\TransformFeedback\GPUTransformFeedback.cpp" />
+    <ClCompile Include="..\Core\Materials\BoundingBoxMaterial\BoundingBoxMaterial.cpp" />
+    <ClCompile Include="..\Core\Materials\ColorMaterial\ColorMaterial.cpp" />
+    <ClCompile Include="..\Core\Materials\Common\Random\RandomGenerator.cpp" />
+    <ClCompile Include="..\Core\Materials\LightMaterial\LightMaterial.cpp" />
+    <ClCompile Include="..\Core\Materials\NormalMaterial\NormalMaterial.cpp" />
+    <ClCompile Include="..\Core\Materials\PhongMaterial\PhongMaterial.cpp" />
+    <ClCompile Include="..\Core\Materials\TextureMaterial\TextureMaterial.cpp" />
+    <ClCompile Include="..\Core\Test\Main.cpp" />
+    <ClCompile Include="..\Core\Utils\GLError.cpp" />
+    <ClCompile Include="..\Core\Utils\ImageReader\ImageReader.cpp" />
+    <ClCompile Include="..\Core\Utils\ImageUtilities\ImageUtils.cpp" />
+    <ClCompile Include="..\Core\Utils\ImageUtilities\image_DXT.cpp" />
+    <ClCompile Include="..\Core\Utils\MyTime.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Core\Effects\BilateralFilter\BilateralFilter.h" />
+    <ClInclude Include="..\Core\Effects\Bloom\Bloom.h" />
+    <ClInclude Include="..\Core\Effects\Composition\Composition.h" />
+    <ClInclude Include="..\Core\Effects\DisplayImage\DisplayImage.h" />
+    <ClInclude Include="..\Core\Effects\DisplayLayer\DisplayLayer.h" />
+    <ClInclude Include="..\Core\Effects\DisplayResource\DisplayResource.h" />
+    <ClInclude Include="..\Core\Effects\LightScattering\LightScattering.h" />
+    <ClInclude Include="..\Core\Effects\SSAO\SSAO.h" />
+    <ClInclude Include="..\Core\Engine\Base\Animator.h" />
+    <ClInclude Include="..\Core\Engine\Base\Animators\RotationAnimator.h" />
+    <ClInclude Include="..\Core\Engine\Base\BoundingBox\BoundingBox.h" />
+    <ClInclude Include="..\Core\Engine\Base\BoundingBox\GeometricBoundingBox.h" />
+    <ClInclude Include="..\Core\Engine\Base\Camera.h" />
+    <ClInclude Include="..\Core\Engine\Base\Effect.h" />
+    <ClInclude Include="..\Core\Engine\Base\Engine.h" />
+    <ClInclude Include="..\Core\Engine\Base\Frame.h" />
+    <ClInclude Include="..\Core\Engine\Base\GeometricModel.h" />
+    <ClInclude Include="..\Core\Engine\Base\GeometricModelLoader.h" />
+    <ClInclude Include="..\Core\Engine\Base\GeometricModelLoader\AssimpLoader.h" />
+    <ClInclude Include="..\Core\Engine\Base\GeometricModelLoader\OBJLoader.h" />
+    <ClInclude Include="..\Core\Engine\Base\Light.hpp" />
+    <ClInclude Include="..\Core\Engine\Base\Lighting\LightingModel.h" />
+    <ClInclude Include="..\Core\Engine\Base\Lighting\LightNode.hpp" />
+    <ClInclude Include="..\Core\Engine\Base\Lighting\ShadowModel.h" />
+    <ClInclude Include="..\Core\Engine\Base\Material.h" />
+    <ClInclude Include="..\Core\Engine\Base\MetaData.hpp" />
+    <ClInclude Include="..\Core\Engine\Base\Model.h" />
+    <ClInclude Include="..\Core\Engine\Base\Node.h" />
+    <ClInclude Include="..\Core\Engine\Base\NodeCollector.h" />
+    <ClInclude Include="..\Core\Engine\Base\NodeCollectors\FCCollector.h" />
+    <ClInclude Include="..\Core\Engine\Base\NodeCollectors\LightCollector.h" />
+    <ClInclude Include="..\Core\Engine\Base\NodeCollectors\MeshNodeCollector.h" />
+    <ClInclude Include="..\Core\Engine\Base\NodeCollectors\StandardCollector.h" />
+    <ClInclude Include="..\Core\Engine\Base\Resource.h" />
+    <ClInclude Include="..\Core\Engine\Base\Resource_mgr.hpp" />
+    <ClInclude Include="..\Core\Engine\Base\Scene.h" />
+    <ClInclude Include="..\Core\Engine\Base\Singleton.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\BoundingBox\BoundingBoxModelGL.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\CameraGL.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\EffectGL.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\EngineGL.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\Lighting\LightingModelGL.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\Managers\GLProgramsSourceManager.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\Managers\GLUniformBlock.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\Managers\GLUniformManager.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\Managers\GPUVariable.hpp" />
+    <ClInclude Include="..\Core\Engine\OpenGL\Managers\textfile.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\MaterialGL.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\ModelGL.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\SceneLoaderGL.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\v4\GLProgram.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\v4\GLProgramPipeline.h" />
+    <ClInclude Include="..\Core\Engine\OpenGL\v4\GLProgramSource.h" />
+    <ClInclude Include="..\Core\GPUResources\Buffers\GPUArrayBuffer.h" />
+    <ClInclude Include="..\Core\GPUResources\Buffers\GPUBuffer.h" />
+    <ClInclude Include="..\Core\GPUResources\Buffers\GPUIBuffer.h" />
+    <ClInclude Include="..\Core\GPUResources\Buffers\GPUShaderStorageBuffer.h" />
+    <ClInclude Include="..\Core\GPUResources\Buffers\GPUTextureBuffer.h" />
+    <ClInclude Include="..\Core\GPUResources\FBO\GPUFBO.h" />
+    <ClInclude Include="..\Core\GPUResources\GPUInfo.h" />
+    <ClInclude Include="..\Core\GPUResources\Query\GPUQuery.h" />
+    <ClInclude Include="..\Core\GPUResources\Textures\GPUTexImage.h" />
+    <ClInclude Include="..\Core\GPUResources\Textures\GPUTexImage2D.h" />
+    <ClInclude Include="..\Core\GPUResources\Textures\GPUTexImage2DArray.h" />
+    <ClInclude Include="..\Core\GPUResources\Textures\GPUTexture.h" />
+    <ClInclude Include="..\Core\GPUResources\Textures\GPUTexture1D.h" />
+    <ClInclude Include="..\Core\GPUResources\Textures\GPUTexture2D.h" />
+    <ClInclude Include="..\Core\GPUResources\Textures\GPUTexture2DArray.h" />
+    <ClInclude Include="..\Core\GPUResources\Textures\GPUTextureCubeMap.h" />
+    <ClInclude Include="..\Core\GPUResources\TransformFeedback\GPUTransformFeedback.h" />
+    <ClInclude Include="..\Core\Materials\BoundingBoxMaterial\BoundingBoxMaterial.h" />
+    <ClInclude Include="..\Core\Materials\ColorMaterial\ColorMaterial.h" />
+    <ClInclude Include="..\Core\Materials\Common\Random\RandomGenerator.h" />
+    <ClInclude Include="..\Core\Materials\LightMaterial\LightMaterial.h" />
+    <ClInclude Include="..\Core\Materials\NormalMaterial\NormalMaterial.h" />
+    <ClInclude Include="..\Core\Materials\PhongMaterial\PhongMaterial.h" />
+    <ClInclude Include="..\Core\Materials\TextureMaterial\TextureMaterial.h" />
+    <ClInclude Include="..\Core\Utils\Constants.h" />
+    <ClInclude Include="..\Core\Utils\dirent.h" />
+    <ClInclude Include="..\Core\Utils\easylogging++.h" />
+    <ClInclude Include="..\Core\Utils\GLError.h" />
+    <ClInclude Include="..\Core\Utils\ImageReader\ImageReader.h" />
+    <ClInclude Include="..\Core\Utils\ImageUtilities\ImageUtils.h" />
+    <ClInclude Include="..\Core\Utils\ImageUtilities\image_DXT.h" />
+    <ClInclude Include="..\Core\Utils\MyTime.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Core\Effects\BilateralFilter\Shaders\Base-VS.glsl" />
+    <None Include="..\Core\Effects\BilateralFilter\Shaders\Horizontal-FS.glsl" />
+    <None Include="..\Core\Effects\BilateralFilter\Shaders\Vertical-FS.glsl" />
+    <None Include="..\Core\Effects\Bloom\Shaders\Base-VS.glsl" />
+    <None Include="..\Core\Effects\Bloom\Shaders\Bloom-FS.glsl" />
+    <None Include="..\Core\Effects\Bloom\Shaders\Copy-FS.glsl" />
+    <None Include="..\Core\Effects\Bloom\Shaders\Pass-FS.glsl" />
+    <None Include="..\Core\Effects\Composition\Shaders\Base-VS.glsl" />
+    <None Include="..\Core\Effects\Composition\Shaders\ColorBloom-FS.glsl" />
+    <None Include="..\Core\Effects\DisplayImage\Shaders\Base-VS.glsl" />
+    <None Include="..\Core\Effects\DisplayImage\Shaders\Display-FS.glsl" />
+    <None Include="..\Core\Effects\DisplayLayer\Shaders\Base-VS.glsl" />
+    <None Include="..\Core\Effects\DisplayLayer\Shaders\Display-FS.glsl" />
+    <None Include="..\Core\Effects\DisplayResource\Shaders\Base-VS.glsl" />
+    <None Include="..\Core\Effects\DisplayResource\Shaders\Display-FS.glsl" />
+    <None Include="..\Core\Effects\LightScattering\Shaders\Base-VS.glsl" />
+    <None Include="..\Core\Effects\LightScattering\Shaders\LightScattering-FS.glsl" />
+    <None Include="..\Core\Effects\LightScattering\Shaders\Pass-FS.glsl" />
+    <None Include="..\Core\Effects\SSAO\Base-FS.glsl" />
+    <None Include="..\Core\Effects\SSAO\Base-VS.glsl" />
+    <None Include="..\Core\Effects\SSAO\Shaders\SSAO-FS.glsl" />
+    <None Include="..\Core\Materials\BoundingBoxMaterial\Shaders\Main-FS.glsl" />
+    <None Include="..\Core\Materials\BoundingBoxMaterial\Shaders\Main-VS.glsl" />
+    <None Include="..\Core\Materials\ColorMaterial\Shaders\Main-FS.glsl" />
+    <None Include="..\Core\Materials\ColorMaterial\Shaders\Main-VS.glsl" />
+    <None Include="..\Core\Materials\Common\Common.glsl" />
+    <None Include="..\Core\Materials\Common\Grid.glsl" />
+    <None Include="..\Core\Materials\Common\Lighting\Lighting.glsl" />
+    <None Include="..\Core\Materials\Common\Random\Random.glsl" />
+    <None Include="..\Core\Materials\Common\Splatting.glsl" />
+    <None Include="..\Core\Materials\LightMaterial\Shaders\Main-FS.glsl" />
+    <None Include="..\Core\Materials\LightMaterial\Shaders\Main-VS.glsl" />
+    <None Include="..\Core\Materials\NormalMaterial\Shaders\Main-FS.glsl" />
+    <None Include="..\Core\Materials\NormalMaterial\Shaders\Main-VS.glsl" />
+    <None Include="..\Core\Materials\PhongMaterial\Shaders\Main-FS.glsl" />
+    <None Include="..\Core\Materials\PhongMaterial\Shaders\Main-VS.glsl" />
+    <None Include="..\Core\Materials\TextureMaterial\Shaders\Main-FS.glsl" />
+    <None Include="..\Core\Materials\TextureMaterial\Shaders\Main-VS.glsl" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F727D444-97AE-4C72-B53B-2759DBA643FC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GobLimGL4</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>C:\Home\Output\GobLimGL4\$(Configuration)\</OutDir>
+    <IntDir>C:\Home\Output\GobLimGL4\$(Configuration)\</IntDir>
+    <TargetName>goblim</TargetName>
+    <IncludePath>$(SolutionDir)\..\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\Libraries\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>C:\Home\Output\GobLimGL4\$(Configuration)\</OutDir>
+    <IntDir>C:\Home\Output\GobLimGL4\$(Configuration)\</IntDir>
+    <TargetName>goblim</TargetName>
+    <IncludePath>$(SolutionDir)\..\Libraries\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\Libraries\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32; _CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;soil.lib;Assimp.lib;AntTweakBar.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32; _CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;soil.lib;Assimp.lib;AntTweakBar.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

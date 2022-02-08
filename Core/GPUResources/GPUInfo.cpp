@@ -1,4 +1,4 @@
-#include "GPUResources/GPUInfo.h"
+#include "GPUResources\GPUInfo.h"
 
 static GPUInfo* GPUInfoGatherer = NULL;
 
@@ -19,7 +19,6 @@ GPUInfo::GPUInfo()
 	maximumDrawBuffers = NULL;
 	maximumColorAttachments = NULL;
 	listOfColorAttachments = NULL;
-	maximumSSBO = NULL;
 }
 
 GPUInfo::~GPUInfo()
@@ -29,7 +28,6 @@ GPUInfo::~GPUInfo()
 	if (maximumDrawBuffers != NULL) delete maximumDrawBuffers;
 	if (maximumColorAttachments != NULL) delete maximumColorAttachments;
 	if (listOfColorAttachments != NULL) delete[] listOfColorAttachments;
-	if (maximumSSBO != NULL) delete maximumSSBO;
 
 }
 
@@ -86,14 +84,4 @@ GLenum* GPUInfo::getListOfColorAttachments()
 		}
 	}
 	return GPUInfoGatherer->listOfColorAttachments;
-}
-
-int GPUInfo::getMaximumSSBO()
-{
-	if (GPUInfoGatherer->maximumSSBO == NULL)
-	{
-		GPUInfoGatherer->maximumSSBO = new int;
-		glGetIntegerv(GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS, GPUInfoGatherer->maximumSSBO);
-	}
-	return *(GPUInfoGatherer->maximumSSBO);
 }

@@ -11,7 +11,7 @@
 #include <string>
 #include "Engine/Base/Engine.h"
 #include "Engine/Base/NodeCollectors/StandardCollector.h"
-#include "Engine/OpenGL/LightingModelGL.h"
+#include "Engine/OpenGL/Lighting/LightingModelGL.h"
 #include "GPUResources/Query/GPUQuery.h"
 
 #include "Materials/BoundingBoxMaterial/BoundingBoxMaterial.h"

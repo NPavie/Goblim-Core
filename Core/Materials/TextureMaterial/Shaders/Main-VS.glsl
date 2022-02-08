@@ -1,6 +1,6 @@
 #version 420
 
-layout(std140) uniform CPU_VS
+layout(std140) uniform CPU
 {
 	mat4 MVP;
 	mat4 MV;

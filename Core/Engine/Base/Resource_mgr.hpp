@@ -42,8 +42,15 @@ Resource_mgr<T>::Resource_mgr()
 template <typename T>
 Resource_mgr<T>::~Resource_mgr () 
 {
-	for(typename map<string , pair< T* , int > >::iterator it = rscmap.begin();it != rscmap.end();it++)
-		delete (*it).second.first;
+	for (typename map<string, pair< T*, int > >::iterator it = rscmap.begin(); it != rscmap.end(); it++)
+	{
+		if ((*it).second.first != NULL)
+		{
+			delete (*it).second.first;
+			(*it).second.first = NULL;
+		}
+	}
+		
 
 	rscmap.clear();
 

@@ -17,7 +17,7 @@ class NodeCollector
 {
 	public:
 		NodeCollector(){};
-		~NodeCollector(){};
+		virtual ~NodeCollector(){};
 
 		virtual void collect(Node* rootNode){};
 

@@ -5,7 +5,7 @@
  */
 #include <iostream>
 #include "GPUBuffer.h"
-#include "Engine/OpenGL/GLProgram.h"
+#include "Engine/OpenGL/v4/GLProgram.h"
 //#include "GLError.h"
 
 GPUBuffer::GPUBuffer(string name):
@@ -59,14 +59,9 @@ void GPUBuffer::bind(int bindingPoint /* = -1 */)
 	else
 	{
 		if (m_BindingPoint != -1)
-        {
-            //glBindBufferBaseEXT(m_Type, m_BindingPoint, m_Buffer);
-            glBindBufferBase(m_Type, m_BindingPoint, m_Buffer);
-        }
+			glBindBufferBase(m_Type, m_BindingPoint, m_Buffer);
 		else
-        {
-            glBindBuffer(m_Type, m_Buffer);
-        }
+			glBindBuffer(m_Type, m_Buffer);
 	}
 	
 	
@@ -176,27 +171,4 @@ void GPUBuffer::unMap()
 	glUnmapBuffer(m_Type);
 	
 	// Une barriere serait peut etre judicieuse à cet endroit
-}
-
-void GPUBuffer::bindToProgramStorageBlock(GLProgram* program, const char* bufferNameInGPU)
-{
-	GLuint block_index = glGetProgramResourceIndex(program->getProgram(), GL_SHADER_STORAGE_BLOCK, bufferNameInGPU);
-	if (block_index != GL_INVALID_INDEX)
-	{
-		glShaderStorageBlockBinding(program->getProgram(), block_index, this->m_BindingPoint);
-	}
-	else
-		std::cout << "/!\\ Warning :: bindBufferToProgramStorageBlock(" << program->getName() << "," << bufferNameInGPU << ")\n" << "/!\\ block not found in program\n";
-
-}
-
-void GPUBuffer::linkBindingPointToProgramStorageBlock(GLProgram* program, const char* bufferNameInGPU, int bindingPoint)
-{
-	GLuint block_index = glGetProgramResourceIndex(program->getProgram(), GL_SHADER_STORAGE_BLOCK, bufferNameInGPU);
-	if (block_index != GL_INVALID_INDEX)
-	{
-		glShaderStorageBlockBinding(program->getProgram(), block_index, bindingPoint);
-	}
-	else
-		std::cout << "/!\\ Warning :: bindBufferToProgramStorageBlock(" << program->getName() << "," << bufferNameInGPU << ")\n" << "/!\\ block not found in program\n";
 }

@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Effects\BendGrass\BendGrass.cpp" />
+    <ClCompile Include="Effects\BloomEffect\BloomEffect.cpp" />
+    <ClCompile Include="Effects\DeferredEffect\DeferredEffect.cpp" />
+    <ClCompile Include="Effects\DepthCopy\DepthCopy.cpp" />
+    <ClCompile Include="Effects\GrainEffect\GrainEffect.cpp" />
+    <ClCompile Include="Effects\GrassComposer\GrassComposer.cpp" />
+    <ClCompile Include="Effects\PostProcess\PostProcess.cpp" />
+    <ClCompile Include="Effects\ShellRayCompute\ShellRayCompute.cpp" />
+    <ClCompile Include="Effects\ToneMappingEffect\ToneMappingEffect.cpp" />
+    <ClCompile Include="Materials\Deferred3DKernelMaterial\Deferred3DKernelMaterial.cpp" />
+    <ClCompile Include="Materials\DeferredMaterial\DeferredMaterial.cpp" />
+    <ClCompile Include="Materials\DepthMaterial\DepthMaterial.cpp" />
+    <ClCompile Include="Materials\DepthPeeledShellMaterial\DepthPeeledShellMaterial.cpp" />
+    <ClCompile Include="Materials\FlatKernelsOnMesh\FlatKernelsOnMesh.cpp" />
+    <ClCompile Include="Materials\ImplicitSurfaceMaterial\ImplicitSurfaceMaterial.cpp" />
+    <ClCompile Include="Materials\ImpulsesOnMesh\ImpulsesOnMesh.cpp" />
+    <ClCompile Include="Materials\InstancedKernelMaterial\InstancedKernelMaterial.cpp" />
+    <ClCompile Include="Materials\InstancedSplattedKernelMaterial\InstancedSplattedKernelMaterial.cpp" />
+    <ClCompile Include="Materials\PBRMaterial\PBRMaterial.cpp" />
+    <ClCompile Include="Materials\SplattedVolumetricKernelMaterial\SplattedVolumetricKernelMaterial.cpp" />
+    <ClCompile Include="Materials\TextureGenerator\TextureGenerator.cpp" />
+    <ClCompile Include="Materials\VolumetricKernelsOnMesh\VolumetricKernelsOnMesh.cpp" />
+    <ClCompile Include="Materials\VolumetricShellKernelMaterial\VolumetricShellKernelMaterial.cpp" />
+    <ClCompile Include="Sources\KernelList.cpp" />
+    <ClCompile Include="Sources\Main.cpp" />
+    <ClCompile Include="Sources\myMathUtils.cpp" />
+    <ClCompile Include="Sources\SampleEngine.cpp" />
+    <ClCompile Include="Sources\Voxel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Effects\BendGrass\BendGrass.h" />
+    <ClInclude Include="Effects\BloomEffect\BloomEffect.h" />
+    <ClInclude Include="Effects\DeferredEffect\DeferredEffect.h" />
+    <ClInclude Include="Effects\DepthCopy\DepthCopy.h" />
+    <ClInclude Include="Effects\GrainEffect\GrainEffect.h" />
+    <ClInclude Include="Effects\GrassComposer\GrassComposer.h" />
+    <ClInclude Include="Effects\PostProcess\PostProcess.h" />
+    <ClInclude Include="Effects\ShellRayCompute\ShellRayCompute.h" />
+    <ClInclude Include="Effects\ToneMappingEffect\ToneMappingEffect.h" />
+    <ClInclude Include="Materials\Deferred3DKernelMaterial\Deferred3DKernelMaterial.h" />
+    <ClInclude Include="Materials\DeferredMaterial\DeferredMaterial.h" />
+    <ClInclude Include="Materials\DepthMaterial\DepthMaterial.h" />
+    <ClInclude Include="Materials\DepthPeeledShellMaterial\DepthPeeledShellMaterial.h" />
+    <ClInclude Include="Materials\FlatKernelsOnMesh\FlatKernelsOnMesh.h" />
+    <ClInclude Include="Materials\ImplicitSurfaceMaterial\ImplicitSurfaceMaterial.h" />
+    <ClInclude Include="Materials\ImpulsesOnMesh\ImpulsesOnMesh.h" />
+    <ClInclude Include="Materials\InstancedKernelMaterial\InstancedKernelMaterial.h" />
+    <ClInclude Include="Materials\InstancedSplattedKernelMaterial\InstancedSplattedKernelMaterial.h" />
+    <ClInclude Include="Materials\PBRMaterial\PBRMaterial.hpp" />
+    <ClInclude Include="Materials\SplattedVolumetricKernelMaterial\SplattedVolumetricKernelMaterial.h" />
+    <ClInclude Include="Materials\TextureGenerator\TextureGenerator.h" />
+    <ClInclude Include="Materials\VolumetricKernelsOnMesh\VolumetricKernelsOnMesh.h" />
+    <ClInclude Include="Materials\VolumetricShellKernelMaterial\VolumetricShellKernelMaterial.h" />
+    <ClInclude Include="Sources\KernelList.h" />
+    <ClInclude Include="Sources\myMathUtils.hpp" />
+    <ClInclude Include="Sources\ParticleManager.h" />
+    <ClInclude Include="Sources\SampleEngine.h" />
+    <ClInclude Include="Sources\Voxel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Effects\BendGrass\Shaders\Base-VS.glsl" />
+    <None Include="Effects\BendGrass\Shaders\BendGrass-FS.glsl" />
+    <None Include="Effects\BloomEffect\Shaders\Base-VS.glsl" />
+    <None Include="Effects\BloomEffect\Shaders\BL-Bloom-FS.glsl" />
+    <None Include="Effects\BloomEffect\Shaders\BL-Bright-Computation-FS.glsl" />
+    <None Include="Effects\BloomEffect\Shaders\BL-Bright-HBlur-FS.glsl" />
+    <None Include="Effects\BloomEffect\Shaders\BL-Bright-VBlur-FS.glsl" />
+    <None Include="Effects\DeferredEffect\Shaders\Base-VS.glsl" />
+    <None Include="Effects\DeferredEffect\Shaders\PerPixel-FS.glsl" />
+    <None Include="Effects\DepthCopy\Shaders\Base-VS.glsl" />
+    <None Include="Effects\DepthCopy\Shaders\DepthCopy-FS.glsl" />
+    <None Include="Effects\GrainEffect\Shaders\Base-VS.glsl" />
+    <None Include="Effects\GrainEffect\Shaders\Grain-FS.glsl" />
+    <None Include="Effects\GrassComposer\Shaders\AddGrass-FS.glsl" />
+    <None Include="Effects\GrassComposer\Shaders\Backup fonctionnel - AddGrass-FS.glsl" />
+    <None Include="Effects\GrassComposer\Shaders\Base-VS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AA-AntiAliasing-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AA-Edge-EdgeDetection-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AA-Edge-HBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AA-Edge-VBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AA-Shading-HBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AA-Shading-VBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AO-AmbientOcclusion-SSAO-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AO-HBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\AO-VBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\Base-VS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\BL-Bloom-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\BL-Bright-Computation-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\BL-Bright-HBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\BL-Bright-VBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\Depth-Normalize-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DOF-DepthOfField-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-FarDepth-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-HBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-NearDepth-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-NearFarDepth-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-VBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DOF-Shading-HBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DOF-Shading-VBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DS-Shading-AO-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DS-Shading-AO-FS.glsl.bak" />
+    <None Include="Effects\PostProcess\Shaders\DS-Shading-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\DS-Shading-FS.glsl.bak" />
+    <None Include="Effects\PostProcess\Shaders\FOG-Fog-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\MB-MotionBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\MB-MotionBlur-PerObject-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\MB-MotionBlur-PerObject-FS.glsl.bak" />
+    <None Include="Effects\PostProcess\Shaders\SSDO-BLUR.glsl" />
+    <None Include="Effects\PostProcess\Shaders\SSDO-FS-PAS-CLEAN.glsl" />
+    <None Include="Effects\PostProcess\Shaders\SSDO-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\SSDO-FS.glsl.bak" />
+    <None Include="Effects\PostProcess\Shaders\SSDO-HBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\SSDO-VBlur-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\TEST-Test-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\TM-Luminance-Computation-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\TM-Luminance-Downscale-FS.glsl" />
+    <None Include="Effects\PostProcess\Shaders\TM-ToneMapping-FS.glsl" />
+    <None Include="Effects\ShellRayCompute\Shaders\basic-VS.glsl" />
+    <None Include="Effects\ShellRayCompute\Shaders\borderCloser-GS.glsl" />
+    <None Include="Effects\ShellRayCompute\Shaders\extruder-VS.glsl" />
+    <None Include="Effects\ShellRayCompute\Shaders\shellRayCompute-FS.glsl" />
+    <None Include="Effects\ToneMappingEffect\Shaders\Base-VS.glsl" />
+    <None Include="Effects\ToneMappingEffect\Shaders\TM-Luminance-Computation-FS.glsl" />
+    <None Include="Effects\ToneMappingEffect\Shaders\TM-Luminance-Downscale-FS.glsl" />
+    <None Include="Effects\ToneMappingEffect\Shaders\TM-ToneMapping-FS.glsl" />
+    <None Include="Materials\Common\Kernels.glsl" />
+    <None Include="Materials\Common\Voxelization-CS.glsl" />
+    <None Include="Materials\Deferred3DKernelMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\Deferred3DKernelMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\DeferredMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\DeferredMaterial\Shaders\Main-GS.glsl" />
+    <None Include="Materials\DeferredMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\DepthMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\DepthMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Pass2-FS.glsl" />
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Pass2-VS.glsl" />
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Pass3-FS.glsl" />
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Pass3-VS.glsl" />
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Main-FS.glsl" />
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Main-VS.glsl" />
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Pass2-FS.glsl" />
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Pass2-VS.glsl" />
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Pass3-FS.glsl" />
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Pass3-VS.glsl" />
+    <None Include="Materials\ImplicitSurfaceMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\ImplicitSurfaceMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\ImpulsesOnMesh\Shaders\Main-FS.glsl" />
+    <None Include="Materials\ImpulsesOnMesh\Shaders\Main-VS.glsl" />
+    <None Include="Materials\InstancedKernelMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\InstancedKernelMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\InstancedKernelMaterial\Shaders\Pass2-FS.glsl" />
+    <None Include="Materials\InstancedKernelMaterial\Shaders\Pass2-VS.glsl" />
+    <None Include="Materials\InstancedSplattedKernelMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\InstancedSplattedKernelMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\InstancedSplattedKernelMaterial\Shaders\Pass2-FS.glsl" />
+    <None Include="Materials\InstancedSplattedKernelMaterial\Shaders\Pass2-VS.glsl" />
+    <None Include="Materials\PBRMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\PBRMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Main-FS.glsl" />
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Main-VS.glsl" />
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Pass2-FS.glsl" />
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Pass2-VS.glsl" />
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Pass3-FS.glsl" />
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Pass3-VS.glsl" />
+    <None Include="Materials\TextureGenerator\Shaders\Main-FS.glsl" />
+    <None Include="Materials\TextureGenerator\Shaders\Main-VS.glsl" />
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Main-FS.glsl" />
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Main-VS.glsl" />
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Pass2-FS.glsl" />
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Pass2-VS.glsl" />
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Pass3-FS.glsl" />
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Pass3-VS.glsl" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{776AE62F-21AF-41C4-9EB2-1EFC9B085FDA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>BunnyExample</RootNamespace>
+    <ProjectName>ShellSpotNoise</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)\..\Libraries\include;$(ProjectDir);$(ProjectDir)\Sources;$(SolutionDir)\..\Core;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\Libraries\lib;C:\Home\Output\GobLimGL4\$(Configuration);$(LibraryPath)</LibraryPath>
+    <OutDir>C:\Home\Output\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>C:\Home\Output\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)\..\Libraries\include;$(ProjectDir);$(ProjectDir)\Sources;$(SolutionDir)\..\Core;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\..\Libraries\lib;C:\Home\Output\GobLimGL4\$(Configuration);$(LibraryPath)</LibraryPath>
+    <OutDir>C:\Home\Output\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>C:\Home\Output\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\Engine\OpenGL\Lighting;$(ProjectDir)\..\Engine\Base\Lighting;$(ProjectDir)\..\Effects;$(ProjectDir)\..;$(ProjectDir)\..\GPUResources;$(ProjectDir)\..\Utils;$(ProjectDir)\..\Engine\Base\Animators;$(ProjectDir)\..\Engine;$(ProjectDir)\..\Engine\Base;$(ProjectDir)\..\Engine\OpenGL;$(ProjectDir)\..\Engine\OpenGL\OpenGL4;$(ProjectDir)\..\Engine\OpenGL\Managers;$(ProjectDir)\..\Materials;$(ProjectDir)\Sources;$(ProjectDir)\Materials;$(ProjectDir)\Effects;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;soil.lib;Assimp.lib;AntTweakBar.lib;goblim.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>:: Copy les materiaux généraux (glsl) avec la librairie
+if exist "$(SolutionDir)..\Core\Materials" xcopy "$(SolutionDir)..\Core\Materials\*.glsl" "$(OutDir)\Materials\" /S /I /y /C
+:: Copy les effets (glsl) avec la librairie
+if exist "$(SolutionDir)..\Core\Effects" xcopy "$(SolutionDir)..\Core\Effects\*.glsl" "$(OutDir)\Effects\" /S /I /y /C
+:: copie des objets 3D de base nécessaires au moteur
+if exist "$(SolutionDir)..\Core\Objets" xcopy "$(SolutionDir)..\Core\Objets" "$(OutDir)\Objets\" /S /I /y /C
+:: copie des DLL 
+if exist "$(SolutionDir)..\Libraries\dll" xcopy "$(SolutionDir)..\Libraries\dll\*.dll" "$(OutDir)" /S /I /y /C
+if exist "$(SolutionDir)..\Core\Textures" xcopy "$(SolutionDir)..\Core\Textures" "$(OutDir)\Textures" /S /I /y /C
+if exist "$(SolutionDir)..\Core\Resources" xcopy "$(SolutionDir)..\Core\Resources" "$(OutDir)\Resources" /S /I /y /C
+:: partie pour les sous projets : copies les dossiers dans le dossier finale
+if exist "$(ProjectDir)\Materials" xcopy "$(ProjectDir)\Materials\*.glsl" "$(OutDir)\Materials\" /S /I /y /C
+if exist "$(ProjectDir)\Effects" xcopy "$(ProjectDir)\Effects\*.glsl" "$(OutDir)\Effects\" /S /I /y /C
+if exist "$(ProjectDir)\Objets" xcopy "$(ProjectDir)\Objets" "$(OutDir)\Objets\" /S /I /y /C
+if exist "$(ProjectDir)\Textures" xcopy "$(ProjectDir)\Textures" "$(OutDir)\Textures\" /S /I /y /C</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\Engine\OpenGL\Lighting;$(ProjectDir)\..\Engine\Base\Lighting;$(ProjectDir)\..\Effects;$(ProjectDir)\..;$(ProjectDir)\..\GPUResources;$(ProjectDir)\..\Utils;$(ProjectDir)\..\Engine\Base\Animators;$(ProjectDir)\..\Engine;$(ProjectDir)\..\Engine\Base;$(ProjectDir)\..\Engine\OpenGL;$(ProjectDir)\..\Engine\OpenGL\OpenGL4;$(ProjectDir)\..\Engine\OpenGL\Managers;$(ProjectDir)\..\Materials;$(ProjectDir)\Sources;$(ProjectDir)\Materials;$(ProjectDir)\Effects;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;soil.lib;Assimp.lib;AntTweakBar.lib;goblim.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>:: Copy les materiaux généraux (glsl) avec la librairie
+if exist "$(SolutionDir)..\Core\Materials" xcopy "$(SolutionDir)..\Core\Materials\*.glsl" "$(OutDir)\Materials\" /S /I /y /C
+:: Copy les effets (glsl) avec la librairie
+if exist "$(SolutionDir)..\Core\Effects" xcopy "$(SolutionDir)..\Core\Effects\*.glsl" "$(OutDir)\Effects\" /S /I /y /C
+:: copie des objets 3D de base nécessaires au moteur
+if exist "$(SolutionDir)..\Core\Objets" xcopy "$(SolutionDir)..\Core\Objets" "$(OutDir)\Objets\" /S /I /y /C
+:: copie des DLL 
+if exist "$(SolutionDir)..\Libraries\dll" xcopy "$(SolutionDir)..\Libraries\dll\*.dll" "$(OutDir)" /S /I /y /C
+if exist "$(SolutionDir)..\Core\Textures" xcopy "$(SolutionDir)..\Core\Textures" "$(OutDir)\Textures" /S /I /y /C
+if exist "$(SolutionDir)..\Core\Resources" xcopy "$(SolutionDir)..\Core\Resources" "$(OutDir)\Resources" /S /I /y /C
+:: partie pour les sous projets : copies les dossiers dans le dossier finale
+if exist "$(ProjectDir)\Materials" xcopy "$(ProjectDir)\Materials\*.glsl" "$(OutDir)\Materials\" /S /I /y /C
+if exist "$(ProjectDir)\Effects" xcopy "$(ProjectDir)\Effects\*.glsl" "$(OutDir)\Effects\" /S /I /y /C
+if exist "$(ProjectDir)\Objets" xcopy "$(ProjectDir)\Objets" "$(OutDir)\Objets\" /S /I /y /C
+if exist "$(ProjectDir)\Textures" xcopy "$(ProjectDir)\Textures" "$(OutDir)\Textures\" /S /I /y /C</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2015-04-10T06:44:40Z</created><keywords></keywords><modified>2015-04-10T06:44:40Z</modified><revision></revision><subject></subject><title></title><unit meter="0.025400" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
+  <library_geometries>
+    <geometry id="Sol-lib" name="SolMesh">
+      <mesh>
+        <source id="Sol-POSITION">
+          <float_array id="Sol-POSITION-array" count="288">
+-20.000000 -20.000000 0.000000
+-10.000000 -20.000000 0.000000
+0.000000 -20.000000 0.000000
+10.000000 -20.000000 0.000000
+20.000000 -20.000000 0.000000
+-20.000000 -10.000000 0.000000
+-10.000000 -10.000000 0.000000
+0.000000 -10.000000 0.000000
+10.000000 -10.000000 0.000000
+20.000000 -10.000000 0.000000
+-20.000000 0.000000 0.000000
+-10.000000 0.000000 0.000000
+0.000000 0.000000 0.000000
+10.000000 0.000000 0.000000
+20.000000 0.000000 0.000000
+-20.000000 10.000000 0.000000
+-10.000000 10.000000 0.000000
+0.000000 10.000000 0.000000
+10.000000 10.000000 0.000000
+20.000000 10.000000 0.000000
+-20.000000 20.000000 0.000000
+-10.000000 20.000000 0.000000
+0.000000 20.000000 0.000000
+10.000000 20.000000 0.000000
+20.000000 20.000000 0.000000
+-10.000000 -10.000000 0.000000
+-20.000000 -20.000000 0.000000
+-10.000000 -10.000000 0.000000
+-10.000000 -20.000000 0.000000
+0.000000 -10.000000 0.000000
+-10.000000 -20.000000 0.000000
+0.000000 -10.000000 0.000000
+0.000000 -20.000000 0.000000
+10.000000 -10.000000 0.000000
+0.000000 -20.000000 0.000000
+10.000000 -10.000000 0.000000
+10.000000 -20.000000 0.000000
+20.000000 -10.000000 0.000000
+10.000000 -20.000000 0.000000
+-20.000000 -10.000000 0.000000
+-10.000000 -10.000000 0.000000
+-10.000000 0.000000 0.000000
+-20.000000 -10.000000 0.000000
+-10.000000 0.000000 0.000000
+-10.000000 -10.000000 0.000000
+0.000000 -10.000000 0.000000
+0.000000 0.000000 0.000000
+-10.000000 -10.000000 0.000000
+0.000000 0.000000 0.000000
+0.000000 -10.000000 0.000000
+10.000000 -10.000000 0.000000
+10.000000 0.000000 0.000000
+0.000000 -10.000000 0.000000
+10.000000 0.000000 0.000000
+10.000000 -10.000000 0.000000
+20.000000 -10.000000 0.000000
+20.000000 0.000000 0.000000
+10.000000 -10.000000 0.000000
+-20.000000 0.000000 0.000000
+-10.000000 0.000000 0.000000
+-10.000000 10.000000 0.000000
+-20.000000 0.000000 0.000000
+-10.000000 10.000000 0.000000
+-10.000000 0.000000 0.000000
+0.000000 0.000000 0.000000
+0.000000 10.000000 0.000000
+-10.000000 0.000000 0.000000
+0.000000 10.000000 0.000000
+0.000000 0.000000 0.000000
+10.000000 0.000000 0.000000
+10.000000 10.000000 0.000000
+0.000000 0.000000 0.000000
+10.000000 10.000000 0.000000
+10.000000 0.000000 0.000000
+20.000000 0.000000 0.000000
+20.000000 10.000000 0.000000
+10.000000 0.000000 0.000000
+-20.000000 10.000000 0.000000
+-10.000000 10.000000 0.000000
+-10.000000 20.000000 0.000000
+-20.000000 10.000000 0.000000
+-10.000000 20.000000 0.000000
+-10.000000 10.000000 0.000000
+0.000000 10.000000 0.000000
+0.000000 20.000000 0.000000
+-10.000000 10.000000 0.000000
+0.000000 20.000000 0.000000
+0.000000 10.000000 0.000000
+10.000000 10.000000 0.000000
+10.000000 20.000000 0.000000
+0.000000 10.000000 0.000000
+10.000000 20.000000 0.000000
+10.000000 10.000000 0.000000
+20.000000 10.000000 0.000000
+20.000000 20.000000 0.000000
+10.000000 10.000000 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Sol-POSITION-array" count="96" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Sol-Normal0">
+          <float_array id="Sol-Normal0-array" count="288">
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Sol-Normal0-array" count="96" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Sol-UV0">
+          <float_array id="Sol-UV0-array" count="192">
+0.000000 0.000000
+0.250000 0.000000
+0.500000 0.000000
+0.750000 0.000000
+1.000000 0.000000
+0.000000 0.250000
+0.250000 0.250000
+0.500000 0.250000
+0.750000 0.250000
+1.000000 0.250000
+0.000000 0.500000
+0.250000 0.500000
+0.500000 0.500000
+0.750000 0.500000
+1.000000 0.500000
+0.000000 0.750000
+0.250000 0.750000
+0.500000 0.750000
+0.750000 0.750000
+1.000000 0.750000
+0.000000 1.000000
+0.250000 1.000000
+0.500000 1.000000
+0.750000 1.000000
+1.000000 1.000000
+0.250000 0.250000
+0.000000 0.000000
+0.250000 0.250000
+0.250000 0.000000
+0.500000 0.250000
+0.250000 0.000000
+0.500000 0.250000
+0.500000 0.000000
+0.750000 0.250000
+0.500000 0.000000
+0.750000 0.250000
+0.750000 0.000000
+1.000000 0.250000
+0.750000 0.000000
+0.000000 0.250000
+0.250000 0.250000
+0.250000 0.500000
+0.000000 0.250000
+0.250000 0.500000
+0.250000 0.250000
+0.500000 0.250000
+0.500000 0.500000
+0.250000 0.250000
+0.500000 0.500000
+0.500000 0.250000
+0.750000 0.250000
+0.750000 0.500000
+0.500000 0.250000
+0.750000 0.500000
+0.750000 0.250000
+1.000000 0.250000
+1.000000 0.500000
+0.750000 0.250000
+0.000000 0.500000
+0.250000 0.500000
+0.250000 0.750000
+0.000000 0.500000
+0.250000 0.750000
+0.250000 0.500000
+0.500000 0.500000
+0.500000 0.750000
+0.250000 0.500000
+0.500000 0.750000
+0.500000 0.500000
+0.750000 0.500000
+0.750000 0.750000
+0.500000 0.500000
+0.750000 0.750000
+0.750000 0.500000
+1.000000 0.500000
+1.000000 0.750000
+0.750000 0.500000
+0.000000 0.750000
+0.250000 0.750000
+0.250000 1.000000
+0.000000 0.750000
+0.250000 1.000000
+0.250000 0.750000
+0.500000 0.750000
+0.500000 1.000000
+0.250000 0.750000
+0.500000 1.000000
+0.500000 0.750000
+0.750000 0.750000
+0.750000 1.000000
+0.500000 0.750000
+0.750000 1.000000
+0.750000 0.750000
+1.000000 0.750000
+1.000000 1.000000
+0.750000 0.750000
+</float_array>
+          <technique_common>
+            <accessor source="#Sol-UV0-array" count="96" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Sol-VERTEX">
+          <input semantic="POSITION" source="#Sol-POSITION"/>
+        </vertices>
+        <triangles count="32"><input semantic="VERTEX" offset="0" source="#Sol-VERTEX"/><input semantic="NORMAL" offset="1" source="#Sol-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#Sol-UV0"/><p> 5 0 5 0 1 0 6 2 6 1 3 1 25 4 25 26 5 26 27 6 27 28 7 28 7 8 7 2 9 2 29 10 29 30 11 30 31 12 31 32 13 32 8 14 8 3 15 3 33 16 33 34 17 34 35 18 35 36 19 36 9 20 9 4 21 4 37 22 37 38 23 38 10 24 10 39 25 39 11 26 11 40 27 40 41 28 41 42 29 42 43 30 43 44 31 44 12 32 12 45 33 45 46 34 46 47 35 47 48 36 48 49 37 49 13 38 13 50 39 50 51 40 51 52 41 52 53 42 53 54 43 54 14 44 14 55 45 55 56 46 56 57 47 57 15 48 15 58 49 58 16 50 16 59 51 59 60 52 60 61 53 61 62 54 62 63 55 63 17 56 17 64 57 64 65 58 65 66 59 66 67 60 67 68 61 68 18 62 18 69 63 69 70 64 70 71 65 71 72 66 72 73 67 73 19 68 19 74 69 74 75 70 75 76 71 76 20 72 20 77 73 77 21 74 21 78 75 78 79 76 79 80 77 80 81 78 81 82 79 82 22 80 22 83 81 83 84 82 84 85 83 85 86 84 86 87 85 87 23 86 23 88 87 88 89 88 89 90 89 90 91 90 91 92 91 92 24 92 24 93 93 93 94 94 94 95 95 95</p></triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="Sol-anim" name="Sol"><animation><source id="Sol-Matrix-animation-input"><float_array id="Sol-Matrix-animation-input-array" count="0">
+</float_array><technique_common><accessor source="#Sol-Matrix-animation-input-array" count="0"><param name="TIME" type="float"/></accessor></technique_common></source><source id="Sol-Matrix-animation-output-transform"><float_array id="Sol-Matrix-animation-output-transform-array" count="0">
+</float_array><technique_common><accessor source="#Sol-Matrix-animation-output-transform-array" count="0" stride="16"><param type="float4x4"/></accessor></technique_common></source><source id="Sol-Interpolations"><Name_array id="Sol-Interpolations-array" count="0">
+</Name_array><technique_common><accessor source="#Sol-Interpolations-array" count="0"><param type="name"/></accessor></technique_common></source><sampler id="Sol-Matrix-animation-transform"><input semantic="INPUT" source="#Sol-Matrix-animation-input"/><input semantic="OUTPUT" source="#Sol-Matrix-animation-output-transform"/><input semantic="INTERPOLATION" source="#Sol-Interpolations"/></sampler><channel source="#Sol-Matrix-animation-transform" target="Sol/matrix"/></animation></animation>
+    <animation id="Caméra001-anim" name="Caméra001"><animation><source id="Caméra001-Matrix-animation-input"><float_array id="Caméra001-Matrix-animation-input-array" count="0">
+</float_array><technique_common><accessor source="#Caméra001-Matrix-animation-input-array" count="0"><param name="TIME" type="float"/></accessor></technique_common></source><source id="Caméra001-Matrix-animation-output-transform"><float_array id="Caméra001-Matrix-animation-output-transform-array" count="0">
+</float_array><technique_common><accessor source="#Caméra001-Matrix-animation-output-transform-array" count="0" stride="16"><param type="float4x4"/></accessor></technique_common></source><source id="Caméra001-Interpolations"><Name_array id="Caméra001-Interpolations-array" count="0">
+</Name_array><technique_common><accessor source="#Caméra001-Interpolations-array" count="0"><param type="name"/></accessor></technique_common></source><sampler id="Caméra001-Matrix-animation-transform"><input semantic="INPUT" source="#Caméra001-Matrix-animation-input"/><input semantic="OUTPUT" source="#Caméra001-Matrix-animation-output-transform"/><input semantic="INTERPOLATION" source="#Caméra001-Interpolations"/></sampler><channel source="#Caméra001-Matrix-animation-transform" target="Caméra001/matrix"/></animation></animation>
+    <animation id="Omnidir.001-anim" name="Omnidir.001"><animation><source id="Omnidir.001-Matrix-animation-input"><float_array id="Omnidir.001-Matrix-animation-input-array" count="0">
+</float_array><technique_common><accessor source="#Omnidir.001-Matrix-animation-input-array" count="0"><param name="TIME" type="float"/></accessor></technique_common></source><source id="Omnidir.001-Matrix-animation-output-transform"><float_array id="Omnidir.001-Matrix-animation-output-transform-array" count="0">
+</float_array><technique_common><accessor source="#Omnidir.001-Matrix-animation-output-transform-array" count="0" stride="16"><param type="float4x4"/></accessor></technique_common></source><source id="Omnidir.001-Interpolations"><Name_array id="Omnidir.001-Interpolations-array" count="0">
+</Name_array><technique_common><accessor source="#Omnidir.001-Interpolations-array" count="0"><param type="name"/></accessor></technique_common></source><sampler id="Omnidir.001-Matrix-animation-transform"><input semantic="INPUT" source="#Omnidir.001-Matrix-animation-input"/><input semantic="OUTPUT" source="#Omnidir.001-Matrix-animation-output-transform"/><input semantic="INTERPOLATION" source="#Omnidir.001-Interpolations"/></sampler><channel source="#Omnidir.001-Matrix-animation-transform" target="Omnidir.001/matrix"/></animation></animation>
+  </library_animations>
+  <library_lights>
+    <light id="_ncl1_2" name="_ncl1_2">
+      <technique_common>
+        <point>
+          <color sid="color">1.000000 0.972549 0.854902</color>
+        </point>
+      </technique_common>
+      <technique profile="MAYA">
+        <intensity sid="intensity">0.400000</intensity>
+      </technique>
+    </light>
+    <light id="_ncl1_3" name="_ncl1_3">
+      <technique_common>
+        <point>
+          <color sid="color">0.854902 0.882353 1.000000</color>
+        </point>
+      </technique_common>
+      <technique profile="MAYA">
+        <intensity sid="intensity">0.500000</intensity>
+      </technique>
+    </light>
+    <light id="_ncl1_4" name="_ncl1_4">
+      <technique_common>
+        <point>
+          <color sid="color">0.941177 0.949020 0.709804</color>
+        </point>
+      </technique_common>
+      <technique profile="MAYA">
+        <intensity sid="intensity">0.200000</intensity>
+      </technique>
+    </light>
+  </library_lights>
+  <library_cameras>
+    <camera id="_ncl1_1" name="_ncl1_1">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">73.739795</xfov>
+            <aspect_ratio>1.333333</aspect_ratio>
+            <znear sid="znear">1.000000</znear>
+            <zfar sid="zfar">1000.000000</zfar>
+          </perspective>
+        </technique_common>
+        <technique profile="FCOLLADA"><vertical_aperture>2.699990</vertical_aperture><horizontal_aperture>3.600000</horizontal_aperture><lens_squeeze>1.000000</lens_squeeze></technique>
+      </optics>
+    </camera>
+  </library_cameras>
+  <library_visual_scenes>
+    <visual_scene id="Plane" name="Plane">
+      <node name="Sol" id="Sol" sid="Sol"><matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 -1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#Sol-lib"/><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="Caméra001" id="Caméra001" sid="Caméra001"><matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 56.304138 0.000000 -1.000000 0.000000 0.000002 0.000000 0.000000 0.000000 1.000000</matrix><instance_camera url="#_ncl1_1"/><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="Omnidir.001" id="Omnidir.001" sid="Omnidir.001"><matrix sid="matrix">0.000000 -0.000000 1.000000 -17.968290 0.000000 -1.000000 -0.000000 47.367355 1.000000 0.000000 -0.000000 -12.807549 0.000000 0.000000 0.000000 1.000000</matrix><instance_light url="#_ncl1_2"/><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="Omni001" id="Omni001" sid="Omni001"><matrix sid="matrix">1.000000 0.000000 0.000000 0.358811 0.000000 -0.000000 -1.000000 172.501953 0.000000 1.000000 -0.000000 2.179604 0.000000 0.000000 0.000000 1.000000</matrix><instance_light url="#_ncl1_3"/><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="Omni002" id="Omni002" sid="Omni002"><matrix sid="matrix">1.000000 0.000000 0.000000 17.314539 0.000000 1.000000 0.000000 8.689102 0.000000 0.000000 1.000000 -12.850729 0.000000 0.000000 0.000000 1.000000</matrix><instance_light url="#_ncl1_4"/><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <extra><technique profile="MAX3D"><frame_rate>30.000000</frame_rate></technique><technique profile="FCOLLADA"><start_time>0.000000</start_time><end_time>3.333333</end_time></technique></extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Plane"></instance_visual_scene>
+  </scene>
+</COLLADA>

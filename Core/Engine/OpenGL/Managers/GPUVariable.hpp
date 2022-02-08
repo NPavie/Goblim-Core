@@ -1,6 +1,6 @@
 #ifndef _GPU_VARIABLE_
 #define _GPU_VARIABLE_
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <string>
 #include <iostream>
@@ -113,10 +113,8 @@ public:
 		}
 		else if (t > 100)
 		{
-#if !defined __APPLE__
 			glProgramUniformHandleui64NV(m_Program, m_Loc, t);
 			m_Value = t;
-#endif
 		}
 		else
 		{
@@ -129,11 +127,9 @@ public:
 	  {			 
 	  	if (m_Loc != -1)
 	  	{
-#if !defined __APPLE__
 			if (m_Value > 30)
 				glProgramUniformHandleui64NV(m_Program, m_Loc, m_Value);
 			else
-#endif
 				glProgramUniform1i(m_Program, m_Loc, (GLint)m_Value);
 		}
 	  };

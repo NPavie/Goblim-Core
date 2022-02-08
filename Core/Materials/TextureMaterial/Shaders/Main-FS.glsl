@@ -6,7 +6,7 @@
 
 
 
-layout(std140) uniform CPU_FS
+layout(std140) uniform CPU
 {	
 	mat4 NormalMV;
 	bool use_normal;

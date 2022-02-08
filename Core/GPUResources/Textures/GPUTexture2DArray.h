@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <GL/glew.h>
 #include "GPUTexture.h"
 #include "GPUTexture2D.h"
 #include <vector>

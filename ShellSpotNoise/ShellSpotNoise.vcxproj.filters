@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Sources\Main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\SampleEngine.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\DepthMaterial\DepthMaterial.cpp">
+      <Filter>Materials\DepthMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\KernelList.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\myMathUtils.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Voxel.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\GrassComposer\GrassComposer.cpp">
+      <Filter>Effects\GrassComposer</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\ShellRayCompute\ShellRayCompute.cpp">
+      <Filter>Effects\ShellRayCompute</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\TextureGenerator\TextureGenerator.cpp">
+      <Filter>Materials\TextureGenerator</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\InstancedSplattedKernelMaterial\InstancedSplattedKernelMaterial.cpp">
+      <Filter>Materials\InstancedSplattedKernelMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\InstancedKernelMaterial\InstancedKernelMaterial.cpp">
+      <Filter>Materials\InstancedKernelMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\DepthPeeledShellMaterial\DepthPeeledShellMaterial.cpp">
+      <Filter>Materials\DepthPeeledShellMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\BendGrass\BendGrass.cpp">
+      <Filter>Effects\BendGrass</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\VolumetricShellKernelMaterial\VolumetricShellKernelMaterial.cpp">
+      <Filter>Materials\VolumetricShellKernelMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\DeferredMaterial\DeferredMaterial.cpp">
+      <Filter>Materials\DeferredMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\PBRMaterial\PBRMaterial.cpp">
+      <Filter>Materials\PBRMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\BloomEffect\BloomEffect.cpp">
+      <Filter>Effects\BloomEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\DeferredEffect\DeferredEffect.cpp">
+      <Filter>Effects\DeferredEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\GrainEffect\GrainEffect.cpp">
+      <Filter>Effects\GrainEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\PostProcess\PostProcess.cpp">
+      <Filter>Effects\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\ToneMappingEffect\ToneMappingEffect.cpp">
+      <Filter>Effects\ToneMappingEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\Deferred3DKernelMaterial\Deferred3DKernelMaterial.cpp">
+      <Filter>Materials\Deferred3DKernelMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\SplattedVolumetricKernelMaterial\SplattedVolumetricKernelMaterial.cpp">
+      <Filter>Materials\SplattedVolumetricKernelMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\DepthCopy\DepthCopy.cpp">
+      <Filter>Effects\DepthCopy</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\ImplicitSurfaceMaterial\ImplicitSurfaceMaterial.cpp">
+      <Filter>Materials\ImplicitSurfaceMaterial</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\ImpulsesOnMesh\ImpulsesOnMesh.cpp">
+      <Filter>Materials\ImpulsesOnMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\FlatKernelsOnMesh\FlatKernelsOnMesh.cpp">
+      <Filter>Materials\FlatKernelsOnMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Materials\VolumetricKernelsOnMesh\VolumetricKernelsOnMesh.cpp">
+      <Filter>Materials\VolumetricKernelsOnMesh</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{a001fa5f-f12d-4fea-a748-b0be0e94f692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects">
+      <UniqueIdentifier>{cb494c69-72e8-4a90-9e28-16c5c714adec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials">
+      <UniqueIdentifier>{cc381c1a-b189-442a-a48e-726638f8e5ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\DepthMaterial">
+      <UniqueIdentifier>{734e7b96-4a17-4d92-808b-790a3c3ce306}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\GrassComposer">
+      <UniqueIdentifier>{64f641a5-556f-48a2-a0f0-475b4ee77d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\ShellRayCompute">
+      <UniqueIdentifier>{addf70a4-7bd8-4b10-b424-42ca9ccf9b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\TextureGenerator">
+      <UniqueIdentifier>{dd7a0347-5a13-4eb1-bfd6-b7af93fdca5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\InstancedSplattedKernelMaterial">
+      <UniqueIdentifier>{98c5af01-c9ba-4759-8879-f56fab120650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\InstancedKernelMaterial">
+      <UniqueIdentifier>{cb332caa-b334-4166-946a-ac1d2cbe62a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\DepthPeeledShellMaterial">
+      <UniqueIdentifier>{38530921-3d6b-4397-8d23-f334fa6fd6c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\BendGrass">
+      <UniqueIdentifier>{ec8ad2cb-a238-496e-b2ff-89aac50619b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\VolumetricShellKernelMaterial">
+      <UniqueIdentifier>{2a31b080-2c47-46ad-8901-efdae19f956a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\Common">
+      <UniqueIdentifier>{37e4f2c6-3908-4f15-85e0-152595f70596}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\DeferredMaterial">
+      <UniqueIdentifier>{d1d9263a-c880-497b-a35d-fd9409823247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\PBRMaterial">
+      <UniqueIdentifier>{19fb928b-8093-44ba-8d0c-36101dea08d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\BloomEffect">
+      <UniqueIdentifier>{0c4059a7-8075-47f0-85f7-5059e3a22ec5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\DeferredEffect">
+      <UniqueIdentifier>{77a1cf44-2e16-4f6a-bd92-4f684d023e65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\GrainEffect">
+      <UniqueIdentifier>{f792ec23-79b0-412c-8f14-e8144a02cc81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\PostProcess">
+      <UniqueIdentifier>{a4b314a9-876d-495a-8a63-99e14caf2f6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\ToneMappingEffect">
+      <UniqueIdentifier>{f84b3c61-5662-46a3-b522-58afce4d7d8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\Deferred3DKernelMaterial">
+      <UniqueIdentifier>{2fa0c63b-44be-4b8b-b22c-caec8b1d54eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\SplattedVolumetricKernelMaterial">
+      <UniqueIdentifier>{d844e776-b32d-45b0-b628-eb8177d2cd52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\DepthCopy">
+      <UniqueIdentifier>{68986030-8b85-4421-8bc6-2c3c72bde04c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\ImplicitSurfaceMaterial">
+      <UniqueIdentifier>{5add4739-84f3-455f-b27b-b1176c38f8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\ImpulsesOnMesh">
+      <UniqueIdentifier>{ca14ea5e-0b7e-4d52-9715-22832e991cd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\FlatKernelsOnMesh">
+      <UniqueIdentifier>{7adbb460-9293-400c-8aa4-3cf2c549a090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Materials\VolumetricKernelsOnMesh">
+      <UniqueIdentifier>{97744248-5fb7-4421-86c3-a67ee8317146}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\SampleEngine.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\DepthMaterial\DepthMaterial.h">
+      <Filter>Materials\DepthMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\KernelList.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\myMathUtils.hpp">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Voxel.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\GrassComposer\GrassComposer.h">
+      <Filter>Effects\GrassComposer</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\ShellRayCompute\ShellRayCompute.h">
+      <Filter>Effects\ShellRayCompute</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\TextureGenerator\TextureGenerator.h">
+      <Filter>Materials\TextureGenerator</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\InstancedSplattedKernelMaterial\InstancedSplattedKernelMaterial.h">
+      <Filter>Materials\InstancedSplattedKernelMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\InstancedKernelMaterial\InstancedKernelMaterial.h">
+      <Filter>Materials\InstancedKernelMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\DepthPeeledShellMaterial\DepthPeeledShellMaterial.h">
+      <Filter>Materials\DepthPeeledShellMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\BendGrass\BendGrass.h">
+      <Filter>Effects\BendGrass</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\VolumetricShellKernelMaterial\VolumetricShellKernelMaterial.h">
+      <Filter>Materials\VolumetricShellKernelMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\DeferredMaterial\DeferredMaterial.h">
+      <Filter>Materials\DeferredMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\PBRMaterial\PBRMaterial.hpp">
+      <Filter>Materials\PBRMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\BloomEffect\BloomEffect.h">
+      <Filter>Effects\BloomEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\DeferredEffect\DeferredEffect.h">
+      <Filter>Effects\DeferredEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\GrainEffect\GrainEffect.h">
+      <Filter>Effects\GrainEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\PostProcess\PostProcess.h">
+      <Filter>Effects\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\ToneMappingEffect\ToneMappingEffect.h">
+      <Filter>Effects\ToneMappingEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\ParticleManager.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\Deferred3DKernelMaterial\Deferred3DKernelMaterial.h">
+      <Filter>Materials\Deferred3DKernelMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\SplattedVolumetricKernelMaterial\SplattedVolumetricKernelMaterial.h">
+      <Filter>Materials\SplattedVolumetricKernelMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\DepthCopy\DepthCopy.h">
+      <Filter>Effects\DepthCopy</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\ImplicitSurfaceMaterial\ImplicitSurfaceMaterial.h">
+      <Filter>Materials\ImplicitSurfaceMaterial</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\ImpulsesOnMesh\ImpulsesOnMesh.h">
+      <Filter>Materials\ImpulsesOnMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\FlatKernelsOnMesh\FlatKernelsOnMesh.h">
+      <Filter>Materials\FlatKernelsOnMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Materials\VolumetricKernelsOnMesh\VolumetricKernelsOnMesh.h">
+      <Filter>Materials\VolumetricKernelsOnMesh</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Materials\DepthMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\DepthMaterial</Filter>
+    </None>
+    <None Include="Materials\DepthMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\DepthMaterial</Filter>
+    </None>
+    <None Include="Effects\GrassComposer\Shaders\AddGrass-FS.glsl">
+      <Filter>Effects\GrassComposer</Filter>
+    </None>
+    <None Include="Effects\GrassComposer\Shaders\Backup fonctionnel - AddGrass-FS.glsl">
+      <Filter>Effects\GrassComposer</Filter>
+    </None>
+    <None Include="Effects\GrassComposer\Shaders\Base-VS.glsl">
+      <Filter>Effects\GrassComposer</Filter>
+    </None>
+    <None Include="Effects\ShellRayCompute\Shaders\basic-VS.glsl">
+      <Filter>Effects\ShellRayCompute</Filter>
+    </None>
+    <None Include="Effects\ShellRayCompute\Shaders\borderCloser-GS.glsl">
+      <Filter>Effects\ShellRayCompute</Filter>
+    </None>
+    <None Include="Effects\ShellRayCompute\Shaders\extruder-VS.glsl">
+      <Filter>Effects\ShellRayCompute</Filter>
+    </None>
+    <None Include="Effects\ShellRayCompute\Shaders\shellRayCompute-FS.glsl">
+      <Filter>Effects\ShellRayCompute</Filter>
+    </None>
+    <None Include="Materials\TextureGenerator\Shaders\Main-FS.glsl">
+      <Filter>Materials\TextureGenerator</Filter>
+    </None>
+    <None Include="Materials\TextureGenerator\Shaders\Main-VS.glsl">
+      <Filter>Materials\TextureGenerator</Filter>
+    </None>
+    <None Include="Materials\InstancedSplattedKernelMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\InstancedSplattedKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\InstancedSplattedKernelMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\InstancedSplattedKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\InstancedSplattedKernelMaterial\Shaders\Pass2-FS.glsl">
+      <Filter>Materials\InstancedSplattedKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\InstancedSplattedKernelMaterial\Shaders\Pass2-VS.glsl">
+      <Filter>Materials\InstancedSplattedKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\InstancedKernelMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\InstancedKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\InstancedKernelMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\InstancedKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\InstancedKernelMaterial\Shaders\Pass2-FS.glsl">
+      <Filter>Materials\InstancedKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\InstancedKernelMaterial\Shaders\Pass2-VS.glsl">
+      <Filter>Materials\InstancedKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\DepthPeeledShellMaterial</Filter>
+    </None>
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\DepthPeeledShellMaterial</Filter>
+    </None>
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Pass2-FS.glsl">
+      <Filter>Materials\DepthPeeledShellMaterial</Filter>
+    </None>
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Pass2-VS.glsl">
+      <Filter>Materials\DepthPeeledShellMaterial</Filter>
+    </None>
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Pass3-FS.glsl">
+      <Filter>Materials\DepthPeeledShellMaterial</Filter>
+    </None>
+    <None Include="Materials\DepthPeeledShellMaterial\Shaders\Pass3-VS.glsl">
+      <Filter>Materials\DepthPeeledShellMaterial</Filter>
+    </None>
+    <None Include="Effects\BendGrass\Shaders\Base-VS.glsl">
+      <Filter>Effects\BendGrass</Filter>
+    </None>
+    <None Include="Effects\BendGrass\Shaders\BendGrass-FS.glsl">
+      <Filter>Effects\BendGrass</Filter>
+    </None>
+    <None Include="Materials\Common\Kernels.glsl">
+      <Filter>Materials\Common</Filter>
+    </None>
+    <None Include="Materials\Common\Voxelization-CS.glsl">
+      <Filter>Materials\Common</Filter>
+    </None>
+    <None Include="Materials\DeferredMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\DeferredMaterial</Filter>
+    </None>
+    <None Include="Materials\DeferredMaterial\Shaders\Main-GS.glsl">
+      <Filter>Materials\DeferredMaterial</Filter>
+    </None>
+    <None Include="Materials\DeferredMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\DeferredMaterial</Filter>
+    </None>
+    <None Include="Materials\PBRMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\PBRMaterial</Filter>
+    </None>
+    <None Include="Materials\PBRMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\PBRMaterial</Filter>
+    </None>
+    <None Include="Effects\BloomEffect\Shaders\Base-VS.glsl">
+      <Filter>Effects\BloomEffect</Filter>
+    </None>
+    <None Include="Effects\BloomEffect\Shaders\BL-Bloom-FS.glsl">
+      <Filter>Effects\BloomEffect</Filter>
+    </None>
+    <None Include="Effects\BloomEffect\Shaders\BL-Bright-Computation-FS.glsl">
+      <Filter>Effects\BloomEffect</Filter>
+    </None>
+    <None Include="Effects\BloomEffect\Shaders\BL-Bright-HBlur-FS.glsl">
+      <Filter>Effects\BloomEffect</Filter>
+    </None>
+    <None Include="Effects\BloomEffect\Shaders\BL-Bright-VBlur-FS.glsl">
+      <Filter>Effects\BloomEffect</Filter>
+    </None>
+    <None Include="Effects\DeferredEffect\Shaders\Base-VS.glsl">
+      <Filter>Effects\DeferredEffect</Filter>
+    </None>
+    <None Include="Effects\DeferredEffect\Shaders\PerPixel-FS.glsl">
+      <Filter>Effects\DeferredEffect</Filter>
+    </None>
+    <None Include="Effects\GrainEffect\Shaders\Base-VS.glsl">
+      <Filter>Effects\GrainEffect</Filter>
+    </None>
+    <None Include="Effects\GrainEffect\Shaders\Grain-FS.glsl">
+      <Filter>Effects\GrainEffect</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AA-AntiAliasing-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AA-Edge-EdgeDetection-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AA-Edge-HBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AA-Edge-VBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AA-Shading-HBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AA-Shading-VBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AO-AmbientOcclusion-SSAO-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AO-HBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\AO-VBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\Base-VS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\BL-Bloom-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\BL-Bright-Computation-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\BL-Bright-HBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\BL-Bright-VBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\Depth-Normalize-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DOF-DepthOfField-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-FarDepth-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-HBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-NearDepth-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-NearFarDepth-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DOF-Focal-VBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DOF-Shading-HBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DOF-Shading-VBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DS-Shading-AO-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DS-Shading-AO-FS.glsl.bak">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DS-Shading-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\DS-Shading-FS.glsl.bak">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\FOG-Fog-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\MB-MotionBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\MB-MotionBlur-PerObject-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\MB-MotionBlur-PerObject-FS.glsl.bak">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\SSDO-BLUR.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\SSDO-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\SSDO-FS.glsl.bak">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\SSDO-FS-PAS-CLEAN.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\SSDO-HBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\SSDO-VBlur-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\TEST-Test-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\TM-Luminance-Computation-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\TM-Luminance-Downscale-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\PostProcess\Shaders\TM-ToneMapping-FS.glsl">
+      <Filter>Effects\PostProcess</Filter>
+    </None>
+    <None Include="Effects\ToneMappingEffect\Shaders\Base-VS.glsl">
+      <Filter>Effects\ToneMappingEffect</Filter>
+    </None>
+    <None Include="Effects\ToneMappingEffect\Shaders\TM-Luminance-Computation-FS.glsl">
+      <Filter>Effects\ToneMappingEffect</Filter>
+    </None>
+    <None Include="Effects\ToneMappingEffect\Shaders\TM-Luminance-Downscale-FS.glsl">
+      <Filter>Effects\ToneMappingEffect</Filter>
+    </None>
+    <None Include="Effects\ToneMappingEffect\Shaders\TM-ToneMapping-FS.glsl">
+      <Filter>Effects\ToneMappingEffect</Filter>
+    </None>
+    <None Include="Materials\Deferred3DKernelMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\Deferred3DKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\Deferred3DKernelMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\Deferred3DKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\SplattedVolumetricKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\SplattedVolumetricKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Pass2-FS.glsl">
+      <Filter>Materials\SplattedVolumetricKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Pass2-VS.glsl">
+      <Filter>Materials\SplattedVolumetricKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Pass3-FS.glsl">
+      <Filter>Materials\SplattedVolumetricKernelMaterial</Filter>
+    </None>
+    <None Include="Materials\SplattedVolumetricKernelMaterial\Shaders\Pass3-VS.glsl">
+      <Filter>Materials\SplattedVolumetricKernelMaterial</Filter>
+    </None>
+    <None Include="Effects\DepthCopy\Shaders\Base-VS.glsl">
+      <Filter>Effects\DepthCopy</Filter>
+    </None>
+    <None Include="Effects\DepthCopy\Shaders\DepthCopy-FS.glsl">
+      <Filter>Effects\DepthCopy</Filter>
+    </None>
+    <None Include="Materials\ImplicitSurfaceMaterial\Shaders\Main-FS.glsl">
+      <Filter>Materials\ImplicitSurfaceMaterial</Filter>
+    </None>
+    <None Include="Materials\ImplicitSurfaceMaterial\Shaders\Main-VS.glsl">
+      <Filter>Materials\ImplicitSurfaceMaterial</Filter>
+    </None>
+    <None Include="Materials\ImpulsesOnMesh\Shaders\Main-FS.glsl">
+      <Filter>Materials\ImpulsesOnMesh</Filter>
+    </None>
+    <None Include="Materials\ImpulsesOnMesh\Shaders\Main-VS.glsl">
+      <Filter>Materials\ImpulsesOnMesh</Filter>
+    </None>
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Main-FS.glsl">
+      <Filter>Materials\FlatKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Main-VS.glsl">
+      <Filter>Materials\FlatKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Pass2-FS.glsl">
+      <Filter>Materials\FlatKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Pass2-VS.glsl">
+      <Filter>Materials\FlatKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Pass3-FS.glsl">
+      <Filter>Materials\FlatKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\FlatKernelsOnMesh\Shaders\Pass3-VS.glsl">
+      <Filter>Materials\FlatKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Main-FS.glsl">
+      <Filter>Materials\VolumetricKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Main-VS.glsl">
+      <Filter>Materials\VolumetricKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Pass2-FS.glsl">
+      <Filter>Materials\VolumetricKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Pass2-VS.glsl">
+      <Filter>Materials\VolumetricKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Pass3-FS.glsl">
+      <Filter>Materials\VolumetricKernelsOnMesh</Filter>
+    </None>
+    <None Include="Materials\VolumetricKernelsOnMesh\Shaders\Pass3-VS.glsl">
+      <Filter>Materials\VolumetricKernelsOnMesh</Filter>
+    </None>
+  </ItemGroup>
+</Project>

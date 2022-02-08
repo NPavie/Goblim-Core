@@ -2,6 +2,7 @@
 #define _GPUTexImage2D_
 
 #include <iostream>
+#include <GL/glew.h>
 #include "Engine/Base/Resource.h"
 #include <fstream>
 #include <sstream>

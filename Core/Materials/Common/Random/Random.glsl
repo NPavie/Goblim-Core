@@ -1,4 +1,6 @@
 
+#ifndef RANDOM_GLSL
+#define RANDOM_GLSL
 
 /*		-- headers Random --
 	void initRandom(tf seed)
@@ -26,15 +28,7 @@ uint next()
 	return seed;
 }
 
-uint getState()
-{
-	return seed;
-}
 
-void setState(uint state)
-{
-	seed = state;
-}
 
 
 /*
@@ -66,7 +60,7 @@ vec3 randomVec3()
 	// 3 seed shift
 }
 
-
+// Could be optimized by an FMA operation
 float randomIn(float min, float max)
 {
 	return min + (random() * (max - min));	
@@ -97,17 +91,6 @@ uint morton(uint x, uint y)
 		z = z | ((x & (one << i)) << i) | ((y & (one << i)) << (i + one));
 	}
 	return z;
-}
-
-uint morton(uint x, uint y,uint z)
-{
-	uint w = 0;
-	uint one = 1;
-	uint two = 2;
-	for (uint i = 0; i < (1 * 8); ++i) {
-		w = w | ((x & (one << i)) << i) | ((y & (one << i)) << (i + one)) | ((z & (one << i)) << (i + two));
-	}
-	return w;
 }
 
 // Morton code 3D
@@ -269,4 +252,6 @@ vec3 randomInPartialCylinder(vec3 center, float radiusMin, float radiusMax, floa
 {
 	return center + normalize(randomSignVec3()) * vec3( vec2( randomIn(radiusMin, radiusMax) ), randomIn(heightMin,heightMax));
 }
+
+#endif
 

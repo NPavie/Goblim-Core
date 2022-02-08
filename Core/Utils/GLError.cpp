@@ -61,7 +61,7 @@ void GLError::displayErrorLog()
 	std::vector<GLuint> ids(numMsgs);
 	std::vector<GLsizei> lengths(numMsgs);
 
-	GLuint numFound = glGetDebugMessageLog(numMsgs, (int)msgData.size(), &sources[0], &types[0], &ids[0], &severities[0], &lengths[0], &msgData[0]);
+	GLuint numFound = glGetDebugMessageLog(numMsgs, msgData.size(), &sources[0], &types[0], &ids[0], &severities[0], &lengths[0], &msgData[0]);
 
 	sources.resize(numFound);
 	types.resize(numFound);
@@ -95,7 +95,7 @@ void APIENTRY DebugMessageCallback
 		GLenum severity,
 		GLsizei length,
 		const GLchar* message,
-		const void* userParam
+		void* userParam
 )
 {
 	//std::stringstream msg_str;
@@ -209,7 +209,7 @@ void GLError::sendDebugNotification(string message, bool testToSend)
 			GL_DEBUG_TYPE_OTHER,
 			0,
 			GL_DEBUG_SEVERITY_NOTIFICATION,
-			(int)message.size(),
+			message.size(),
 			message.c_str()
 		);
 }

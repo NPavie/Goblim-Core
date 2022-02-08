@@ -38,6 +38,7 @@ GeometricModel::GeometricModel()
 {
     nb_vertex = 0;
     nb_faces = 0;
+	box = NULL;
 };
 GeometricModel::GeometricModel(std::string name,bool loadnow)
 {
@@ -56,7 +57,11 @@ GeometricModel::GeometricModel(std::string name,bool loadnow)
 };
 GeometricModel::~GeometricModel()
 {
-	if (box != NULL) delete box;
+	if (box != NULL)
+	{
+		delete box;
+		box = NULL;
+	}
     
 };
 const std::string GeometricModel::getName()
@@ -77,7 +82,7 @@ void GeometricModel::buildSSBO()
 {
     unsigned int* indiceRandom = new unsigned int [nb_faces];
 	
-	unsigned int key,swap,x;
+	unsigned int key,key2,swap,x;
     //génération liste alléatoire pour mélanger les triangles
     for(unsigned int i=0;i<(unsigned int) nb_faces;i++)   
 		indiceRandom[i] = i;

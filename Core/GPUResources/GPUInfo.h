@@ -2,7 +2,7 @@
 #define GPU_INFOS_H
 
 #include <iostream>
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <string>
 
 // Class singleton simple pour la collecte des information du GPU
@@ -26,8 +26,6 @@ public:
 	// Return an array that contains the list of available color attachments point (from 0 to max-1) for layered rendering or MRT
 	GLenum* getListOfColorAttachments();
 
-	int getMaximumSSBO();
-
 private:
 	GPUInfo();
 	~GPUInfo();
@@ -38,8 +36,6 @@ private:
 	int*			maximumDrawBuffers;
 	int*			maximumColorAttachments;
 	GLenum*			listOfColorAttachments;
-
-	int*			maximumSSBO;
 
 };
 

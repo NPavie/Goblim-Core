@@ -20,8 +20,12 @@ DisplayResource::DisplayResource(std::string name):
 	m_ProgramPipeline->bind();
 
 	displaybox = vp->uniforms()->getGPUvec4("box");
-	res = fp->uniforms()->getGPUsampler("resource");
+	res = fp->uniforms()->getGPUsampler("resourceSampler");
 	res->Set(0);
+
+	isUIntDepth = fp->uniforms()->getGPUint("isUIntDepth");
+	isUIntDepth->Set(0);
+
 
 	
 }

@@ -2,14 +2,12 @@
 #define _GPUFBO_
 
 #include <iostream>
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include "Engine/Base/Resource.h"
 #include "Engine/OpenGL/ModelGL.h"
 #include "Engine/Base/Scene.h"
 #include "GPUResources/Textures/GPUTexture2D.h"
 #include "GPUResources/Textures/GPUTexture2DArray.h"
-
-
 
 class Material;
 class DisplayResource;
@@ -55,6 +53,11 @@ public:
 
 	virtual void display(const glm::vec4 & box = glm::vec4(0.0,0.0,1.0,1.0),int layer = 0);
 	virtual void displayDepth(const glm::vec4 & box = glm::vec4(0.0,0.0,1.0,1.0));
+
+	GLuint getFBOid();
+
+	void switchToTexture2DArray();
+
 private:
 	int width;
 	int height;

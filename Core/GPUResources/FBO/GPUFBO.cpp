@@ -7,9 +7,12 @@
 #include "GPUResources/Textures/GPUTexture2D.h"
 #include "Utils/GLError.h"
 
+#include "GPUResources/GPUInfo.h"
+
 #include <cmath>
 
-static GLenum buffers[4] = {GL_COLOR_ATTACHMENT0,GL_COLOR_ATTACHMENT1,GL_COLOR_ATTACHMENT2,GL_COLOR_ATTACHMENT3};
+static GLenum buffers[8] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2, GL_COLOR_ATTACHMENT3, GL_COLOR_ATTACHMENT4, GL_COLOR_ATTACHMENT5, GL_COLOR_ATTACHMENT6, GL_COLOR_ATTACHMENT7 };
+
 
 std::string toStr(int a)
 {
@@ -32,6 +35,8 @@ GPUFBO::GPUFBO(std::string name):
 	scene = Scene::getInstance();
 	HUD = new DisplayResource("HUD FBO");
 	HUDArray = new DisplayLayer("HUD ARRAY FBO");
+
+
 }
 
 
@@ -75,8 +80,6 @@ bool GPUFBO::create(int w,int h,int numberOfTarget,bool useDepth,GLint format,GL
 
 	m_Target = typeOfTarget;
 	glGenFramebuffers(1,&FBOId);
-	
-	//glEnable(typeOfTarget); // j'ai un doute mais je n'ai vu nul part dans la doc qu'il fallait activer l'état de texturing avec enable
 
 	bufferIsBound = new bool[numberOfTarget];
 	glBindFramebuffer(GL_FRAMEBUFFER,FBOId);
@@ -87,18 +90,20 @@ bool GPUFBO::create(int w,int h,int numberOfTarget,bool useDepth,GLint format,GL
 		case GL_TEXTURE_3D :
 		case GL_TEXTURE_2D_ARRAY :
 			colorBuffers.push_back(new GPUTexture2DArray(m_Name+"ColoRArray"+toStr(i),width,height,layerDepth,format));
-			glFramebufferTextureLayer(GL_FRAMEBUFFER, buffers[i], colorBuffers[i]->getId(),0, 0);
-			
-			// Si on fait comme ça, on peut également repenser le fonctionnement global du FBO et se référer aux nombres de buffers (max 4)
-			// Si on utilise des Textures2DArray, on ne crée plus n texture, mais une seul texture2DArray avec n couche et on attribu chaque couche aux buffers, 
-			for (int k = 0; k < min(layerDepth, 4); k++)
+			//glFramebufferTextureLayer(GL_FRAMEBUFFER, buffers[i], colorBuffers[i]->getId(),0, 0);
+			for (int k = 0; k < layerDepth; k++)
 				glFramebufferTextureLayer(GL_FRAMEBUFFER, buffers[k], colorBuffers[0]->getId(), 0, k);
+			
+			// modif perso -- texture de depth buffer personnalisé sur le dernier buffer --- NOTE : fait planter ma HD 7950 ...
+			//colorBuffers.push_back(new GPUTexture2D(m_Name + "Color" + toStr(i+1), width, height, format));
+			//glFramebufferTexture2D(GL_FRAMEBUFFER, buffers[6], GL_TEXTURE_2D, colorBuffers[i+1]->getId(), 0);
+			
+			
 			break;
 
 		case GL_TEXTURE_2D :
 			colorBuffers.push_back(new GPUTexture2D(m_Name+"Color"+toStr(i),width,height,format));
 			glFramebufferTexture2D(GL_FRAMEBUFFER,buffers[i],typeOfTarget,colorBuffers[i]->getId(),0);
-			// if (i < 4)	glFramebufferTextureLayer(GL_FRAMEBUFFER, buffers[i], colorBuffers[i]->getId(), 0, i);
 			
 			break;
 
@@ -115,30 +120,8 @@ bool GPUFBO::create(int w,int h,int numberOfTarget,bool useDepth,GLint format,GL
 	
 	if (use_depth)
 	{
-		// Only one depth can be stored for now
 		depthBuffer = new GPUTexture2D(m_Name + "-Depth", width, height, GL_DEPTH_COMPONENT24, GL_DEPTH_COMPONENT, GL_UNSIGNED_INT);
 		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthBuffer->getId(), 0);
-
-		/*switch (typeOfTarget)
-		{
-		case GL_TEXTURE_3D :
-		case GL_TEXTURE_2D_ARRAY :
-			depthBuffer = new GPUTexture2DArray(m_Name+"-Depth",width,height,layerDepth,GL_DEPTH_COMPONENT24,GL_DEPTH_COMPONENT,GL_UNSIGNED_INT);
-			glFramebufferTextureLayer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT,depthBuffer->getId(), 0, 0);
-			break;
-
-		case GL_TEXTURE_2D :
-			depthBuffer = new GPUTexture2D(m_Name+"-Depth",width,height,GL_DEPTH_COMPONENT24,GL_DEPTH_COMPONENT,GL_UNSIGNED_INT);
-			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, typeOfTarget, depthBuffer->getId(), 0);
-			
-			break;
-
-		default:
-			LOG(ERROR) << this->name() + " Error : unrecognized type of target " << endl;
-			return false;
-			break;
-		}*/
-
 	}
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);    //  unbind
 
@@ -161,16 +144,16 @@ bool  GPUFBO::CheckFramebufferStatus()
 	case GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT:
 		info_text += "Framebuffer incomplete, missing attachment\n";
 		break;
-//	case GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS:
-//		info_text += "Framebuffer incomplete, attached images must have same dimensions\n";
-//		break;
-//	case GL_FRAMEBUFFER_INCOMPLETE_FORMATS:
-//		info_text += "Framebuffer incomplete, attached images must have same format\n";
-//		break;
-	case GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER:
+	case GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT:
+		info_text += "Framebuffer incomplete, attached images must have same dimensions\n";
+		break;
+	case GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT:
+		info_text += "Framebuffer incomplete, attached images must have same format\n";
+		break;
+	case GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT:
 		info_text += "Framebuffer incomplete, missing draw buffer\n";
 		break;
-	case GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER:
+	case GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_EXT:
 		info_text += "Framebuffer incomplete, missing read buffer\n";
 		break;
 	default:
@@ -181,12 +164,10 @@ bool  GPUFBO::CheckFramebufferStatus()
 
 void GPUFBO::drawBuffer(int i)
 {
-	if (i < 4)
 		glDrawBuffer(buffers[i]);
 }
 void  GPUFBO::drawBuffers(int i)
 {
-	//if (i < 4)
 	glDrawBuffers(i,buffers);
 }
 
@@ -247,6 +228,7 @@ void GPUFBO::display(const glm::vec4 & box,int layer)
 	if(m_Target == GL_TEXTURE_2D)
 	{
 		colorBuffers[layer]->bind();
+		HUD->isUIntDepth->Set(0);
 		HUD->display(box);
 		colorBuffers[layer]->release();
 	}
@@ -263,6 +245,7 @@ void GPUFBO::display(const glm::vec4 & box,int layer)
 void GPUFBO::displayDepth(const glm::vec4 & box)
 {
 	depthBuffer->bind();
+	HUD->isUIntDepth->Set(1);
 	HUD->display(box);
 	depthBuffer->release();
 
@@ -315,4 +298,15 @@ void GPUFBO::setDepthBuffer(GPUTexture* de)
 	glBindFramebuffer(GL_FRAMEBUFFER,0);
 }
 
+
+void GPUFBO::switchToTexture2DArray()
+{
+	// TODO : à partir du tableau de texture, remplacer
+	
+}
+
+GLuint GPUFBO::getFBOid()
+{
+	return FBOId;
+}
 
