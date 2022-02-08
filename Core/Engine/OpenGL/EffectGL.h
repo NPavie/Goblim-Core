@@ -2,7 +2,7 @@
 #define _EFFECTGL_
 
 #include "Engine/Base/Effect.h"
-#include "Engine/OpenGL/GLProgramPipeline.h"
+#include "Engine/OpenGL/v4/GLProgramPipeline.h"
 #include "GPUResources/FBO/GPUFBO.h"
 #include "Engine/OpenGL/ModelGL.h"
 

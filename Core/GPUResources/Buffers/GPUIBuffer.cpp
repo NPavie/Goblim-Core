@@ -5,7 +5,7 @@
  */
 #include <iostream>
 #include "GPUIBuffer.h"
-#include "Engine/OpenGL/GLProgram.h"
+#include "Engine/OpenGL/v4/GLProgram.h"
 
 GPUIBuffer::GPUIBuffer(string name):
 	Resource(name)
@@ -26,7 +26,7 @@ void GPUIBuffer::destroy()
 }
 void GPUIBuffer::create(GLenum target, GLsizeiptr size,const GLvoid * data, GLbitfield flags)
 {
-	m_Size = (int)size;
+	m_Size = size;
 	glGenBuffers(1, &m_Buffer);
 	glBindBuffer(target,m_Buffer);
 	glBufferStorage(target, size ,data, flags);

@@ -1,5 +1,4 @@
 
-
 struct Light
 {
 	vec4 pos;
@@ -8,25 +7,12 @@ struct Light
 	vec4 info;
 };
 
-#if __VERSION__ > 410
-
 layout (std430,binding=2) readonly buffer LightingBuffer
 {
 	vec4 camPos;
-	vec4 nbLights;
+	ivec4 nbLights;	
 	Light Lights[];
 };
-
-#else 
-
-layout(std140) uniform LightingBuffer
-{
-	vec4 camPos;
-	ivec4 nbLights;	
-	Light Lights[100];
-};
-
-#endif
 
 // Phong Highlight
 vec3 PhongHighlight(in float dotRV, in vec3 S, in vec4 K)
@@ -139,13 +125,7 @@ addLight(
 	return _color;
 }
 
-vec4 addPhong(
-              in vec3 position,
-              in vec3 normal,
-              in vec4 ambiant,
-              in vec4 diffuse,
-              in vec4 specular,
-              in vec4 coefs)
+vec4 addPhong(in vec3 position, in vec3 normal,in vec4 ambiant, in vec4 diffuse,in vec4 specular,in vec4 coefs)
 {	
 
 	vec4 _color;
@@ -164,51 +144,7 @@ vec4 addPhong(
 		
 }
 
-/**
- @brief phong illumination function with limited subfunction access (works on iris pro)
- @param position position of the evaluated surface point (in world space)
- @param normal normal of the point (still in world space)
- @param ambiant color of the material when non-directly illuminated (typically the object color)
- @param diffuse color of the material when directly illuminated (typically the object color)
- @param specular color of the material when strongly exposed to light (typically the Light color or white)
- @param coefs coefficents of each color contribution + power of the specular dot
- */
-vec4 phongFunction(
-    vec3 position,
-    vec3 normal,
-    vec4 ambiant,
-    vec4 diffuse,
-    vec4 specular,
-    vec4 coefs)
-{
 
-    vec4 surfaceColor = vec4(1.0);
-    surfaceColor.xyz = ambiant.xyz*coefs.x;
-
-    for(int i = 0; i < nbLights.x; ++i)
-    {
-        vec4 lightColorReceived = vec4(1.0);
-        vec4 lDir;
-        lDir.xyz = Lights[i].pos.xyz - position;
-        lDir.w = length(lDir);
-        lDir.xyz = normalize(lDir.xyz);
-
-        vec4 cPos = vec4(1.0);
-        cPos.xyz = normalize(camPos.xyz-position);
-
-        vec3 reflectedLight = reflect(-lDir.xyz,normal);
-        float specPower = pow(max(0.0,dot(reflectedLight,cPos.xyz)),coefs.w);
-        float diffusePower = max(0.0,dot(lDir.xyz,normal));
-
-        lightColorReceived = (coefs.y * diffusePower * diffuse * Lights[i].color );
-        lightColorReceived += (coefs.z * specPower * specular * Lights[i].color );
-        
-        surfaceColor.xyz += lightColorReceived.xyz * Lights[i].color.w;
-    }
-    
-    return surfaceColor;
-    
-}
 
 vec4 addBoulanger	(	vec3 position, 
 						vec4 positionColor,
@@ -258,7 +194,6 @@ vec4 addBoulanger2    ( vec3 position,
                         float occlusionDensity
                     )
 {
-
 
     vec4 color_added = positionColor;
     color_added.rgb *= 0.2 * reflectance;

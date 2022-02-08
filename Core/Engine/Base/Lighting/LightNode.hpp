@@ -25,7 +25,6 @@ struct Light
 	//glm::mat4 worldToLight2;
 };
 
-
 void printLight(Light* L);
 
 

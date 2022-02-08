@@ -13,6 +13,24 @@
     <ClCompile Include="Effects\SampleEffect\SampleEffect.cpp">
       <Filter>Effects\SampleEffect</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Spot.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\SpotNoise\SpotNoise.cpp">
+      <Filter>Effects\SpotNoise</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\SpotProfile\SpotProfile.cpp">
+      <Filter>Effects\SpotProfile</Filter>
+    </ClCompile>
+    <ClCompile Include="Effects\DistributionProfile\DistributionProfile.cpp">
+      <Filter>Effects\DistributionProfile</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GPUSpotVector.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GaussianSplat.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Sources">
@@ -30,6 +48,21 @@
     <Filter Include="Effects\SampleEffect">
       <UniqueIdentifier>{faf3040d-d492-4668-b2f6-9e54e9c3e463}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Materials\Common">
+      <UniqueIdentifier>{9eff9c39-9f6c-4c05-b2f5-8753ae3368a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\SpotNoise">
+      <UniqueIdentifier>{45500af6-a29c-44b2-a7f0-1b990606a259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\SpotProfile">
+      <UniqueIdentifier>{37cc3fbd-8cef-45df-a9a8-883e4fe37828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\DistributionProfile">
+      <UniqueIdentifier>{8cafe106-3b8d-4301-a44f-45acce957421}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effects\WaveletImage">
+      <UniqueIdentifier>{d457a278-f4e3-40be-87a2-674c73325f06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\SampleEngine.h">
@@ -40,6 +73,24 @@
     </ClInclude>
     <ClInclude Include="Effects\SampleEffect\SampleEffect.h">
       <Filter>Effects\SampleEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Spot.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\SpotNoise\SpotNoise.h">
+      <Filter>Effects\SpotNoise</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\SpotProfile\SpotProfile.h">
+      <Filter>Effects\SpotProfile</Filter>
+    </ClInclude>
+    <ClInclude Include="Effects\DistributionProfile\DistributionProfile.h">
+      <Filter>Effects\DistributionProfile</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GPUSpotVector.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GaussianSplat.h">
+      <Filter>Sources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +106,30 @@
     <None Include="Effects\SampleEffect\Shaders\PerPixel-FS.glsl">
       <Filter>Effects\SampleEffect</Filter>
     </None>
+    <None Include="Materials\Common\SpotTree.glsl">
+      <Filter>Materials\Common</Filter>
+    </None>
     <None Include="SampleProject.sublime-project" />
+    <None Include="Effects\SpotNoise\Shaders\Base-VS.glsl">
+      <Filter>Effects\SpotNoise</Filter>
+    </None>
+    <None Include="Effects\SpotNoise\Shaders\PerPixel-FS.glsl">
+      <Filter>Effects\SpotNoise</Filter>
+    </None>
+    <None Include="Effects\SpotProfile\Shaders\Base-VS.glsl">
+      <Filter>Effects\SpotProfile</Filter>
+    </None>
+    <None Include="Effects\SpotProfile\Shaders\PerPixel-FS.glsl">
+      <Filter>Effects\SpotProfile</Filter>
+    </None>
+    <None Include="Effects\DistributionProfile\Shaders\Base-VS.glsl">
+      <Filter>Effects\DistributionProfile</Filter>
+    </None>
+    <None Include="Effects\DistributionProfile\Shaders\PerPixel-FS.glsl">
+      <Filter>Effects\DistributionProfile</Filter>
+    </None>
+    <None Include="Materials\Common\SpotNoise.glsl">
+      <Filter>Materials\Common</Filter>
+    </None>
   </ItemGroup>
 </Project>

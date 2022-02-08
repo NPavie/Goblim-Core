@@ -42,7 +42,7 @@ bool AssimpLoader::loadModel(string filename,GeometricModel *model)
 bool AssimpLoader::loadFromMesh(aiMesh* mesh, GeometricModel *model)
 {
 	int baseVertex = model->nb_vertex;
-	//int baseFaces = model->nb_faces;
+	int baseFaces = model->nb_faces;
 
 	model->nb_vertex += mesh->mNumVertices;
 	model->nb_faces += mesh->mNumFaces;

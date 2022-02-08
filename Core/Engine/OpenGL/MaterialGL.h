@@ -4,7 +4,7 @@
 #include "Engine/Base/Material.h"
 #include "Engine/Base/Resource.h"
 #include "Engine/Base/Resource_mgr.hpp"
-#include "Engine/OpenGL/GLProgramPipeline.h"
+#include "Engine/OpenGL/v4/GLProgramPipeline.h"
 class MaterialGL : public Material
 {
 	public :

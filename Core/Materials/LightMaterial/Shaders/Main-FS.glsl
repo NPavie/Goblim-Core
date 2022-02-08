@@ -1,6 +1,6 @@
-#version 410
+#version 420
 
-layout(std140) uniform CPU_FS
+layout(std140) uniform CPU
 {	
 
 	vec4 color;
@@ -10,5 +10,5 @@ layout(std140) uniform CPU_FS
 layout (location = 0) out vec4 Color;
 void main()
 {
-    Color = color;
+Color = color;
 }

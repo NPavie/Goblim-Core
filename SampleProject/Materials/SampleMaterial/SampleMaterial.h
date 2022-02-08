@@ -19,6 +19,7 @@ protected:
 
 	GPUmat4* modelViewMatrix;
 
+
 };
 
 #endif

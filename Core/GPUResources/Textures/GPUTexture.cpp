@@ -84,9 +84,7 @@ void GPUTexture::setUpSampler(GLint wrap,GLint filter)
 void GPUTexture::makeResident()
 {
 	glBindTexture(m_Target, m_TextureId);
-#if defined GLAD_NV_bindless_texture
 	m_Handle = glGetTextureHandleNV(m_TextureId);
 	glMakeTextureHandleResidentNV(m_Handle);
-#endif
 	glBindTexture(m_Target, 0);
 }

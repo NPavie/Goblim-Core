@@ -1,6 +1,6 @@
 #ifndef _IMAGE_UTILS
 #define _IMAGE_UTILS
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <SOIL/SOIL.h>
 #include <fstream>

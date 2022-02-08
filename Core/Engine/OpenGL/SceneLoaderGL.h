@@ -13,7 +13,7 @@
 #define _SCENELOADERGL_H
 
 #include "Engine/Base/GeometricModelLoader/AssimpLoader.h"
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include "Engine/Base/Node.h"
 #include "Engine/OpenGL/ModelGL.h"
 #include "Engine/Base/Scene.h"

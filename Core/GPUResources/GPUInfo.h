@@ -2,7 +2,7 @@
 #define GPU_INFOS_H
 
 #include <iostream>
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <string>
 
 // Class singleton simple pour la collecte des information du GPU

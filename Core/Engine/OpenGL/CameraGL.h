@@ -10,7 +10,7 @@
 #include "Engine/Base/Camera.h"
 #include "GPUResources/Buffers/GPUBuffer.h"
 
-#define MATRICES_SSBO_BINDINGS 1
+#define COMMON_SSBO_BINDINGS 1
 
 /**
  * @brief      Class to manage a OpenGL camera in your virtual scene

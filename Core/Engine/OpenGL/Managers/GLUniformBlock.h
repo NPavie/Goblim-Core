@@ -6,7 +6,7 @@
 
 #ifndef _GLUNIFORMBLOCK_H
 #define _GLUNIFORMBLOCK_H
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <string>
 #include <stdexcept>
 using namespace std;
@@ -21,13 +21,10 @@ class GPUBuffer;
 #define TESS_CONTROL_BINDING_START 10
 #define TESS_EVALUATION_BINDING_START 15
 #define FRAGMENT_BINDING_START 20
-#define LIGHTING_UNIFORM_BINDING 25
-#define MATRICES_UNIFORM_BINDING 26
-#define MISC_BINDING_START 27
+#define LIGHTING_BINDING 25
+#define MISC_BINDING_START 26
 
 class GLProgram;
-
-
 
 class GLUniformBlock
 {

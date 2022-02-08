@@ -5,7 +5,7 @@
  */
 #include <iostream>
 #include "GPUBuffer.h"
-#include "Engine/OpenGL/GLProgram.h"
+#include "Engine/OpenGL/v4/GLProgram.h"
 //#include "GLError.h"
 
 GPUBuffer::GPUBuffer(string name):
@@ -59,14 +59,9 @@ void GPUBuffer::bind(int bindingPoint /* = -1 */)
 	else
 	{
 		if (m_BindingPoint != -1)
-        {
-            //glBindBufferBaseEXT(m_Type, m_BindingPoint, m_Buffer);
-            glBindBufferBase(m_Type, m_BindingPoint, m_Buffer);
-        }
+			glBindBufferBase(m_Type, m_BindingPoint, m_Buffer);
 		else
-        {
-            glBindBuffer(m_Type, m_Buffer);
-        }
+			glBindBuffer(m_Type, m_Buffer);
 	}
 	
 	

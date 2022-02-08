@@ -30,7 +30,7 @@ bool OBJLoader::loadModel(string filename,GeometricModel *model)
 	char linechar[200];
 	glm::vec3 v;
 	Face F;
-	//bool texcoords = false;
+	bool texcoords = false;
 
 	while(!fp_in.eof())
 	{
@@ -75,9 +75,9 @@ bool OBJLoader::loadModel(string filename,GeometricModel *model)
 				isegment >> S;
 				Vlist_per_face.push_back(S); // Format of a segment can be V, V/VT, V/VT/VN. Only interested in V right now
 				int VT;
-				size_t pp = segment.find_first_of("/");
+				int pp = segment.find_first_of("/");
 
-                if (pp != std::string::npos)
+				if (pp != -1)
 				{
 					std::string segmentVt = segment.substr(pp+1,string::npos);
 					if (segmentVt.find_first_of("/") != 0)
@@ -114,8 +114,8 @@ bool OBJLoader::loadModel(string filename,GeometricModel *model)
 		}
 	}
 
-	model->nb_vertex = (int)model->listVertex.size();
-	model->nb_faces = (int)model->listFaces.size();
+	model->nb_vertex = model->listVertex.size();
+	model->nb_faces = model->listFaces.size();
 	fp_in.close();
 
 
@@ -145,8 +145,8 @@ void OBJLoader::setupForTextureCoordinates(GeometricModel* model)
 		else if (packcoords[(int)c_face.s1] != ctex)	// deja un vertex assigné : On dedouble le sommet
 		{
 			packcoords.push_back(ctex);
-			model->listFaces[i].s1 = (int)model->listVertex.size();
-			model->listCoordFaces[i].s1 = (int)model->listVertex.size();
+			model->listFaces[i].s1 = model->listVertex.size();
+			model->listCoordFaces[i].s1 = model->listVertex.size();
 			model->listVertex.push_back(model->listVertex[c_face.s1]);
 			model->listNormals.push_back(model->listNormals[c_face.s1]);
 		}
@@ -157,8 +157,8 @@ void OBJLoader::setupForTextureCoordinates(GeometricModel* model)
 		else if (packcoords[(int)c_face.s2] != ctex)	// deja un vertex assigné : On dedouble le sommet
 		{
 			packcoords.push_back(ctex);
-			model->listFaces[i].s2 = (int)model->listVertex.size();
-			model->listCoordFaces[i].s2 = (int)model->listVertex.size();
+			model->listFaces[i].s2 = model->listVertex.size();
+			model->listCoordFaces[i].s2 = model->listVertex.size();
 			model->listVertex.push_back(model->listVertex[c_face.s2]);
 			model->listNormals.push_back(model->listNormals[c_face.s2]);
 		}
@@ -169,13 +169,13 @@ void OBJLoader::setupForTextureCoordinates(GeometricModel* model)
 		else if (packcoords[(int)c_face.s3] != ctex)	// deja un vertex assigné : On dedouble le sommet
 		{
 			packcoords.push_back(ctex);
-			model->listFaces[i].s3 = (int)model->listVertex.size();
-			model->listCoordFaces[i].s3 = (int)model->listVertex.size();
+			model->listFaces[i].s3 = model->listVertex.size();
+			model->listCoordFaces[i].s3 = model->listVertex.size();
 			model->listVertex.push_back(model->listVertex[c_face.s3]);
 			model->listNormals.push_back(model->listNormals[c_face.s3]);
 		}
 	}
-	model->nb_vertex = (int)model->listVertex.size();
+	model->nb_vertex = model->listVertex.size();
 	model->listCoords = packcoords;
 }
 void OBJLoader::computeNormals(GeometricModel *model)

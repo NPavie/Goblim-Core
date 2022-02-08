@@ -65,7 +65,7 @@ bool GPUTexture2D::create(std::string filename)
 {
 
 	//m_TextureId = load2DTexture(filename, SOIL_LOAD_AUTO);
-	//notused: int width,height,channels;
+	int width,height,channels;
 	/*
 	unsigned char * tex = SOIL_load_image(filename.c_str(),&width, &height, &channels,SOIL_LOAD_AUTO);
 	glGenTextures(1,&m_TextureId);

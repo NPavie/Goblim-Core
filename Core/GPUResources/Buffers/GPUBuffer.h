@@ -6,7 +6,7 @@
 
 #ifndef _GPUBuffer_H
 #define _GPUBuffer_H
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <string>
 #include "Engine/Base/Resource.h"
 using namespace std;
@@ -85,7 +85,10 @@ class GPUBuffer : public Resource
 
 		void destroy();
 		
-		
+		/*
+         @brief Active the current buffer for use and set its access point in memory
+         @param bindingPoint Access point of the buffer
+         */
 		virtual void bind(int bindingPoint = -1);
 		
 		virtual void release(int fromBindingPoint = -1);

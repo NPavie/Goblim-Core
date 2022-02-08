@@ -77,7 +77,7 @@ void GeometricModel::buildSSBO()
 {
     unsigned int* indiceRandom = new unsigned int [nb_faces];
 	
-	unsigned int key,swap,x;
+	unsigned int key,key2,swap,x;
     //génération liste alléatoire pour mélanger les triangles
     for(unsigned int i=0;i<(unsigned int) nb_faces;i++)   
 		indiceRandom[i] = i;

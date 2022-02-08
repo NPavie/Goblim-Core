@@ -35,7 +35,6 @@ void BoundingBoxMaterial::render(Node *o)
 
 void BoundingBoxMaterial::update(Node* o,const int elapsedTime)
 {
-    
 	/*
 	if (o->frame()->updateNeeded())
 	{

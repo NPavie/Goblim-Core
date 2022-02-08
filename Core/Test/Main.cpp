@@ -7,19 +7,19 @@
 // For GLM 0.9.6.3
 
 
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
 #include <time.h>
+
 #include <AntTweakBar/AntTweakBar.h>
+
 
 #include "Utils/MyTime.h"
 
 #include "Engine/OpenGL/EngineGL.h"
-
-#include "GPUResources/GPUInfo.h"
 
 using namespace std;
 #ifndef M_PI
@@ -193,7 +193,7 @@ void OnMouseWheel(GLFWwindow* win, double posx, double posy)
 			}
 			else if (iTarget == NODE && scene->camera() != NULL)
 			{
-				//float modif = (posy) ? 1.0f : -1.0f;
+				float modif = (posy) ? 1.0f : -1.0f;
 				glm::vec3 dep = (float)(posy)*0.1f*scene->camera()->convertDirTo(glm::vec3(0.0, 0.0, -1.0), scene->getManipulatedNode()->frame());
 				scene->getManipulatedNode()->frame()->translate(dep);
 
@@ -322,18 +322,14 @@ bool initSystem()
 		// A fatal error occurred
 		LOG(ERROR)  << "GLFW initialization failed" << std::endl;
 		return (false);
-    }
-	
+	}
+	TwInit(TW_OPENGL, NULL);
+
 
 	// FSAA Antialiasing : Possible Performance Killer
 	glfwWindowHint (GLFW_REFRESH_RATE,0);
 	glfwWindowHint (GLFW_SAMPLES,8);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    
-	//glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT,GL_TRUE);
+	glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT,GL_TRUE);
 	window = glfwCreateWindow(Wwidth, Wheight, "GobLim", NULL, NULL);
 	//window = glfwCreateWindow(Wwidth, Wheight, "Goblim", glfwGetPrimaryMonitor(), NULL);
 
@@ -361,11 +357,10 @@ bool initSystem()
 	TwInit(TW_OPENGL, NULL);
 	TwWindowSize(Wwidth, Wheight);
 
-	// Initialize GLEW (or glad)
-    if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
-	//if (GLEW_OK != glewInit())
+	// Initialize GLEW
+	if (GLEW_OK != glewInit())
 	{
-		LOG(ERROR) << "OpenGL context initialization failed" << std::endl;
+		LOG(ERROR) << "glew initialization failed" << std::endl;
 		glfwTerminate();
 		return false;
 	}
@@ -447,8 +442,8 @@ int main()
 {
 	start_time = GetTimeMs64();
 
-	Wwidth = 800;
-	Wheight = 600;
+	Wwidth = 1280;
+	Wheight = 720;
 
 	if (!initSystem())
 	{
@@ -459,10 +454,6 @@ int main()
 
 	OnWindowSize(window, Wwidth, Wheight);
 
-    std::cout << "GPU : " << GPUInfo::Instance()->getGPUName() << std::endl;
-    std::cout << "OpenGL : " << GPUInfo::Instance()->getOpenGLVersion() << std::endl;
-    
-    
 	engine = new EngineGL(Wwidth,Wheight);
 	init = false;
 	try
@@ -474,7 +465,8 @@ int main()
 	
 		cerr << e.what() ;
 	}
-    
+
+
 	scene = Scene::getInstance();
 	current_time = GetTimeMs64();
 	LOG(INFO)  << "[Initialization time] " << (current_time - start_time)/1000.0f <<"s" << endl;

@@ -161,16 +161,16 @@ bool  GPUFBO::CheckFramebufferStatus()
 	case GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT:
 		info_text += "Framebuffer incomplete, missing attachment\n";
 		break;
-//	case GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS:
-//		info_text += "Framebuffer incomplete, attached images must have same dimensions\n";
-//		break;
-//	case GL_FRAMEBUFFER_INCOMPLETE_FORMATS:
-//		info_text += "Framebuffer incomplete, attached images must have same format\n";
-//		break;
-	case GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER:
+	case GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT:
+		info_text += "Framebuffer incomplete, attached images must have same dimensions\n";
+		break;
+	case GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT:
+		info_text += "Framebuffer incomplete, attached images must have same format\n";
+		break;
+	case GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT:
 		info_text += "Framebuffer incomplete, missing draw buffer\n";
 		break;
-	case GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER:
+	case GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_EXT:
 		info_text += "Framebuffer incomplete, missing read buffer\n";
 		break;
 	default:

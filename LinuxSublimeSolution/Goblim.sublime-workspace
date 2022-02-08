@@ -1,0 +1,1075 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Gauss",
+				"GaussianLee"
+			],
+			[
+				"rota",
+				"rotatedVector"
+			],
+			[
+				"scale",
+				"scales"
+			],
+			[
+				"convert_i",
+				"convert_int2	Explixit Type Conversion To int2"
+			],
+			[
+				"the",
+				"theta"
+			],
+			[
+				"pow",
+				"pown	x To The Power Integer y"
+			],
+			[
+				"v_",
+				"v_p"
+			],
+			[
+				"u_",
+				"u_0"
+			],
+			[
+				"PI",
+				"PI_square"
+			],
+			[
+				"exp",
+				"exp	Base e Exponential of x"
+			],
+			[
+				"neg",
+				"negPart"
+			],
+			[
+				"get_gl",
+				"get_global_id	Returns Unique Global Work-Item ID"
+			],
+			[
+				"get_global",
+				"get_global_size	Returns Number Of Global Work-Items"
+			],
+			[
+				"get",
+				"get_global_size	Returns Number Of Global Work-Items"
+			],
+			[
+				"get_locla",
+				"get_local_size"
+			],
+			[
+				"fre",
+				"frequency"
+			],
+			[
+				"pix",
+				"pixPos"
+			],
+			[
+				"wind",
+				"windowResolution"
+			],
+			[
+				"off",
+				"offsets_frequency"
+			],
+			[
+				"convert_float",
+				"convert_float2	Explixit Type Conversion To float2"
+			],
+			[
+				"conv",
+				"convert_float	Explixit Type Conversion To float"
+			],
+			[
+				"get_loc",
+				"get_local_size	Returns Number Of Local Work-Items"
+			],
+			[
+				"get_lo",
+				"get_local_size	Returns Number Of Local Work-Items"
+			],
+			[
+				"get_",
+				"get_num_groups	Returns Number Of Work-Groups"
+			],
+			[
+				"p_m",
+				"p_max"
+			],
+			[
+				"p_mi",
+				"p_min"
+			],
+			[
+				"p",
+				"p_center"
+			],
+			[
+				"spot",
+				"spotID"
+			],
+			[
+				"impul",
+				"impulsePos"
+			],
+			[
+				"imp",
+				"impulsePerCellAxis"
+			],
+			[
+				"four",
+				"fourierCoefs"
+			],
+			[
+				"dista",
+				"distanceMinFound"
+			],
+			[
+				"get_image_h",
+				"get_image_height	Returns Image Height In Pixels"
+			],
+			[
+				"as_",
+				"as_uint	Reinterpret Type As uint"
+			],
+			[
+				"curr",
+				"currentGridValue"
+			],
+			[
+				"sampler",
+				"sampler_t"
+			],
+			[
+				"mesh",
+				"meshDirection"
+			],
+			[
+				"voxel",
+				"voxelGrid"
+			],
+			[
+				"get_i",
+				"get_image_height	Returns Image Height In Pixels"
+			],
+			[
+				"voxe",
+				"voxelGrid"
+			],
+			[
+				"imag",
+				"image3d_t"
+			],
+			[
+				"depth",
+				"depthValue"
+			],
+			[
+				"nbP",
+				"nbPixPerThread"
+			],
+			[
+				"bart",
+				"barycentre"
+			],
+			[
+				"out",
+				"outputImage"
+			],
+			[
+				"sqrt",
+				"SQRT2_2"
+			],
+			[
+				"trian",
+				"triangleIndex"
+			],
+			[
+				"frag",
+				"fragmentPos"
+			],
+			[
+				"list",
+				"listeFragment"
+			],
+			[
+				"bar",
+				"barycentre"
+			],
+			[
+				"pro",
+				"projectPointOnTriangle"
+			],
+			[
+				"pixelM",
+				"pixelMin"
+			],
+			[
+				"vir",
+				"virtualGrid"
+			],
+			[
+				"projec",
+				"projectionMatrix"
+			],
+			[
+				"AABB",
+				"AABB_minOverAxe"
+			],
+			[
+				"top",
+				"topVertex"
+			],
+			[
+				"coord",
+				"coordMask"
+			],
+			[
+				"atom",
+				"atomic_min_vertex"
+			],
+			[
+				"scaleM",
+				"scaleMin"
+			],
+			[
+				"wei",
+				"weight"
+			],
+			[
+				"no",
+				"nodeID"
+			],
+			[
+				"str",
+				"strANSSI"
+			],
+			[
+				"char",
+				"charValue"
+			],
+			[
+				"state",
+				"stateBackup"
+			],
+			[
+				"noeud",
+				"noeudEvaluer"
+			],
+			[
+				"create",
+				"createImpulseOf"
+			],
+			[
+				"getSon",
+				"getSonID"
+			],
+			[
+				"noeu",
+				"noeudCourant"
+			],
+			[
+				"impulseat",
+				"impulseAtLvl"
+			],
+			[
+				"max",
+				"MAXLVL"
+			],
+			[
+				"niveau",
+				"niveauCourant"
+			],
+			[
+				"dis",
+				"distribSpotID"
+			],
+			[
+				"Impu",
+				"Impulsion"
+			],
+			[
+				"rot",
+				"rotation"
+			],
+			[
+				"di",
+				"distribSpotID"
+			],
+			[
+				"lo",
+				"localDistParam"
+			],
+			[
+				"nivea",
+				"niveauCourant"
+			],
+			[
+				"nbImpulseC",
+				"nbImpulseCreated"
+			],
+			[
+				"nbFilsA",
+				"nbFilsATraiter"
+			],
+			[
+				"niv",
+				"niveauCourant"
+			],
+			[
+				"fir",
+				"firstData"
+			],
+			[
+				"respo",
+				"responseSize"
+			],
+			[
+				"posM",
+				"posMax"
+			],
+			[
+				"w",
+				"weight"
+			],
+			[
+				"scal",
+				"scale"
+			],
+			[
+				"w_m",
+				"w_max"
+			],
+			[
+				"w_",
+				"w_min"
+			],
+			[
+				"random",
+				"randomIn"
+			],
+			[
+				"rand",
+				"randomRotate"
+			],
+			[
+				"spotsTree",
+				"spotsTreeData"
+			],
+			[
+				"genera",
+				"generatedImpulse"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"she",
+				"shellSurface"
+			],
+			[
+				"shell",
+				"shellFront"
+			],
+			[
+				"smp_shellB",
+				"smp_shellBack"
+			],
+			[
+				"smp_sh",
+				"smp_shellFront"
+			],
+			[
+				"surface",
+				"surfacePosition"
+			],
+			[
+				"worl",
+				"worldGroundNormal"
+			],
+			[
+				"normali",
+				"normalize"
+			],
+			[
+				"norm",
+				"normalize"
+			],
+			[
+				"surfa",
+				"surfaceKernel_toViewSpace"
+			],
+			[
+				"kernel",
+				"kernelColor"
+			],
+			[
+				"Color",
+				"colorAccumulation"
+			],
+			[
+				"position",
+				"positionFinale"
+			],
+			[
+				"surf",
+				"surfaceKernel"
+			],
+			[
+				"norml",
+				"normalize"
+			],
+			[
+				"slicing",
+				"slicingDirectionInKernel"
+			],
+			[
+				"kernelC",
+				"kernelContrib"
+			],
+			[
+				"intersection",
+				"intersectionPoint"
+			],
+			[
+				"fram",
+				"fragmentImpulse"
+			],
+			[
+				"height",
+				"heightFromGround"
+			],
+			[
+				"grid",
+				"gridHeight"
+			],
+			[
+				"surfaceK",
+				"surfaceKernel"
+			],
+			[
+				"surfaceKer",
+				"surfaceKernel_toObjectSpace"
+			],
+			[
+				"g",
+				"g_vrk"
+			],
+			[
+				"obj",
+				"objectToWorldSpace"
+			],
+			[
+				"profi",
+				"profileID"
+			],
+			[
+				"instan",
+				"instanceCell"
+			],
+			[
+				"inst",
+				"instanceID"
+			],
+			[
+				"n",
+				"normale"
+			],
+			[
+				"fromObjectSp",
+				"fromObjectSpace"
+			],
+			[
+				"from",
+				"fromObject"
+			],
+			[
+				"objectT",
+				"objectToWorldSpace"
+			],
+			[
+				"tang",
+				"tangente"
+			],
+			[
+				"smp_",
+				"smp_distributionMaps"
+			],
+			[
+				"instance",
+				"instanceCell"
+			],
+			[
+				"object",
+				"objectNormal"
+			],
+			[
+				"kernelT",
+				"kernelToObjectSpace"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"colorsu",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"x++",
+				"Set Syntax: C++"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"sub",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"nasm",
+				"Set Syntax: Assembly x86 (NASM)"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"subli",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				"",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"read ima",
+				"Snippet: Read Image Element Float"
+			],
+			[
+				"snippet:compl",
+				"Snippet: Compare x &lt y"
+			],
+			[
+				"do",
+				"Snippet: Dot Product"
+			],
+			[
+				"open",
+				"Set Syntax: OpenCL"
+			],
+			[
+				"style",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				"package inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"relea",
+				"Build: Deploy resources to release"
+			],
+			[
+				"release",
+				"Build: Deploy resources to release"
+			],
+			[
+				"buil",
+				"Build: Deploy resources to release"
+			],
+			[
+				"bui",
+				"Build: Deploy resources to release"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"batch",
+				"Set Syntax: Batch File"
+			],
+			[
+				"Powe",
+				"Set Syntax: PowerShell"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"buid",
+				"Build: Build"
+			],
+			[
+				"C++",
+				"Set Syntax: C++"
+			],
+			[
+				"bat",
+				"Set Syntax: Batch File"
+			],
+			[
+				"ope",
+				"Set Syntax: OpenCL"
+			],
+			[
+				"cma",
+				"Set Syntax: CMake"
+			]
+		],
+		"width": 808.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/Core",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/Core/Engine",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/Core/Engine/OpenGL",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/Core/Engine/OpenGL/v4"
+	],
+	"file_history":
+	[
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core-ShellSpotNoise/Core/Engine/OpenGL/v4/GLProgramSource.cpp",
+		"/C/cygwin64/home/Nico/Projet_L3/code/ProgramLLL.sublime-project",
+		"/C/cygwin64/home/Nico/Projet_L3/matrices_test/avant_lll/dim30.txt",
+		"/C/cygwin64/home/Nico/Projet_L3/matrices_test/avant_lll/dim20.txt",
+		"/C/cygwin64/home/Nico/Projet_L3/matrices_test/avant_lll/dim10.txt",
+		"/C/cygwin64/home/Nico/Projet_L3/code/matrice.hpp",
+		"/C/cygwin64/home/Nico/Projet_L3/code/main.cpp",
+		"/C/cygwin64/home/Nico/Projet_L3/code/matrice.cpp",
+		"/C/cygwin64/home/Nico/Projet_L3/matrices_test/avant_lll/dim40.txt",
+		"/C/Users/Nico/Dropbox/CodeSharing/ToolBox/Sources/Modules/DFT/DFT.cl",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP 2015/CorrectionsSujet3.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP 2015/question3.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP 2015/question4.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP 2015/question5.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP 2015/question6.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP 2015/hello.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP 2015/hello.c",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP_4-6_nasm/hello.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP_4-6_nasm/exo3.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP_4-6_nasm/exo4.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP_4-6_nasm/print_decimal_number.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP_4-6_nasm/star_rectangle.asm",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Architecture - TP/TP_4-6_nasm/star_rectangle_print_functions.asm",
+		"/C/Users/Nico/Dropbox/CodeSharing/ToolBox/Resources/ImagePPM/melon.ppm",
+		"/C/Users/Nico/Dropbox/CodeSharing/ToolBox/Resources/ImagePPM/test.ppm",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/Sources/Modules/DFT/DFT.cl",
+		"/C/Users/Nico/Documents/EditionOfPackage/OpenCL.tmLanguage",
+		"/C/Users/Nico/Documents/EditionOfPackage/package-metadata.json",
+		"/C/cygwin64/home/Nico/.ssh/id_rsa.pub",
+		"/C/Users/Nico/Documents/rsa-key-20160122.pbk",
+		"/C/Users/Nico/Documents/EditionOfPackage/readme.md",
+		"/C/Users/Nico/Documents/EditionOfPackage/Completions/OpenCL.sublime-completions",
+		"/C/Users/Nico/Documents/EditionOfPackage/Completions/OpenCL-C.sublime-completions",
+		"/C/Users/Nico/AppData/Local/Temp/7zE1783.tmp/OpenCL.tmLanguage",
+		"/C/Users/Nico/AppData/Roaming/Sublime Text 3/Installed Packages/OpenCL.sublime-package",
+		"/C/Users/Nico/Desktop/Projet_L3/code/matrice.cpp",
+		"/C/Users/Nico/Desktop/Projet_L3/code/matrice.hpp",
+		"/C/Users/Nico/Dropbox/Enseignements/TemplateFicheTDTP/templateFiche.tex",
+		"/C/Users/Nico/Dropbox/Enseignements/FST L2 - Prog Unix/ProgUnix/SujetsTDTP2015/td_tp_1.tex",
+		"/C/Users/Nico/Dropbox/Enseignements/TemplateFicheTDTP/td_tp_1.tex",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/ExecutionOutput/blue_magnitudeWhelch.pgm",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/Resources/ImagePPM/noiseTest.pgm",
+		"/C/Users/Nico/Documents/Gits/Projet_L3/sujet.tex",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Effects/DistributionProfile/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Effects/SpotNoise/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Effects/SpotProfile/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Materials/Common/SpotNoise.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Executables64b/noiseTest.ppm",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/Resources/ImagePPM/noiseTest.ppm",
+		"/C/Users/Nico/Dropbox/Applications/ShareLaTeX/WSCG_/Parts/Local_Spot_Noises.tex",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Materials/Common/SpotTree.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/Sources/GaborWaveletDecomposition/Readme.txt",
+		"/C/Users/Nico/Dropbox/CodeSharing/Xcode/WaveletDecomposition/WaveletDecomposition/main.c",
+		"/C/Users/Nico/Dropbox/CodeSharing/Xcode/WaveletDecomposition/WaveletDecomposition/clHandler.c",
+		"/C/Users/Nico/Dropbox/CodeSharing/Xcode/WaveletDecomposition/WaveletDecomposition/ImagePPM.c",
+		"/C/Users/Nico/Dropbox/CodeSharing/Xcode/WaveletDecomposition/WaveletDecomposition/kernel.cl",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core-ShellSpotNoise/ShellSpotNoise/Materials/Common/Kernels.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/ImageGPUDecodeur/decodeImage.cl",
+		"/C/Users/Nico/Dropbox/CodeSharing/ImageGPUDecodeur/decodeur.cpp",
+		"/C/Users/Nico/Downloads/voxelizator-429cbe65ac087336765f6e40e3088df71afaff32-429cbe65ac087336765f6e40e3088df71afaff32/Voxelization/kernel_backup/kernels.cl",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/Sources/Modules/Voxelizator/Voxelization.cl",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/VisualStudio2015/WelchFFT.vcxproj",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/VisualStudio2015/GaborWaveletDecomposition.vcxproj",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/VisualStudio2015/TestVoxelizator.vcxproj",
+		"/F/._.com.apple.timemachine.donotpresent",
+		"/C/Users/Nico/AppData/Local/Temp/7zE705E.tmp/kernels.cl",
+		"/C/Users/Nico/Dropbox/Applications/ShareLaTeX/WSCG_/Parts/Results.tex",
+		"/C/Users/Nico/Dropbox/Applications/ShareLaTeX/ShellSpotNoise/Shell Spot Noise/ericstyle.tex",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core-ShellSpotNoise/ShellSpotNoise/Materials/Common/toolbox.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/Sources/Modules/Base/GeometricScene/GeometricModelLoader/AssimpLoader.cpp",
+		"/C/Users/Nico/Dropbox/CodeSharing/OpenCLTools/Sources/Modules/Base/GeometricScene/GeometricModelLoader/AssimpLoader.h",
+		"/C/Users/Nico/Documents/rsa-key-20160122.ppk",
+		"/C/Users/Nico/Dropbox/sharelatex/WSCG_/eg-alpha.bst",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/elsarticle-template-3-num-cag.tex",
+		"/C/Users/Nico/Dropbox/sharelatex/WSCG_/Parts/Fuzzy_Procedural_Pattern.tex",
+		"/C/Users/Nico/Dropbox/CodeSharing/Goblim-Win32-core/SampleProject/Effects/NoiseTextureGenerator/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/Dropbox/sharelatex/WSCG_/Parts/Introduction.tex",
+		"/C/Users/Nico/Dropbox/sharelatex/WSCG_/Parts/StateOfArt.tex",
+		"/C/Users/Nico/Dropbox/sharelatex/WSCG_/Parts/Abstract.tex",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/Parts/Abstract.tex",
+		"/C/Users/Nico/Dropbox/Enseignements/Examens et Projets/2015-2016/Réseaux1 - Janvier 2016/BADJI_FALL/index.html",
+		"/C/Users/Nico/Dropbox/Enseignements/Examens et Projets/2015-2016/Réseaux1 - Janvier 2016/BADJI_FALL/cgi-bin/code.py",
+		"/C/Users/Nico/Dropbox/Enseignements/Examens et Projets/2015-2016/Réseaux1 - Janvier 2016/EL-HARDOUZ_TAHIRI/réseaux/serveur/cgi-bin/server.py",
+		"/C/Users/Nico/Dropbox/Enseignements/Examens et Projets/2015-2016/Réseaux1 - Janvier 2016/EL-HARDOUZ_TAHIRI/réseaux/firewall",
+		"/C/Users/Nico/Dropbox/Enseignements/Examens et Projets/2015-2016/Réseaux1 - Janvier 2016/EL-HARDOUZ_TAHIRI/réseaux/serveur/index.html",
+		"/C/Users/Nico/Dropbox/CodeSharing/LocalRandomPhaseNoise/resources/OpenCL/DFT.cl",
+		"/C/Users/Nico/Dropbox/CodeSharing/LocalRandomPhaseNoise/resources/ImagePPM/blue.ppm",
+		"/C/Users/Nico/Dropbox/CodeSharing/LocalRandomPhaseNoise/Output/blue.ppm",
+		"/C/Users/Nico/Dropbox/CodeSharing/WorkSpaceJMD/spectralnoise/periodic/periodic.cpp",
+		"/C/Users/Nico/Dropbox/CodeSharing/Xcode/Threads/Threads/TD5.c",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/src/module_OpenCL/clHandler.c",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/src/module_OpenCL/cl.hpp",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/SampleProject/Effects/NoiseTextureGenerator/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/SampleProject/Materials/Common/SpotTree.glsl",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/VisualStudioFiles/ProceduralTextureEditor.vcxproj",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/VisualStudioFiles/ProceduralTextureEditor.vcxproj.filters",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/VisualStudioFiles/ProceduralTextureEditor.sln",
+		"/C/Users/Nico/Dropbox/CodeSharing/ProceduralTextureEditor/VisualStudioFiles/ProceduralTextureEditor.vcxproj.user",
+		"/C/Users/Nico/Documents/Gits/Goblim-Win32-core/SampleProject/Effects/DisplaySpot/Shaders/PerPixel-FS.glsl",
+		"/C/Users/Nico/gits/Goblim-Win32-core/Core/Effects/DisplayResource/Shaders/Base-VS.glsl",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SpotNoise2DCPU/SimpleSpotNoiseTest/Noise.cpp",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SimpleSpotNoiseTest/SimpleSpotNoiseTest/Spots2DTree.cpp",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SimpleSpotNoiseTest/SimpleSpotNoiseTest/Noise.cpp",
+		"/C/cygwin64/home/Nico/fastCode/main.cpp",
+		"/C/Users/Nico/Downloads/Kernel.hpp",
+		"/C/Users/Nico/Downloads/Kernel.cpp",
+		"/C/Users/Nico/gits/Goblim-Win32-core/SampleProject/Effects/DisplaySpot/Shaders/kd5hxbxk.vfw~",
+		"/C/Users/Nico/gits/Goblim-Win32-core/Core/Materials/Common/Random/Random.glsl",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SpotNoise2DCPU/SimpleSpotNoiseTest/Main.cpp",
+		"/C/Users/Nico/Desktop/voxelizator/Voxelization/openCL.hpp",
+		"/C/Users/Nico/Desktop/voxelizator/Voxelization/openCL.cpp",
+		"/C/Users/Nico/gits/Goblim-Win32-core/SampleProject/Materials/SpotsTreeNoise/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Downloads/image.cpp",
+		"/C/Users/Nico/Documents/sshkey/id_public.key",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Sources/SampleEngine.cpp",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SpotNoise2DCPU/SimpleSpotNoiseTest/Spot2D.cpp",
+		"/C/Users/Nico/Documents/Visual Studio 2013/Projects/SpotNoise2DCPU/SimpleSpotNoiseTest/PRNG_Lagae.h",
+		"/C/Users/Nico/Documents/Template_These/These.tex",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Pass3-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Main-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Pass2-FS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/FlatKernelsOnMesh/Shaders/Pass2-VS.glsl",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/Core/Materials/Common/Lighting/Lighting.glsl",
+		"/C/Users/Nico/Documents/paper_0042_example_code/noise.cpp",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/Common/Kernels.glsl",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/Parts/Fuzzy_Procedural_Pattern.tex",
+		"/C/Users/Nico/Dropbox/sharelatex/ShellSpotNoise/Shell Spot Noise/elsarticle-template-3-num-cag.tcp",
+		"/C/Users/Nico/Desktop/Goblim core maintenance/Goblim-SSN/ShellSpotNoise/Materials/VolumetricKernelsOnMesh/Shaders/Main-FS.glsl"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Users\\Nico\\Dropbox\\CodeSharing\\Goblim-Win32-core\\Core",
+			"C:\\Users\\Nico\\Dropbox\\CodeSharing\\Goblim-Win32-core\\LinuxSublimeSolution"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"namedstring",
+			"nameString",
+			"getVector",
+			"this->",
+			"uint2",
+			"keyword.address-space.opencl",
+			"pixPos",
+			"pos",
+			"X",
+			"sin(f.y)",
+			"cos(f.y)",
+			"cos",
+			"p_prime",
+			"p_prime_0",
+			"p",
+			"f",
+			"waveletCoefs",
+			"bah",
+			"huge",
+			"frequency",
+			"windowBlocStartNumber",
+			"firstWindowPixel",
+			"pixel",
+			"posInWindow",
+			"windowPos",
+			"unsigned int",
+			"x",
+			"blocSize",
+			"x",
+			"fromDistribParam",
+			"LocalDistribParam",
+			"weight",
+			"Param",
+			"delta",
+			"f",
+			"frequency",
+			"Converter",
+			"get_image_height(voxelGrid)",
+			"get_image_width(voxelGrid)",
+			".x",
+			"x",
+			"transpose",
+			"\\eon",
+			"\\eoff",
+			"\\eoff ",
+			"\\eon ",
+			"\\eon",
+			"projectionMatrix",
+			"v[1].xy",
+			"v[0].xy",
+			"fragPerTriangle",
+			"y",
+			"min",
+			"0",
+			"triangleVertex",
+			"ab",
+			"cdef",
+			"c1",
+			"s0123",
+			"		\n",
+			"type",
+			"call",
+			"call.type",
+			"call.type$",
+			"init.state.consts",
+			"output.bibitem",
+			"\\eoff",
+			"\\eoff ",
+			"\\eon ",
+			"\\eoff",
+			"\\eoff ",
+			"\\eoff",
+			"\\eon ",
+			"\\eoff",
+			"\\eoff ",
+			"\\eoff",
+			"\\eon",
+			"\\eoff ",
+			"\\eon ",
+			"\\eoff",
+			"\\eon",
+			"vec3",
+			"impulseDensity",
+			"ellipseIsoSurfaceMatrix",
+			"OpenCL",
+			"strANSSI",
+			"argv",
+			"]);\n",
+			"createI",
+			"nodeID",
+			"xi",
+			"dist",
+			"Dist",
+			"dist",
+			"localDistParam",
+			"nodeData",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"Dist",
+			"dist",
+			"posM",
+			";",
+			"x_i",
+			"y_i",
+			";\n",
+			"currentCell",
+			"c",
+			"dist",
+			"xi",
+			"scale",
+			"XYZrotations",
+			"glm::",
+			"glm",
+			"glm::",
+			"evalSpotID",
+			"smp_colorMap",
+			"k",
+			"positionOverSurface",
+			"sol",
+			"currentSliceCenter"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"v_i"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Goblim.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"spot",
+				"Project Materials\\Common\\SpotTree.glsl"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 242.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -6,11 +6,11 @@
 
 #ifndef _GLPROGRAMSSOURCEMANAGER_H
 #define _GLPROGRAMSSOURCEMANAGER_H
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include <string>
 #include <vector>
 using namespace std;
-#include "Engine/OpenGL/GLProgramSource.h"
+#include "Engine/OpenGL/v4/GLProgramSource.h"
 #include "Engine/Base/Resource_mgr.hpp"
 
 

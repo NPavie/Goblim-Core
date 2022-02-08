@@ -1,50 +1,35 @@
 {
-	"folders":
+	"build_systems":
 	[
-    {
-      "name":"Project Sources",
-      "path": "Sources"
-    },
 		{
-      "name":"Project Materials",
-			"path": "Materials"
+			"name": "Transfert GLSL Files To debug",
+			"windows":
+			{
+				"cmd":
+				[
+					"shaderTransfer.bat",
+					"C:\\Home\\Output\\",
+					"${project_base_name}\\Debug\\"
+				],
+				"encoding": "cp850",
+				"shell": true
+			},
+			"working_dir": "${project_path}"
 		},
 		{
-      "name":"Project Effects",
-			"path": "Effects"
-		},
-    {
-      "name":"Goblim Core",
-      "path": "../Core"
-    }
-	],
-  
-  
-	
-  "build_systems":
-    [
-
-        {
-        	"name": "Transfert GLSL Files To debug",
-          "working_dir": "${project_path}",
-          "windows":
-          {
-           		"cmd": ["shaderTransfer.bat","C:\\Home\\Output\\","${project_base_name}\\Debug\\"],
-           		"shell": true,
-           		"encoding": "cp850"	
-          }      	
-        },
-        {
-        	"name": "Transfert GLSL Files To release",
-            "working_dir": "${project_path}",
-           	"windows":
-           	{
-           		"cmd": ["shaderTransfer.bat", "C:\\Home\\Output\\","${project_base_name}\\Release\\"],
-           		"shell": true,
-           		"encoding": "cp850"	
-           	}
-           	
-           	
-        }
-    ]
+			"name": "Transfert GLSL Files To release",
+			"windows":
+			{
+				"cmd":
+				[
+					"shaderTransfer.bat",
+					"C:\\Home\\Output\\",
+					"${project_base_name}\\Release\\"
+				],
+				"encoding": "cp850",
+				"shell": true
+			},
+			"working_dir": "${project_path}"
+		}
+	]
 }

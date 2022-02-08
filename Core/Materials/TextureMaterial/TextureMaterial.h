@@ -3,7 +3,7 @@
 
 #include "Engine/OpenGL/MaterialGL.h"
 #include "GPUResources/Textures/GPUTexture2D.h"
-#include "Engine/OpenGL/LightingModelGL.h"
+#include "Engine/OpenGL/Lighting/LightingModelGL.h"
 #include <memory.h>
 
 class TextureMaterial : public MaterialGL

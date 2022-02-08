@@ -31,10 +31,8 @@ class SampleEngine : public EngineGL
 	protected:
 
 		//SampleEffect* sampleEffectForTest;
-		SampleMaterial* sampleMaterialForTest;
+		//SampleMaterial* sampleMaterialForTest;
 
-		GPUFBO* framebuffer;
-		GPUFBO* framebufferSpot;
 		
 		
 		

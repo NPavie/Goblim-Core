@@ -1,9 +1,9 @@
 #ifndef _GPUTransformFeedback_h
 #define _GPUTransformFeedback_h
 
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include "Engine/Base/Resource.h"
-#include "Engine/OpenGL/GLProgramPipeline.h"
+#include "Engine/OpenGL/v4/GLProgramPipeline.h"
 #include "GPUResources/Buffers/GPUBuffer.h"
 
 class GPUTransformFeedback : public Resource

@@ -10,7 +10,7 @@
 #include <vector>
 #include <map>
 #include "GPUResources/Buffers/GPUBuffer.h"
-#include <glad/glad.h>
+#include <GL/glew.h>
 #include "Engine/Base/GeometricModelLoader.h"
 #include "Engine/Base/BoundingBox/GeometricBoundingBox.h"
 

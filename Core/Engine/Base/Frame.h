@@ -7,6 +7,7 @@
 #ifndef __FRAME__
 #define __FRAME__
 
+#include <GL/glew.h>
 #include <glm/glm.hpp>
 #include <vector>
 /**

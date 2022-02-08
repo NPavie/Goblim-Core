@@ -6,7 +6,7 @@
 #include "FCCollector.h"
 #include "Engine/Base/Node.h"
 #include "Engine/Base/Scene.h"
-//#include <omp.h>
+#include <omp.h>
 #include "Engine/Base/BoundingBox/BoundingBox.h"
 #include <glm/gtc/matrix_access.hpp>
 
@@ -27,9 +27,9 @@ void FCCollector::collect(Node* node)
 	if (node->getName() == "Root")
 	{
 		int i = 0;
-		//#pragma omp parallel //num_threads(4)
+		#pragma omp parallel //num_threads(4)
 		{
-			//#pragma omp for schedule(dynamic, glm::max((int)node->m_Sons.size() / omp_get_num_threads(), 1))
+			#pragma omp for schedule(dynamic, glm::max((int)node->m_Sons.size() / omp_get_num_threads(), 1))
 			for (i = 0; i < (int)node->m_Sons.size(); i++)
 				collectRecur(node->m_Sons.at(i));
 			//#pragma omp barrier
@@ -78,7 +78,7 @@ bool FCCollector::inFrustum(Node* node)
 
 void FCCollector::updateCam()
 {
-	//float length;
+	float length;
 	//glm::mat4 proj = Scene::getInstance()->camera()->getProjectionMatrix() * (*Scene::getInstance()->camera()->getFrame()->getMatrix());
 	glm::mat4 proj = Scene::getInstance()->getRoot()->frame()->getTransformMatrix();
 		//Scene::getInstance()->camera()->getProjectionMatrix() 

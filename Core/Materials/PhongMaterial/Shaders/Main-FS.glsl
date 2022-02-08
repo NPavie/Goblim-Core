@@ -5,7 +5,7 @@
 #line 6 
 
 
-layout(std140) uniform CPU_FS
+layout(std140) uniform CPU
 {	
 mat4 NormalMV;
 vec3 globalColor;

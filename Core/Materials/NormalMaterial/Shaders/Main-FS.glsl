@@ -1,5 +1,5 @@
 #version 420
-layout(std140) uniform CPU_FS
+layout(std140) uniform CPU
 {
 	float near;
 	float far ;

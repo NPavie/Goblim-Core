@@ -11,22 +11,47 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Effects\DistributionProfile\DistributionProfile.cpp" />
     <ClCompile Include="Effects\SampleEffect\SampleEffect.cpp" />
+    <ClCompile Include="Effects\SpotNoise\SpotNoise.cpp" />
+    <ClCompile Include="Effects\SpotProfile\SpotProfile.cpp" />
     <ClCompile Include="Materials\SampleMaterial\SampleMaterial.cpp" />
+    <ClCompile Include="Sources\GaussianSplat.cpp" />
+    <ClCompile Include="Sources\GPUSpotVector.cpp" />
     <ClCompile Include="Sources\Main.cpp" />
     <ClCompile Include="Sources\SampleEngine.cpp" />
+    <ClCompile Include="Sources\Spot.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Effects\DistributionProfile\DistributionProfile.h" />
     <ClInclude Include="Effects\SampleEffect\SampleEffect.h" />
+    <ClInclude Include="Effects\SpotNoise\SpotNoise.h" />
+    <ClInclude Include="Effects\SpotProfile\SpotProfile.h" />
     <ClInclude Include="Materials\SampleMaterial\SampleMaterial.h" />
+    <ClInclude Include="Sources\GaussianSplat.h" />
+    <ClInclude Include="Sources\GPUSpotVector.h" />
     <ClInclude Include="Sources\SampleEngine.h" />
+    <ClInclude Include="Sources\Spot.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Effects\DistributionProfile\Shaders\Base-VS.glsl" />
+    <None Include="Effects\DistributionProfile\Shaders\PerPixel-FS.glsl" />
     <None Include="Effects\SampleEffect\Shaders\Base-VS.glsl" />
     <None Include="Effects\SampleEffect\Shaders\PerPixel-FS.glsl" />
+    <None Include="Effects\SpotNoise\Shaders\Base-VS.glsl" />
+    <None Include="Effects\SpotNoise\Shaders\PerPixel-FS.glsl" />
+    <None Include="Effects\SpotProfile\Shaders\Base-VS.glsl" />
+    <None Include="Effects\SpotProfile\Shaders\PerPixel-FS.glsl" />
+    <None Include="Materials\Common\SpotNoise.glsl" />
+    <None Include="Materials\Common\SpotTree.glsl" />
     <None Include="Materials\SampleMaterial\Shaders\Main-FS.glsl" />
     <None Include="Materials\SampleMaterial\Shaders\Main-VS.glsl" />
     <None Include="SampleProject.sublime-project" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visual2013Solution\GobLimGL4.vcxproj">
+      <Project>{f727d444-97ae-4c72-b53b-2759dba643fc}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{776AE62F-21AF-41C4-9EB2-1EFC9B085FDA}</ProjectGuid>
@@ -61,14 +86,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)\..\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\..\Libraries\lib;C:\Home\Output\$(SolutionName)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\..\Libraries\lib\Win32;C:\Home\Output\GobLimGL4\$(Configuration);$(LibraryPath)</LibraryPath>
     <OutDir>C:\Home\Output\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>C:\Home\Output\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)\..\Libraries\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\..\Libraries\lib;C:\Home\Output\$(SolutionName)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\..\Libraries\lib\Win32;C:\Home\Output\GobLimGL4\$(Configuration);$(LibraryPath)</LibraryPath>
     <OutDir>C:\Home\Output\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>C:\Home\Output\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -86,7 +111,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;glew32.lib;soil.lib;Assimp.lib;AntTweakBar.lib;goblim.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;glew32.lib;Assimp.lib;AntTweakBar.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>:: Copy les materiaux généraux (glsl) avec la librairie
@@ -122,7 +147,7 @@ if exist "$(ProjectDir)\Textures" xcopy "$(ProjectDir)\Textures" "$(OutDir)\Effe
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;glew32.lib;soil.lib;Assimp.lib;AntTweakBar.lib;goblim.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3dll.lib;glew32.lib;Assimp.lib;AntTweakBar.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>:: Copy les materiaux généraux (glsl) avec la librairie

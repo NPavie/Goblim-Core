@@ -7,6 +7,7 @@ SampleMaterial::SampleMaterial(std::string name) :
 MaterialGL(name,"SampleMaterial")
 {
 	modelViewMatrix = vp->uniforms()->getGPUmat4("CPU_modelViewMatrix");
+
 	
 }
 

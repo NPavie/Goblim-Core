@@ -3,7 +3,7 @@
 #include "Engine/OpenGL/ModelGL.h"
 #include "GPUResources/Textures/GPUTexture2D.h"
 #include "Engine/Base/Scene.h"
-#include "Engine/OpenGL/LightingModelGL.h"
+#include "Engine/OpenGL/Lighting/LightingModelGL.h"
 #include "Materials/NormalMaterial/NormalMaterial.h"
 #include "Engine/Base/NodeCollector.h"
 #include "Effects/BilateralFilter/BilateralFilter.h"
